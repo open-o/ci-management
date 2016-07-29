@@ -14,7 +14,10 @@ HOST=$(/bin/hostname)
 SYSTEM_TYPE=''
 
 IFS=','
-for i in "trusty,trusty"
+for i in "basebuild,basebuild" \
+         "centos,centos" \
+         "trusty,trusty" \
+         "xenial,xenial"
 do set -- $i
     if [[ $HOST == *"$1"* ]]; then
         SYSTEM_TYPE="$2"

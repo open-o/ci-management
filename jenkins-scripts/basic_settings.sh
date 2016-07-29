@@ -35,13 +35,13 @@ Host *
   ServerAliveInterval 60
 
 # we don't want to do SSH host key checking on spin-up systems
-Host 10.30.56.0/23
+Host 10.30.96.* 10.30.97.*
   StrictHostKeyChecking no
   UserKnownHostsFile /dev/null
 EOSSH
 
 cat <<EOKNOWN >  /etc/ssh/ssh_known_hosts
-[gerrit.zephyrproject.org]:29418,[199.19.213.246]:29418 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDLhAICjKMqwNREHPZvs95Hlk8HfGt2VX3i5qUBJCyQ6unqmnlxy7xf1TDWCw6Tnq4jJH3/9SplNYONy5uwvLDtUoLrSG4kD6vvYUjgMB6pa/ECtefMnPkhCv09XOdfzWfku3O9GQRO8cpzoZZSV1NqIR2VVde1Xs2dbBXAwkLW8F0VFNOYs1ihApEAQWYf+hi3j+FcZP/9VnI7kg1XVJttfBJIlm05BjAkyQ+cSllgVAEi4iW1Q2KZ2iDwhdzTlwa+FpLnezFJtYR+v9449Fz2tMgBDl30p3A1bPvBwndxMsiddxjVRGuj2oTzAwkSYLS2hXT5pZOl7DOrSt3sTCKD
+[gerrit.open-o.org]:29418,[198.145.29.91]:29418 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC63lHCxVeE/SwExgfi6EsncRtwpVOLUV0CJIlwgLasaJRk5mi4WB7r7Nltn+eC2loaYqEoboxf6vzcLIrvq2ODp+k3ZnI4Lc4Dtcw9RGLoLSCqxatagWBzw0/9pI/MqZB3bzGb03ItSCaUjYJJraoNe81hviG9hIvGUkTolB2oRMcZvpYNvpKlQ6xpD5lMAWQL82GWqTNoCg/LCn3oDu4fXV7IF3ZcJsglx2EiWHwjnLpmv/yNA9AIaFs+JkuBrSPhiKWetk208KxQQ9M/aACj6zcBNSAYZePMLpciMnnth4MMVTtgnABXouqX8e4TDDq9t4LufVSHmXTY+quIWBX3
 EOKNOWN
 
 # vim: sw=2 ts=2 sts=2 et :

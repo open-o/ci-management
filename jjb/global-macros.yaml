@@ -8,7 +8,9 @@
       - string:
           name: PROJECT
           default: '{project}'
+          # yamllint disable rule:line-length
           description: "JJB configured PROJECT parameter to identify a Gerrit project"
+          # yamllint enable
       - string:
           name: GERRIT_BRANCH
           default: '{branch}'
@@ -207,7 +209,9 @@
           recipients: 'nobody@open-o.org'
           reply-to:
           content-type: default
+          # yamllint disable rule:line-length
           subject: '{email-prefix} $PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!'
+          # yamllint enable
           body: |
             $PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:
 
@@ -225,7 +229,9 @@
           exec-pattern: '**/**.exec'
           class-pattern: '**/classes'
           source-pattern: '**/src/main/java'
+          # yamllint disable rule:line-length
           exclusion-pattern: '**/gen**,**/generated-sources/**,**/yang-gen**,**/pax/**'
+          # yamllint enable
           status-update: true
           targets:
             - branch:

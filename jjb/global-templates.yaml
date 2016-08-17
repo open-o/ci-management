@@ -1,0 +1,32 @@
+# Job Templates
+- job-template:
+    name: '{project}-verify-java'
+
+    project-type: freestyle
+    node: '{build-node}'
+
+    parameters:
+      - openo-infra-parameters:
+          project: '{project}'
+          branch: '{branch}'
+          refspec: 'refs/heads/{branch}'
+
+    scm:
+      - gerrit-trigger-scm:
+          refspec: '$GERRIT_REFSPEC'
+          choosing-strategy: 'gerrit'
+
+    wrappers:
+      - openo-infra-wrappers:
+          build-timeout: '{build-timeout}'
+
+    triggers:
+      - gerrit-trigger-patch-submitted:
+          name: '{project}'
+          branch: '{branch}'
+
+    builders:
+      - maven-target:
+          maven-version: '{mvn33}'
+          goals: 'clean install'
+

@@ -25,8 +25,45 @@
           name: '{project}'
           branch: '{branch}'
 
+    prebuilders:
+      - provide-maven-settings
+
     builders:
       - maven-target:
           maven-version: '{mvn33}'
           goals: 'clean install'
 
+
+- job-template:
+    name: '{project}-merge'
+
+    project-type: freestyle
+    node: '{build-node}'
+
+    parameters:
+      - openo-infra-parameters:
+          project: '{project}'
+          branch: '{branch}'
+          refspec: 'refs/heads/{branch}'
+
+    scm:
+      - gerrit-trigger-scm:
+          refspec: ''
+          choosing-strategy: 'default'
+
+    wrappers:
+      - openo-infra-wrappers:
+          build-timeout: '{build-timeout}'
+
+    triggers:
+      - gerrit-trigger-patch-merged:
+          name: '{project}'
+          branch: '{branch}'
+
+    prebuilders:
+      - provide-maven-settings
+
+    builders:
+      - maven-target:
+          maven-version: '{mvn33}'
+          goals: 'clean install deploy'

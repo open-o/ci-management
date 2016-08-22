@@ -1,3 +1,4 @@
+---
 - project:
     name: common-tosca-catalog
     jobs:
@@ -5,3 +6,4 @@
 
     project: 'common-tosca-catalog'
     branch: 'master'
+    mvn-settings: 'common-tosca-catalog-settings'

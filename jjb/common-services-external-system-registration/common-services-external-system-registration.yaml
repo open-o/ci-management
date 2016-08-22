@@ -1,3 +1,4 @@
+---
 - project:
     name: common-services-external-system-registration
     jobs:
@@ -5,3 +6,4 @@
 
     project: 'common-services-external-system-registration'
     branch: 'master'
+    mvn-settings: 'common-services-external-system-registration-settings'

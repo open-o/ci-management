@@ -26,11 +26,6 @@
           name: '{project}'
           branch: '{branch}'
 
-    prebuilders:
-      - provide-maven-settings:
-          global-settings-file: 'global-settings'
-          settings-file: '{mvn-settings}'
-
     builders:
       - provide-maven-settings:
           global-settings-file: 'global-settings'
@@ -38,6 +33,10 @@
       - maven-target:
           maven-version: '{mvn33}'
           goals: 'clean install'
+          settings: '{mvn-settings}'
+          settings-type: cfp
+          global-settings: 'global-settings'
+          global-settings-type: cfp
 
 
 - job-template:
@@ -66,11 +65,6 @@
           name: '{project}'
           branch: '{branch}'
 
-    prebuilders:
-      - provide-maven-settings:
-          global-settings-file: 'global-settings'
-          settings-file: '{mvn-settings}'
-
     builders:
       - provide-maven-settings:
           global-settings-file: 'global-settings'
@@ -78,3 +72,7 @@
       - maven-target:
           maven-version: '{mvn33}'
           goals: 'clean install deploy'
+          settings: '{mvn-settings}'
+          settings-type: cfp
+          global-settings: 'global-settings'
+          global-settings-type: cfp

@@ -1,3 +1,4 @@
+---
 - project:
     name: common-services-protocol-stack
     jobs:
@@ -5,3 +6,4 @@
 
     project: 'common-services-protocol-stack'
     branch: 'master'
+    mvn-settings: 'common-services-protocol-stack-settings'

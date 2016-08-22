@@ -1,3 +1,4 @@
+---
 - project:
     name: common-services-microservice-bus
     jobs:
@@ -5,3 +6,4 @@
 
     project: 'common-services-microservice-bus'
     branch: 'master'
+    mvn-settings: 'common-services-microservice-bus-settings'

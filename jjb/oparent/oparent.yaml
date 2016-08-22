@@ -1,3 +1,4 @@
+---
 - project:
     name: oparent
     jobs:
@@ -6,3 +7,4 @@
 
     project: 'oparent'
     branch: 'master'
+    mvn-settings: 'oparent-settings'

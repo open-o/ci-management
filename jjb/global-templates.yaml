@@ -1,3 +1,4 @@
+---
 # Job Templates
 - job-template:
     name: '{project}-verify-java'
@@ -26,9 +27,14 @@
           branch: '{branch}'
 
     prebuilders:
-      - provide-maven-settings
+      - provide-maven-settings:
+          global-settings-file: 'global-settings'
+          settings-file: '{mvn-settings}'
 
     builders:
+      - provide-maven-settings:
+          global-settings-file: 'global-settings'
+          settings-file: '{mvn-settings}'
       - maven-target:
           maven-version: '{mvn33}'
           goals: 'clean install'
@@ -61,9 +67,14 @@
           branch: '{branch}'
 
     prebuilders:
-      - provide-maven-settings
+      - provide-maven-settings:
+          global-settings-file: 'global-settings'
+          settings-file: '{mvn-settings}'
 
     builders:
+      - provide-maven-settings:
+          global-settings-file: 'global-settings'
+          settings-file: '{mvn-settings}'
       - maven-target:
           maven-version: '{mvn33}'
           goals: 'clean install deploy'

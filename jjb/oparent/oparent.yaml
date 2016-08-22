@@ -2,7 +2,7 @@
     name: oparent
     jobs:
       - '{project}-verify-java'
-      - '{project}-merge'
+      - '{project}-merge-java'
 
     project: 'oparent'
     branch: 'master'

@@ -3,6 +3,7 @@
     name: common-services-common-utilities
     jobs:
       - '{project}-verify-java'
+      - '{project}-merge-java'
 
     project: 'common-services-common-utilities'
     branch: 'master'

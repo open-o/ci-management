@@ -1,0 +1,9 @@
+---
+- project:
+    name: common-services-driver-mgr
+    jobs:
+      - '{project}-verify-java'
+
+    project: 'common-services-driver-mgr'
+    branch: 'master'
+    mvn-settings: 'common-services-driver-mgr-settings'

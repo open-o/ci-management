@@ -1,0 +1,9 @@
+---
+- project:
+    name: common-services-common-utilities
+    jobs:
+      - '{project}-verify-java'
+
+    project: 'common-services-common-utilities'
+    branch: 'master'
+    mvn-settings: 'common-services-common-utilities-settings'

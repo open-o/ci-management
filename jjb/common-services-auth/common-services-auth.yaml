@@ -1,0 +1,9 @@
+---
+- project:
+    name: common-services-auth
+    jobs:
+      - '{project}-verify-java'
+
+    project: 'common-services-auth'
+    branch: 'master'
+    mvn-settings: 'common-services-auth-settings'

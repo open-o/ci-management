@@ -1,0 +1,10 @@
+---
+- project:
+    name: nfvo
+    jobs:
+      - '{project}-verify-java'
+      - '{project}-merge-java'
+
+    project: 'nfvo'
+    branch: 'master'
+    mvn-settings: 'nfvo-settings'

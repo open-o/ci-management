@@ -1,0 +1,10 @@
+---
+- project:
+    name: sdno-utils
+    jobs:
+      - '{project}-verify-java'
+      - '{project}-merge-java'
+
+    project: 'sdno-utils'
+    branch: 'master'
+    mvn-settings: 'sdno-utils-settings'

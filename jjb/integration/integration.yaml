@@ -1,0 +1,10 @@
+---
+- project:
+    name: integration
+    jobs:
+      - '{project}-verify-java'
+      - '{project}-merge-java'
+
+    project: 'integration'
+    branch: 'master'
+    mvn-settings: 'integration-settings'

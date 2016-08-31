@@ -1,0 +1,10 @@
+---
+- project:
+    name: sdno-brs
+    jobs:
+      - '{project}-verify-java'
+      - '{project}-merge-java'
+
+    project: 'sdno-brs'
+    branch: 'master'
+    mvn-settings: 'sdno-brs-settings'

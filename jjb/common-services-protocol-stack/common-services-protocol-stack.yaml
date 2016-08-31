@@ -3,6 +3,7 @@
     name: common-services-protocol-stack
     jobs:
       - '{project}-verify-java'
+      - '{project}-merge-java'
 
     project: 'common-services-protocol-stack'
     branch: 'master'

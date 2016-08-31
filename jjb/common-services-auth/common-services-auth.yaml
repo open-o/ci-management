@@ -3,6 +3,7 @@
     name: common-services-auth
     jobs:
       - '{project}-verify-java'
+      - '{project}-merge-java'
 
     project: 'common-services-auth'
     branch: 'master'

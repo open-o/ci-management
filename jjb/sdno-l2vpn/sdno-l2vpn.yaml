@@ -1,0 +1,10 @@
+---
+- project:
+    name: sdno-l2vpn
+    jobs:
+      - '{project}-verify-java'
+      - '{project}-merge-java'
+
+    project: 'sdno-l2vpn'
+    branch: 'master'
+    mvn-settings: 'sdno-l2vpn-settings'

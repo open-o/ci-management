@@ -1,0 +1,10 @@
+---
+- project:
+    name: sdno-vxlan
+    jobs:
+      - '{project}-verify-java'
+      - '{project}-merge-java'
+
+    project: 'sdno-vxlan'
+    branch: 'master'
+    mvn-settings: 'sdno-vxlan-settings'

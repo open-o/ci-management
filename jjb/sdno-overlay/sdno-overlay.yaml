@@ -1,0 +1,10 @@
+---
+- project:
+    name: sdno-overlay
+    jobs:
+      - '{project}-verify-java'
+      - '{project}-merge-java'
+
+    project: 'sdno-overlay'
+    branch: 'master'
+    mvn-settings: 'sdno-overlay-settings'

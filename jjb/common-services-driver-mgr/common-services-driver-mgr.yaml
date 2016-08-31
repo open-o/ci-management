@@ -3,6 +3,7 @@
     name: common-services-driver-mgr
     jobs:
       - '{project}-verify-java'
+      - '{project}-merge-java'
 
     project: 'common-services-driver-mgr'
     branch: 'master'

@@ -3,6 +3,7 @@
     name: common-tosca-catalog
     jobs:
       - '{project}-verify-java'
+      - '{project}-merge-java'
 
     project: 'common-tosca-catalog'
     branch: 'master'

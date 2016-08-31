@@ -3,6 +3,7 @@
     name: common-services-external-system-registration
     jobs:
       - '{project}-verify-java'
+      - '{project}-merge-java'
 
     project: 'common-services-external-system-registration'
     branch: 'master'

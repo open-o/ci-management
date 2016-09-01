@@ -32,7 +32,7 @@
           settings-file: '{mvn-settings}'
       - maven-target:
           maven-version: '{mvn33}'
-          goals: 'clean install'
+          goals: 'clean install deploy'
           settings: '{mvn-settings}'
           settings-type: cfp
           global-settings: 'global-settings'

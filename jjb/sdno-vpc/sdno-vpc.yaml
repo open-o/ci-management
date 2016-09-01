@@ -1,0 +1,10 @@
+---
+- project:
+    name: sdno-vpc
+    jobs:
+      - '{project}-verify-java'
+      - '{project}-merge-java'
+
+    project: 'sdno-vpc'
+    branch: 'master'
+    mvn-settings: 'sdno-vpc-settings'

@@ -1,0 +1,10 @@
+---
+- project:
+    name: gso-gui
+    jobs:
+      - '{project}-verify-java'
+      - '{project}-merge-java'
+
+    project: 'gso-gui'
+    branch: 'master'
+    mvn-settings: 'gso-gui-settings'

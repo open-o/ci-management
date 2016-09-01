@@ -1,0 +1,10 @@
+---
+- project:
+    name: sdno-driver-huawei-overlay
+    jobs:
+      - '{project}-verify-java'
+      - '{project}-merge-java'
+
+    project: 'sdno-driver-huawei-overlay'
+    branch: 'master'
+    mvn-settings: 'sdno-driver-huawei-overlay-settings'

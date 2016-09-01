@@ -1,0 +1,10 @@
+---
+- project:
+    name: common-tosca-model-designer
+    jobs:
+      - '{project}-verify-java'
+      - '{project}-merge-java'
+
+    project: 'common-tosca-model-designer'
+    branch: 'master'
+    mvn-settings: 'common-tosca-model-designer-settings'

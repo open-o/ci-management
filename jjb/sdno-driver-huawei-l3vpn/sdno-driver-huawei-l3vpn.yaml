@@ -1,0 +1,10 @@
+---
+- project:
+    name: sdno-driver-huawei-l3vpn
+    jobs:
+      - '{project}-verify-java'
+      - '{project}-merge-java'
+
+    project: 'sdno-driver-huawei-l3vpn'
+    branch: 'master'
+    mvn-settings: 'sdno-driver-huawei-l3vpn-settings'

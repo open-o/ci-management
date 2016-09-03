@@ -1,0 +1,10 @@
+---
+- project:
+    name: common-tosca-inventory
+    jobs:
+      - '{project}-verify-java'
+      - '{project}-merge-java'
+
+    project: 'common-tosca-inventory'
+    branch: 'master'
+    mvn-settings: 'common-tosca-inventory-settings'

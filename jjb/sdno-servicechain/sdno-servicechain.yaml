@@ -1,0 +1,10 @@
+---
+- project:
+    name: sdno-servicechain
+    jobs:
+      - '{project}-verify-java'
+      - '{project}-merge-java'
+
+    project: 'sdno-servicechain'
+    branch: 'master'
+    mvn-settings: 'sdno-servicechain-settings'

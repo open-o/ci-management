@@ -4,6 +4,7 @@
     name: '{project}-verify-java'
 
     project-type: freestyle
+    concurrent: true
     node: '{build-node}'
 
     parameters:

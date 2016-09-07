@@ -1,0 +1,10 @@
+---
+- project:
+    name: sdno-nslcm
+    jobs:
+      - '{project}-verify-java'
+      - '{project}-merge-java'
+
+    project: 'sdno-nslcm'
+    branch: 'master'
+    mvn-settings: 'sdno-nslcm-settings'

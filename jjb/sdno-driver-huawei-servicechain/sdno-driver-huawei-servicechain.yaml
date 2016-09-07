@@ -1,0 +1,10 @@
+---
+- project:
+    name: sdno-driver-huawei-servicechain
+    jobs:
+      - '{project}-verify-java'
+      - '{project}-merge-java'
+
+    project: 'sdno-driver-huawei-servicechain'
+    branch: 'master'
+    mvn-settings: 'sdno-driver-huawei-servicechain-settings'

@@ -7,6 +7,13 @@
     concurrent: true
     node: '{build-node}'
 
+    properties:
+      - build-discarder:
+          days-to-keep: '{build-days-to-keep}'
+          num-to-keep: '{build-num-to-keep}'
+          artifact-days-to-keep: '{build-artifact-days-to-keep}'
+          artifact-num-to-keep: '{build-artifact-num-to-keep}'
+
     parameters:
       - openo-infra-parameters:
           project: '{project}'
@@ -45,6 +52,13 @@
 
     project-type: freestyle
     node: '{build-node}'
+
+    properties:
+      - build-discarder:
+          days-to-keep: '{build-days-to-keep}'
+          num-to-keep: '{build-num-to-keep}'
+          artifact-days-to-keep: '{build-artifact-days-to-keep}'
+          artifact-num-to-keep: '{build-artifact-num-to-keep}'
 
     parameters:
       - openo-infra-parameters:

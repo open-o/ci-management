@@ -4,5 +4,5 @@ for dynamic minions.
 The spinup script will be as follows (${system_type} will be replaced
 with the appropriate system_type script)
 
-git clone https://gerrit.zephyrproject.org/r/p/ci-management.git /ci-management
+git clone https://gerrit.open-o.org/r/p/ci-management.git /ci-management
 /ci-management/jenkins-scripts/jenkins-init-script.sh

@@ -71,7 +71,7 @@
       - maven-target:
           maven-version: '{mvn33}'
           # yamllint disable rule:line-length
-          goals: 'clean install deploy -DaltDeploymentRepository=openo-snapshots::default::$NEXUSPROXY/content/repositories/thirdpary-snapshots'
+          goals: 'clean install deploy -DaltDeploymentRepository=thirdparty-snapshots::default::$NEXUSPROXY/content/repositories/thirdpary-snapshots'
           # yamllint enable
           settings: '{mvn-settings}'
           settings-type: cfp

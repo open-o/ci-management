@@ -44,7 +44,9 @@
       - maven-target:
           maven-version: '{mvn33}'
           pom: 'org.eclipse.winery.model.csar.toscametafile/pom.xml'
-          goals: 'clean install'
+          # yamllint disable rule:line-length
+          goals: 'clean install deploy -DaltDeploymentRepository=thirdparty-snapshots::default::$NEXUSPROXY/content/repositories/thirdparty-snapshots'
+          # yamllint enable
           settings: '{mvn-settings}'
           settings-type: cfp
           global-settings: 'global-settings'
@@ -53,7 +55,9 @@
       - maven-target:
           maven-version: '{mvn33}'
           pom: 'org.eclipse.winery.model.selfservice/pom.xml'
-          goals: 'clean install'
+          # yamllint disable rule:line-length
+          goals: 'clean install deploy -DaltDeploymentRepository=thirdparty-snapshots::default::$NEXUSPROXY/content/repositories/thirdparty-snapshots'
+          # yamllint enable
           settings: '{mvn-settings}'
           settings-type: cfp
           global-settings: 'global-settings'
@@ -62,7 +66,9 @@
       - maven-target:
           maven-version: '{mvn33}'
           pom: 'org.eclipse.winery.model.tosca/pom.xml'
-          goals: 'clean install'
+          # yamllint disable rule:line-length
+          goals: 'clean install deploy -DaltDeploymentRepository=thirdparty-snapshots::default::$NEXUSPROXY/content/repositories/thirdparty-snapshots'
+          # yamllint enable
           settings: '{mvn-settings}'
           settings-type: cfp
           global-settings: 'global-settings'

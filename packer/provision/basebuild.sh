@@ -5,11 +5,17 @@
 rh_systems() {
     # Install python dependencies
     yum install -y python-{devel,virtualenv,setuptools,pip}
+
+    # Required to build some python package requirements
+    yum install -y openssl-devel mysql-devel
 }
 
 ubuntu_systems() {
     # Install python dependencies
     apt install -y python-{dev,virtualenv,setuptools,pip}
+
+    # Required to build some python package requirements
+    apt install -y libssl-dev libmysqlclient-dev
 }
 
 all_systems() {

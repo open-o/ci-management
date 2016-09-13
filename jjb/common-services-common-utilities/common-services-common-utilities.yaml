@@ -1,10 +1,14 @@
 ---
 - project:
     name: common-services-common-utilities
-    jobs:
-      - '{project}-verify-java'
-      - '{project}-merge-java'
-
     project: 'common-services-common-utilities'
     branch: 'master'
     mvn-settings: 'common-services-common-utilities-settings'
+    subproject:
+      - 'common-util':
+          path: 'common-util'
+      - 'rest-client':
+          path: 'rest-client'
+    jobs:
+      - '{project}-{subproject}-verify-java'
+      - '{project}-{subproject}-merge-java'

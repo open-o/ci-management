@@ -1,0 +1,24 @@
+---
+- project:
+    name: nfvo-java
+    project: 'nfvo'
+    branch: 'master'
+    mvn-settings: 'nfvo-settings'
+    subproject:
+      - 'monitor-umc':
+          path: 'monitor/umc'
+      - 'monitor-dac':
+          path: 'monitor/dac'
+      - 'resmanagement':
+          path: 'resmanagement'
+      - 'drivers-sdnc-zte-sfc-driver':
+          path: 'drivers/sdnc/zte/sfc-driver'
+      - 'drivers-vim-vimadapter':
+          path: 'drivers/vim/vimadapter'
+      - 'drivers-vnfm-svnfm-etsi-ia':
+          path: 'drivers/vnfm/svnfm/etsi-ia'
+      - 'drivers-vnfm-svnfm-huawei-vnfmadapter':
+          path: 'drivers/vnfm/svnfm/huawei/vnfmadapter'
+    jobs:
+      - '{project}-{subproject}-verify-java':
+      - '{project}-{subproject}-merge-java':

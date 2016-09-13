@@ -1,0 +1,13 @@
+---
+- project:
+    name: nfvo-python
+    project: 'nfvo'
+    branch: 'master'
+    mvn-settings: 'nfvo-settings'
+    subproject:
+      - 'lcm':
+          path: 'lcm'
+      - 'drivers-vnfm-svnfm-zte-vmanager':
+          path: 'drivers/vnfm/svnfm/zte/vmanager'
+    jobs:
+      - '{project}-{subproject}-verify-python':

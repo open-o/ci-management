@@ -15,6 +15,8 @@
           path: 'drivers/sdnc/zte/sfc-driver'
       - 'drivers-vim-vimadapter':
           path: 'drivers/vim/vimadapter'
+      - 'drivers-vnfm-gvnfm-juju-juju-vnfmadapter':
+          path: 'drivers/vnfm/gvnfm/juju/juju-vnfmadapter'
       - 'drivers-vnfm-svnfm-etsi-ia':
           path: 'drivers/vnfm/svnfm/etsi-ia'
       - 'drivers-vnfm-svnfm-huawei-vnfmadapter':

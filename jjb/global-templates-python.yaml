@@ -46,6 +46,5 @@
             pip install --upgrade pip
             pip install --upgrade tox argparse
             pip freeze
-            cd $WORKSPACE/repo/{path}
+            cd $WORKSPACE/{path}
             tox
-

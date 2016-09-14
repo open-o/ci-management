@@ -4,8 +4,19 @@
     jobs:
       - 'ci-management-verify-jjb'
       - 'ci-management-merge'
+      - 'ci-management-verify-packer-{platforms}-{templates}'
+      - 'ci-management-merge-packer-{platforms}-{templates}'
 
     project: 'ci-management'
+    build-timeout: '60'
+
+    platforms:
+      - centos
+      - ubuntu-14.04
+      - ubuntu-16.04
+
+    templates:
+      - basebuild
 
 - job-template:
     name: ci-management-verify-jjb
@@ -110,3 +121,84 @@
     builders:
       - shell:
           !include-raw-escape: include-raw-jjb-update.sh
+
+- job-template:
+    name: 'ci-management-verify-packer-{platforms}-{templates}'
+    project-type: freestyle
+    node: '{build-node}'
+    concurrent: true
+
+    properties:
+      - build-discarder:
+          days-to-keep: '14'
+          num-to-keep: '{build-num-to-keep}'
+          artifact-days-to-keep: '{build-artifact-days-to-keep}'
+          artifact-num-to-keep: '0'
+
+    parameters:
+      - openo-infra-parameters:
+          project: '{project}'
+          branch: 'master'
+          refspec: 'refs/heads/master'
+
+    scm:
+      - gerrit-trigger-scm:
+          refspec: '$GERRIT_REFSPEC'
+          choosing-strategy: 'gerrit'
+
+    wrappers:
+      - openo-infra-wrappers:
+          build-timeout: '{build-timeout}'
+
+    triggers:
+      - gerrit-trigger-patch-submitted-pattern:
+          name: '{project}'
+          branch: 'master'
+          pattern: 'packer/**'
+
+    builders:
+      - packer-validate:
+          platform: '{platforms}'
+          template: '{templates}'
+
+- job-template:
+    name: 'ci-management-merge-packer-{platforms}-{templates}'
+    project-type: freestyle
+    node: '{build-node}'
+    concurrent: true
+
+    properties:
+      - build-discarder:
+          days-to-keep: '14'
+          num-to-keep: '{build-num-to-keep}'
+          artifact-days-to-keep: '{build-artifact-days-to-keep}'
+          artifact-num-to-keep: '0'
+
+    parameters:
+      - openo-infra-parameters:
+          project: '{project}'
+          branch: 'master'
+          refspec: 'refs/heads/master'
+
+    scm:
+      - gerrit-trigger-scm:
+          refspec: ''
+          choosing-strategy: 'default'
+
+    wrappers:
+      - openo-infra-wrappers:
+          build-timeout: '{build-timeout}'
+
+    triggers:
+      - gerrit-trigger-patch-merged-pattern:
+          name: '{project}'
+          branch: 'master'
+          pattern: 'packer/**'
+
+    builders:
+      - packer-validate:
+          platform: '{platforms}'
+          template: '{templates}'
+      - packer-build:
+          platform: '{platforms}'
+          template: '{templates}'

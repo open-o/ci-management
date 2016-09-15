@@ -29,7 +29,7 @@
           refspec: 'refs/heads/{branch}'
 
     scm:
-      - git-scm:
+      - git-branch-scm:
           branch: '{branch}'
 
     wrappers:

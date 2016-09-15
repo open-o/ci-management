@@ -10,12 +10,18 @@ rh_systems() {
     yum install -y openssl-devel mysql-devel gcc
 
     # Packer builds happen from the centos flavor images
-    mkdir /tmp/packer
-    cd /tmp/packer
+    PACKERDIR=$(mktemp -d)
+    cd $PACKERDIR
     wget https://releases.hashicorp.com/packer/0.10.1/packer_0.10.1_linux_amd64.zip
     unzip packer_0.10.1_linux_amd64.zip -d /usr/local/bin/
     # rename packer to avoid conflicts with cracklib
     mv /usr/local/bin/packer /usr/local/bin/packer.io
+    # cleanup from the installation
+    rm -rf $PACKERDIR
+    # cleanup from previous install process
+    if [ -d /tmp/packer ]
+        rm -rf /tmp/packer
+    fi
 }
 
 ubuntu_systems() {

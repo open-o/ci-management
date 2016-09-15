@@ -1,0 +1,60 @@
+# Autorelease build jobs
+- project:
+    name: integration-autorelease
+    jobs:
+      - 'integration-autorelease-daily'
+
+    project: 'integration'
+    branch: 'master'
+    mvn-settings: 'integration-autorelease-settings'
+
+- job-template:
+    name: 'integration-autorelease-daily'
+
+    project-type: freestyle
+    concurrent: true
+    node: '{build-node}'
+
+    properties:
+      - build-discarder:
+          days-to-keep: '{build-days-to-keep}'
+          num-to-keep: '{build-num-to-keep}'
+          artifact-days-to-keep: '{build-artifact-days-to-keep}'
+          artifact-num-to-keep: '{build-artifact-num-to-keep}'
+
+    parameters:
+      - openo-infra-parameters:
+          project: '{project}'
+          branch: '{branch}'
+          refspec: 'refs/heads/{branch}'
+
+    scm:
+      - git-scm:
+          branch: '{branch}'
+
+    wrappers:
+      - openo-infra-wrappers:
+          build-timeout: '{build-timeout}'
+
+    triggers:
+        - timed: '@daily'
+        # allow manual triggering
+        - gerrit-trigger-patch-submitted-pattern:
+            name: '{project}'
+            branch: '{branch}'
+            pattern: 'autorelease/**'
+
+    builders:
+      - provide-maven-settings:
+          global-settings-file: 'global-settings'
+          settings-file: '{mvn-settings}'
+      - shell:
+          !include-raw-escape:
+            - include-raw-clone-all-projects.sh
+      - maven-target:
+          maven-version: '{mvn33}'
+          goals: 'clean install'
+          settings: '{mvn-settings}'
+          settings-type: cfp
+          global-settings: 'global-settings'
+          global-settings-type: cfp

@@ -11,15 +11,21 @@ rh_systems() {
 
     # Packer builds happen from the centos flavor images
     PACKERDIR=$(mktemp -d)
+    # disable double quote checking
+    # shellcheck disable=SC2086
     cd $PACKERDIR
     wget https://releases.hashicorp.com/packer/0.10.1/packer_0.10.1_linux_amd64.zip
     unzip packer_0.10.1_linux_amd64.zip -d /usr/local/bin/
     # rename packer to avoid conflicts with cracklib
     mv /usr/local/bin/packer /usr/local/bin/packer.io
+
     # cleanup from the installation
+    # disable double quote checking
+    # shellcheck disable=SC2086
     rm -rf $PACKERDIR
     # cleanup from previous install process
     if [ -d /tmp/packer ]
+    then
         rm -rf /tmp/packer
     fi
 }
@@ -37,7 +43,7 @@ all_systems() {
 }
 
 echo "---> Detecting OS"
-ORIGIN=$(facter operatingsystem | tr A-Z a-z)
+ORIGIN=$(facter operatingsystem | tr '[:upper:]' '[:lower:]')
 
 case "${ORIGIN}" in
     fedora|centos|redhat)

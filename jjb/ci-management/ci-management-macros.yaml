@@ -22,6 +22,7 @@
           cd packer
           export PACKER_LOG="yes"
           export PACKER_LOG_PATH="packer-validate.log"
-          packer.io build -var-file=$CLOUDENV \
+          packer.io build -color=false \
+            -var-file=$CLOUDENV \
             -var-file=vars/{platform}.json \
             templates/{template}.json

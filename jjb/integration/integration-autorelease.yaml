@@ -6,7 +6,7 @@
 
     project: 'integration'
     branch: 'master'
-    mvn-settings: 'integration-autorelease-settings'
+    mvn-settings: 'integration-settings'
 
 - job-template:
     name: 'integration-autorelease-daily'

@@ -53,6 +53,7 @@
             - include-raw-clone-all-projects.sh
       - maven-target:
           maven-version: '{mvn33}'
+          pom: 'autorelease/build/pom.xml'
           goals: 'clean install'
           settings: '{mvn-settings}'
           settings-type: cfp

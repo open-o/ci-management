@@ -21,6 +21,9 @@
           path: 'drivers/vnfm/svnfm/etsi-ia'
       - 'drivers-vnfm-svnfm-huawei-vnfmadapter':
           path: 'drivers/vnfm/svnfm/huawei/vnfmadapter'
+      - 'root':
+          path: '.'
+          pattern: '*'
     jobs:
       - '{project}-{subproject}-verify-java':
       - '{project}-{subproject}-merge-java':

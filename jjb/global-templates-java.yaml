@@ -63,8 +63,11 @@
     #     branch:    git branch (eg. stable/lithium or master)
     #     path:      directory containing the project's pom.xml relative to
     #                the workspace.
+    # Optional Variables:
+    #     pattern:   ant file-path pattern relative to the workspace used to trigger the job
 
     name: '{project}-{subproject}-verify-java'
+    pattern: '{path}/**'
 
     project-type: freestyle
     concurrent: true
@@ -96,7 +99,7 @@
       - gerrit-trigger-patch-submitted-pattern:
           name: '{project}'
           branch: '{branch}'
-          pattern: '{path}/**'
+          pattern: '{pattern}'
 
     builders:
       - provide-maven-settings:
@@ -173,8 +176,11 @@
     #     branch:    git branch (eg. stable/lithium or master)
     #     path:      directory containing the project's pom.xml relative to
     #                the workspace.
+    # Optional Variables:
+    #     pattern:   ant file-path pattern relative to the workspace used to trigger the job
 
     name: '{project}-{subproject}-merge-java'
+    pattern: '{path}/**'
 
     project-type: freestyle
     node: '{build-node}'
@@ -205,7 +211,7 @@
       - gerrit-trigger-patch-merged-pattern:
           name: '{project}'
           branch: '{branch}'
-          pattern: '{path}/**'
+          pattern: '{pattern}'
 
     builders:
       - provide-maven-settings:

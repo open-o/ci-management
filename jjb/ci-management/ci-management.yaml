@@ -17,6 +17,7 @@
 
     templates:
       - basebuild
+      - redis
 
 - job-template:
     name: ci-management-verify-jjb

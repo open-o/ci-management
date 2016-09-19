@@ -61,13 +61,10 @@
     #
     # Required Variables:
     #     branch:    git branch (eg. stable/lithium or master)
-    #     path:      directory containing the project's pom.xml relative to
-    #                the workspace.
-    # Optional Variables:
-    #     pattern:   ant file-path pattern relative to the path variable used to trigger the job
+    #     pom:       name/location of the pom.xml file relative to the workspace
+    #     pattern:   ant file-path pattern relative to the workspace used to trigger the job
 
     name: '{project}-{subproject}-verify-java'
-    pattern: '**'
 
     project-type: freestyle
     concurrent: true
@@ -99,7 +96,7 @@
       - gerrit-trigger-patch-submitted-pattern:
           name: '{project}'
           branch: '{branch}'
-          pattern: '{path}/{pattern}'
+          pattern: '{pattern}'
 
     builders:
       - provide-maven-settings:
@@ -107,7 +104,7 @@
           settings-file: '{mvn-settings}'
       - maven-target:
           maven-version: '{mvn33}'
-          pom: '{path}/pom.xml'
+          pom: '{pom}'
           goals: 'clean install'
           settings: '{mvn-settings}'
           settings-type: cfp
@@ -174,13 +171,10 @@
     #
     # Required Variables:
     #     branch:    git branch (eg. stable/lithium or master)
-    #     path:      directory containing the project's pom.xml relative to
-    #                the workspace.
-    # Optional Variables:
-    #     pattern:   ant file-path pattern relative to the path variable used to trigger the job
+    #     pom:       name/location of the pom.xml file relative to the workspace
+    #     pattern:   ant file-path pattern relative to the workspace used to trigger the job
 
     name: '{project}-{subproject}-merge-java'
-    pattern: '**'
 
     project-type: freestyle
     node: '{build-node}'
@@ -211,7 +205,7 @@
       - gerrit-trigger-patch-merged-pattern:
           name: '{project}'
           branch: '{branch}'
-          pattern: '{path}/{pattern}'
+          pattern: '{pattern}'
 
     builders:
       - provide-maven-settings:
@@ -219,7 +213,7 @@
           settings-file: '{mvn-settings}'
       - maven-target:
           maven-version: '{mvn33}'
-          pom: '{path}/pom.xml'
+          pom: '{pom}'
           goals: 'clean install deploy'
           settings: '{mvn-settings}'
           settings-type: cfp

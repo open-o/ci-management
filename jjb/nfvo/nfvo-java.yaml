@@ -6,23 +6,31 @@
     mvn-settings: 'nfvo-settings'
     subproject:
       - 'monitor-umc':
-          path: 'monitor/umc'
+          pom: 'monitor/umc/pom.xml'
+          pattern: 'monitor/umc/**'
       - 'monitor-dac':
-          path: 'monitor/dac'
+          pom: 'monitor/dac/pom.xml'
+          pattern: 'monitor/dac/**'
       - 'resmanagement':
-          path: 'resmanagement'
+          pom: 'resmanagement/pom.xml'
+          pattern: 'resmanagement/**'
       - 'drivers-sdnc-zte-sfc-driver':
-          path: 'drivers/sdnc/zte/sfc-driver'
+          pom: 'drivers/sdnc/zte/sfc-driver/pom.xml'
+          pattern: 'drivers/sdnc/zte/sfc-driver/**'
       - 'drivers-vim-vimadapter':
-          path: 'drivers/vim/vimadapter'
+          pom: 'drivers/vim/vimadapter/pom.xml'
+          pattern: 'drivers/vim/vimadapter/**'
       - 'drivers-vnfm-gvnfm-juju-juju-vnfmadapter':
-          path: 'drivers/vnfm/gvnfm/juju/juju-vnfmadapter'
+          pom: 'drivers/vnfm/gvnfm/juju/juju-vnfmadapter/pom.xml'
+          pattern: 'drivers/vnfm/gvnfm/juju/juju-vnfmadapter/**'
       - 'drivers-vnfm-svnfm-etsi-ia':
-          path: 'drivers/vnfm/svnfm/etsi-ia'
+          pom: 'drivers/vnfm/svnfm/etsi-ia/pom.xml'
+          pattern: 'drivers/vnfm/svnfm/etsi-ia/**'
       - 'drivers-vnfm-svnfm-huawei-vnfmadapter':
-          path: 'drivers/vnfm/svnfm/huawei/vnfmadapter'
+          pom: 'drivers/vnfm/svnfm/huawei/vnfmadapter/pom.xml'
+          pattern: 'drivers/vnfm/svnfm/huawei/vnfmadapter/**'
       - 'root':
-          path: '.'
+          pom: 'pom.xml'
           pattern: '*'
     jobs:
       - '{project}-{subproject}-verify-java':

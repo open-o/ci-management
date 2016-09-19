@@ -6,11 +6,13 @@
     mvn-settings: 'common-services-common-utilities-settings'
     subproject:
       - 'common-util':
-          path: 'common-util'
+          pom: 'common-util/pom.xml'
+          pattern: 'common-util/**'
       - 'rest-client':
-          path: 'rest-client'
+          pom: 'rest-client/pom.xml'
+          pattern: 'rest-client/**'
       - 'root':
-          path: '.'
+          pom: 'pom.xml'
           pattern: '*'
     jobs:
       - '{project}-{subproject}-verify-java'

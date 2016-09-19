@@ -7,6 +7,7 @@
     project: 'integration'
     branch: 'master'
     mvn-settings: 'integration-settings'
+    build-node: 'centos7-basebuild-4c-2g'
 
 - job-template:
     name: 'integration-autorelease-daily'
@@ -55,6 +56,8 @@
           maven-version: '{mvn33}'
           pom: 'autorelease/build/pom.xml'
           goals: 'clean install'
+          java-opts:
+            - '-Xmx1536m -XX:MaxPermSize=384m'
           settings: '{mvn-settings}'
           settings-type: cfp
           global-settings: 'global-settings'

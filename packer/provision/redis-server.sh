@@ -3,13 +3,10 @@
 # vim: ts=4 sw=4 sts=4 et tw=72 :
 
 rh_systems() {
-    # Install redis-server
-    wget http://download.redis.io/releases/redis-3.2.3.tar.gz
-    tar xzf redis-3.2.3.tar.gz
-    cd redis-3.2.3
-    make
-    make install
-    nohup /usr/local/bin/redis-server &
+    # make sure that IUS is installed
+    yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+    # now install redis 3.2.x
+    yum install -y redis32u
 }
 
 ubuntu_systems() {

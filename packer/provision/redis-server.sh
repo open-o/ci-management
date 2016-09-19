@@ -3,13 +3,15 @@
 # vim: ts=4 sw=4 sts=4 et tw=72 :
 
 rh_systems() {
+    echo "---> Installing IUS repo and Redis"
     # make sure that IUS is installed
-    yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+    yum install -y https://centos7.iuscommunity.org/ius-release.rpm
     # now install redis 3.2.x
     yum install -y redis32u
 }
 
 ubuntu_systems() {
+    echo "---> Installing Redis"
     # Install redis-server
     apt install -y redis-server
 }

@@ -18,6 +18,7 @@
     templates:
       - basebuild
       - redis
+      - robot
 
 - job-template:
     name: ci-management-verify-jjb

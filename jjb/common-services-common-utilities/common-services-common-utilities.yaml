@@ -9,6 +9,9 @@
           path: 'common-util'
       - 'rest-client':
           path: 'rest-client'
+      - 'root':
+          path: '.'
+          pattern: '*'
     jobs:
       - '{project}-{subproject}-verify-java'
       - '{project}-{subproject}-merge-java'

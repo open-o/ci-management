@@ -39,5 +39,6 @@
 
     builders:
       - integration-install-robotframework
+      - inject:
+          properties-file: 'env.properties'
       - integration-run-test
-

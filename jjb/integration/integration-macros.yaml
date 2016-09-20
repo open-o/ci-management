@@ -1,0 +1,29 @@
+- parameter:
+    name: integration-test-plan
+    parameters:
+      - string:
+          name: TESTPLAN
+          default: '{test-plan}'
+          description: 'General test plan we will run unless stream-specific one is found'
+
+- parameter:
+    name: integration-test-options
+    parameters:
+      - string:
+          name: TESTOPTIONS
+          default: '{test-options}'
+          description: 'Robot command options'
+
+- builder:
+    name: integration-install-robotframework
+    builders:
+      - shell:
+          !include-raw:
+            - include-raw-integration-install-robotframework.sh
+
+- builder:
+    name: integration-run-test
+    builders:
+      - shell:
+          !include-raw:
+            - include-raw-integration-run-test.sh

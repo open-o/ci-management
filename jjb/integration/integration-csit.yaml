@@ -1,0 +1,12 @@
+---
+- project:
+    name: integration-csit
+    jobs:
+      - '{project}-csit-{functionality}':
+
+    project: 'integration'
+    functionality: 'functionality1'
+    robot-options: ''
+    branch: 'master'
+    mvn-settings: 'integration-settings'
+

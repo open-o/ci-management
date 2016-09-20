@@ -8,6 +8,7 @@ rh_systems() {
     yum install -y https://centos7.iuscommunity.org/ius-release.rpm
     # now install redis 3.2.x
     yum install -y redis32u
+    systemct enable redis
 }
 
 ubuntu_systems() {

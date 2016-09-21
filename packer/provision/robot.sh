@@ -8,6 +8,10 @@ rh_systems() {
     # Install dependencies for robotframework and robotframework-sshlibrary
     yum install -y -q yum-utils unzip sshuttle nc libffi-devel openssl-devel
 
+    # Install docker
+    yum install -y docker
+    systemctl enable docker.service
+
     # Actual installation of robot is done from an integration JJB script
 }
 
@@ -16,6 +20,9 @@ ubuntu_systems() {
 
     # Install dependencies for robotframework and robotframework-sshlibrary
     apt install -y unzip sshuttle netcat libffi-dev libssl-dev
+
+    # Install docker
+    apt install -y docker.io
 
     # Actual installation of robot is done from an integration JJB script
 }

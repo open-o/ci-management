@@ -1,13 +1,13 @@
 ---
 - project:
-    name: integration-csit
+    name: common-services-microservice-bus-csit
     jobs:
       - '{project}-csit-{functionality}':
 
-    project: 'integration'
+    project: 'common-services-microservice-bus'
     functionality:
       - 'all'
-      - 'functionality1'
+      - 'sanity-check'
     pattern: '**'
     robot-options: ''
 

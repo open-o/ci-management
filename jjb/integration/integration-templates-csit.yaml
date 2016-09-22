@@ -18,7 +18,7 @@
           branch: '{branch}'
           refspec: 'refs/heads/{branch}'
       - integration-test-plan:
-          test-plan: '{project}-{functionality}.txt'
+          test-plan: '{project}/{functionality}'
       - integration-test-options:
           test-options: '{robot-options}'
 
@@ -32,10 +32,26 @@
           build-timeout: '{build-timeout}'
 
     triggers:
-      - gerrit-trigger-patch-submitted-pattern:
+      - csit-patch-submitted:
+          name: '{project}'
+          branch: '{branch}'
+          pattern: '{pattern}'
+      - csit-patch-submitted:
           name: 'integration'
           branch: '{branch}'
-          pattern: 'test/csit/suites/{project}/**'
+          pattern: 'test/csit/plans/{project}/{functionality}/**'
+      - csit-patch-submitted:
+          name: 'integration'
+          branch: '{branch}'
+          pattern: 'test/csit/docker/{project}/**'
+      - csit-patch-submitted:
+          name: 'integration'
+          branch: '{branch}'
+          pattern: 'test/csit/scripts/{project}/**'
+      - csit-patch-submitted:
+          name: 'integration'
+          branch: '{branch}'
+          pattern: 'test/csit/tests/{project}/**'
 
     builders:
       - integration-install-robotframework

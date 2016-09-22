@@ -1,13 +1,13 @@
 ---
 - project:
-    name: integration-csit
+    name: common-tosca-catalog-csit
     jobs:
       - '{project}-csit-{functionality}':
 
-    project: 'integration'
+    project: 'common-tosca-catalog'
     functionality:
       - 'all'
-      - 'functionality1'
+      - 'sanity-check'
     pattern: '**'
     robot-options: ''
 

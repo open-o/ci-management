@@ -3,7 +3,7 @@
     disabled: false
 
     project-type: freestyle
-    node: 'centos7-robot-2c-1g'
+    node: 'centos7-robot-8c-8g'
 
     properties:
       - build-discarder:

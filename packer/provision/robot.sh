@@ -11,6 +11,8 @@ rh_systems() {
     # Install docker
     yum install -y docker
     systemctl enable docker.service
+    # docker group doesn't get created by default for some reason
+    groupadd docker
 
     # Actual installation of robot is done from an integration JJB script
 }

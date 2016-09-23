@@ -9,8 +9,19 @@ rh_systems() {
     yum install -y -q yum-utils unzip sshuttle nc libffi-devel openssl-devel
 
     # Install docker
-    yum install -y docker
-    systemctl enable docker.service
+    yum install -y docker supervisor bridge-utils
+    systemctl enable docker
+
+    # configure docker networking so that it does not conflict with LF
+    # internal networks
+    cat <<EOL > /etc/sysconfig/docker-network
+# /etc/sysconfig/docker-network
+DOCKER_NETWORK_OPTIONS='--bip=10.250.0.254/24'
+EOL
+    # configure docker daemon to listen on port 5555 enabling remote
+    # managment
+    sed -i -e "s#='--selinux-enabled'#='--selinux-enabled -H unix:///var/run/docker.sock -H tcp://0.0.0.0:5555'#g" /etc/sysconfig/docker
+
     # docker group doesn't get created by default for some reason
     groupadd docker
 

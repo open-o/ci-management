@@ -33,25 +33,9 @@
 
     triggers:
       - csit-patch-submitted:
-          name: '{project}'
+          project: '{project}'
           branch: '{branch}'
           pattern: '{pattern}'
-      - csit-patch-submitted:
-          name: 'integration'
-          branch: '{branch}'
-          pattern: 'test/csit/plans/{project}/{functionality}/**'
-      - csit-patch-submitted:
-          name: 'integration'
-          branch: '{branch}'
-          pattern: 'test/csit/docker/{project}/**'
-      - csit-patch-submitted:
-          name: 'integration'
-          branch: '{branch}'
-          pattern: 'test/csit/scripts/{project}/**'
-      - csit-patch-submitted:
-          name: 'integration'
-          branch: '{branch}'
-          pattern: 'test/csit/tests/{project}/**'
 
     builders:
       - integration-install-robotframework

@@ -45,13 +45,21 @@
                 comment-contains-value: 'reverify'
           projects:
             - project-compare-type: 'ANT'
-              project-pattern: '{name}'
+              project-pattern: '{project}'
               branches:
                 - branch-compare-type: 'ANT'
                   branch-pattern: '**/{branch}'
               file-paths:
                 - compare-type: 'ANT'
                   pattern: '{pattern}'
+            - project-compare-type: 'ANT'
+              project-pattern: 'integration'
+              branches:
+                - branch-compare-type: 'ANT'
+                  branch-pattern: '**/{branch}'
+              file-paths:
+                - compare-type: 'ANT'
+                  pattern: 'test/csit/**/{project}/**'
           skip-vote:
             successful: true
             failed: true

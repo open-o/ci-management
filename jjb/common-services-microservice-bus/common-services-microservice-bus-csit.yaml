@@ -3,10 +3,11 @@
     name: common-services-microservice-bus-csit
     jobs:
       - '{project}-csit-{functionality}':
+          trigger_jobs:
+            - 'common-services-microservice-bus-merge-java'
 
     project: 'common-services-microservice-bus'
     functionality:
-      - 'all'
       - 'sanity-check'
     pattern: '**'
     robot-options: ''

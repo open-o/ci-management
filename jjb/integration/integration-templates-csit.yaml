@@ -1,4 +1,49 @@
 - job-template:
+    name: 'integration-verify-{project}-csit-{functionality}'
+    disabled: false
+
+    project-type: freestyle
+    node: 'centos7-robot-8c-8g'
+
+    properties:
+      - build-discarder:
+          days-to-keep: '{build-days-to-keep}'
+          num-to-keep: '{build-num-to-keep}'
+          artifact-days-to-keep: '{build-artifact-days-to-keep}'
+          artifact-num-to-keep: '{build-artifact-num-to-keep}'
+
+    parameters:
+      - openo-infra-parameters:
+          project: 'integration'
+          branch: '{branch}'
+          refspec: 'refs/heads/{branch}'
+      - integration-test-plan:
+          test-plan: 'plans/{project}/{functionality}'
+      - integration-test-options:
+          test-options: '{robot-options}'
+
+    scm:
+      - gerrit-trigger-scm:
+          refspec: '$GERRIT_REFSPEC'
+          choosing-strategy: 'gerrit'
+
+    wrappers:
+      - openo-infra-wrappers:
+          build-timeout: '{build-timeout}'
+
+    triggers:
+      - gerrit-trigger-nonvoting-patch-submitted-pattern:
+          name: 'integration'
+          branch: '{branch}'
+          pattern: 'test/csit/**/{project}/**'
+
+    builders:
+      - integration-install-robotframework
+      - inject:
+          properties-file: 'env.properties'
+      - integration-run-test
+
+- job-template:
     name: '{project}-csit-{functionality}'
     disabled: false
 
@@ -18,24 +63,23 @@
           branch: '{branch}'
           refspec: 'refs/heads/{branch}'
       - integration-test-plan:
-          test-plan: '{project}/{functionality}'
+          test-plan: 'plans/{project}/{functionality}'
       - integration-test-options:
           test-options: '{robot-options}'
 
     scm:
-      - gerrit-trigger-scm:
-          refspec: '$GERRIT_REFSPEC'
-          choosing-strategy: 'gerrit'
+      - git-branch-scm:
+          branch: '{branch}'
 
     wrappers:
       - openo-infra-wrappers:
           build-timeout: '{build-timeout}'
 
     triggers:
-      - csit-patch-submitted:
-          project: '{project}'
-          branch: '{branch}'
-          pattern: '{pattern}'
+      - timed: '@daily'
+      - build-result:
+          groups:
+            - jobs: '{obj:trigger_jobs}'
 
     builders:
       - integration-install-robotframework

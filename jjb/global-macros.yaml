@@ -132,6 +132,36 @@
                   pattern: '{pattern}'
 
 - trigger:
+    name: gerrit-trigger-nonvoting-patch-submitted-pattern
+    triggers:
+      - gerrit:
+          server-name: 'Open-O'
+          trigger-on:
+            - patchset-created-event:
+                exclude-drafts: 'false'
+                exclude-trivial-rebase: 'false'
+                exclude-no-code-change: 'false'
+            - draft-published-event
+            - comment-added-contains-event:
+                comment-contains-value: 'recheck'
+            - comment-added-contains-event:
+                comment-contains-value: 'reverify'
+          projects:
+            - project-compare-type: 'ANT'
+              project-pattern: '{name}'
+              branches:
+                - branch-compare-type: 'ANT'
+                  branch-pattern: '**/{branch}'
+              file-paths:
+                - compare-type: 'ANT'
+                  pattern: '{pattern}'
+          skip-vote:
+            successful: true
+            failed: true
+            unstable: true
+            notbuilt: true
+
+- trigger:
     name: gerrit-trigger-patch-merged
     triggers:
       - gerrit:

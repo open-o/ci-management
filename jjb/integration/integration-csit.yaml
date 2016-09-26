@@ -3,10 +3,11 @@
     name: integration-csit
     jobs:
       - '{project}-csit-{functionality}':
+          trigger_jobs:
+            - 'integration-merge-java'
 
     project: 'integration'
     functionality:
-      - 'all'
       - 'functionality1'
     pattern: '**'
     robot-options: ''

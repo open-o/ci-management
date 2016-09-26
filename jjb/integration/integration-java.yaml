@@ -1,0 +1,19 @@
+---
+- project:
+    name: integration-java
+
+    subproject:
+      - 'test-sdno-testframework':
+          pom: 'test/sdno-testframework/pom.xml'
+          pattern: 'test/sdno-testframework/**'
+      - 'root':
+          pom: 'pom.xml'
+          pattern: '*'
+
+    jobs:
+      - '{project}-{subproject}-verify-java':
+      - '{project}-{subproject}-merge-java':
+
+    project: 'integration'
+    branch: 'master'
+    mvn-settings: 'integration-settings'

@@ -2,6 +2,7 @@
 - project:
     name: common-tosca-catalog-csit
     jobs:
+      - 'integration-verify-{project}-csit-{functionality}'
       - '{project}-csit-{functionality}':
           trigger_jobs:
             - 'common-tosca-catalog-merge-java'

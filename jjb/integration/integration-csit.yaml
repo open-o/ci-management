@@ -2,6 +2,7 @@
 - project:
     name: integration-csit
     jobs:
+      - 'integration-verify-{project}-csit-{functionality}'
       - '{project}-csit-{functionality}':
           trigger_jobs:
             - 'integration-merge-java'

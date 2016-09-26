@@ -2,6 +2,7 @@
 - project:
     name: common-services-microservice-bus-csit
     jobs:
+      - 'integration-verify-{project}-csit-{functionality}'
       - '{project}-csit-{functionality}':
           trigger_jobs:
             - 'common-services-microservice-bus-merge-java'

@@ -77,9 +77,8 @@
 
     triggers:
       - timed: '@daily'
-      - build-result:
-          groups:
-            - jobs: '{obj:trigger_jobs}'
+      - reverse:
+          jobs: '{obj:trigger_jobs}'
 
     builders:
       - integration-install-robotframework

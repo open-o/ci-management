@@ -29,6 +29,9 @@
       - 'drivers-vnfm-svnfm-huawei-vnfmadapter':
           pom: 'drivers/vnfm/svnfm/huawei/vnfmadapter/pom.xml'
           pattern: 'drivers/vnfm/svnfm/huawei/vnfmadapter/**'
+      - 'lcm':
+          pom: 'lcm/pom.xml'
+          pattern: 'lcm/**'
       - 'root':
           pom: 'pom.xml'
           pattern: '*'

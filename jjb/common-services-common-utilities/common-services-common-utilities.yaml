@@ -11,6 +11,9 @@
       - 'rest-client':
           pom: 'rest-client/pom.xml'
           pattern: 'rest-client/**'
+      - 'wso2bpel-ext':
+          pom: 'wso2bpel-ext/pom.xml'
+          pattern: 'wso2bpel-ext/**'
       - 'root':
           pom: 'pom.xml'
           pattern: '*'

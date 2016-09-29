@@ -25,11 +25,11 @@
           description: "GERRIT_REFSPEC parameter if not given by trigger"
 
 - parameter:
-    name: maven-project-parameter
+    name: maven-exec
     parameters:
       - string:
-          name: MAVEN_SELECTOR
-          default: '{maven}'
+          name: MVN
+          default: '$HOME/tools/tools/hudson.tasks.Maven_MavenInstallation/{maven-version}/bin/mvn'
           description: 'Maven selector to be used by shell scripts'
 
 

@@ -9,6 +9,9 @@ rh_systems() {
     # Build dependencies for Python packages
     yum install -y openssl-devel mysql-devel gcc
 
+    # Autorelease support packages
+    yum install -y xmlstarlet
+
     # Packer builds happen from the centos flavor images
     PACKERDIR=$(mktemp -d)
     # disable double quote checking

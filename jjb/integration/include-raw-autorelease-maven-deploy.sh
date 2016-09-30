@@ -15,7 +15,8 @@ mkdir -p m2repo/org/openo/
 
 (IFS='
 '
-for m in `xmlstarlet sel -N x=http://maven.apache.org/POM/4.0.0 -t -m '//x:modules' -v '//x:module' ../../../../autorelease/pom.xml`; do
+for m in `xmlstarlet sel -N x=http://maven.apache.org/POM/4.0.0 -t -m '//x:modules' \
+    -v '//x:module' ../../../../autorelease/build/pom.xml`; do
     rsync -avz --exclude 'maven-metadata*' \
                --exclude '_remote.repositories' \
                --exclude 'resolver-status.properties' \

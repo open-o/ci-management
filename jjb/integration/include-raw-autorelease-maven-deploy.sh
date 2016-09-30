@@ -10,12 +10,12 @@
 ##############################################################################
 
 # Assuming that mvn deploy created the hide/from/pom/files/stage directory.
-cd autorelease/hide/from/pom/files
+cd hide/from/pom/files
 mkdir -p m2repo/org/openo/
 
 (IFS='
 '
-for m in `xmlstarlet sel -N x=http://maven.apache.org/POM/4.0.0 -t -m '//x:modules' -v '//x:module' ../../../../pom.xml`; do
+for m in `xmlstarlet sel -N x=http://maven.apache.org/POM/4.0.0 -t -m '//x:modules' -v '//x:module' ../../../../autorelease/pom.xml`; do
     rsync -avz --exclude 'maven-metadata*' \
                --exclude '_remote.repositories' \
                --exclude 'resolver-status.properties' \

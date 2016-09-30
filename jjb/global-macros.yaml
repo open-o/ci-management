@@ -29,7 +29,7 @@
     parameters:
       - string:
           name: MVN
-          default: '/w/tools/tools/hudson.tasks.Maven_MavenInstallation/{maven-version}/bin/mvn'
+          default: '/w/tools/hudson.tasks.Maven_MavenInstallation/{maven-version}/bin/mvn'
           description: 'Maven selector to be used by shell scripts'
 
 

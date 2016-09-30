@@ -52,6 +52,8 @@
       - shell:
           !include-raw-escape:
             - include-raw-clone-all-projects.sh
+      - integration-autorelease-fix-relativepaths
+      - integration-autorelease-set-version
       - maven-target:
           maven-version: '{mvn33}'
           pom: 'autorelease/build/pom.xml'

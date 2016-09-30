@@ -10,7 +10,7 @@
 ##############################################################################
 
 # Assuming that mvn deploy created the hide/from/pom/files/stage directory.
-cd hide/from/pom/files
+cd autorelease/hide/from/pom/files
 mkdir -p m2repo/org/openo/
 
 (IFS='

@@ -114,7 +114,7 @@
 - job-template:
     # Job template for Java merge jobs
     #
-    # The purpose of this job template is to run "maven clean install deploy" for projects using this
+    # The purpose of this job template is to run "maven clean deploy" for projects using this
     # template.
     #
     # Required Variables:
@@ -157,7 +157,7 @@
           settings-file: '{mvn-settings}'
       - maven-target:
           maven-version: '{mvn33}'
-          goals: 'clean install deploy'
+          goals: 'clean deploy'
           settings: '{mvn-settings}'
           settings-type: cfp
           global-settings: 'global-settings'
@@ -166,7 +166,7 @@
 - job-template:
     # Job template for Java merge jobs with POM not at the root
     #
-    # The purpose of this job template is to run "maven clean install deploy" for projects using this
+    # The purpose of this job template is to run "maven clean deploy" for projects using this
     # template.
     #
     # Required Variables:
@@ -214,7 +214,7 @@
       - maven-target:
           maven-version: '{mvn33}'
           pom: '{pom}'
-          goals: 'clean install deploy'
+          goals: 'clean deploy'
           settings: '{mvn-settings}'
           settings-type: cfp
           global-settings: 'global-settings'

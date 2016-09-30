@@ -45,7 +45,7 @@
           maven-version: '{mvn33}'
           pom: 'org.eclipse.winery.model.csar.toscametafile/pom.xml'
           # yamllint disable rule:line-length
-          goals: 'clean install deploy -DaltDeploymentRepository=thirdparty-snapshots::default::$NEXUSPROXY/content/repositories/thirdparty-snapshots'
+          goals: 'clean deploy -DaltDeploymentRepository=thirdparty-snapshots::default::$NEXUSPROXY/content/repositories/thirdparty-snapshots'
           # yamllint enable
           settings: '{mvn-settings}'
           settings-type: cfp
@@ -56,7 +56,7 @@
           maven-version: '{mvn33}'
           pom: 'org.eclipse.winery.model.selfservice/pom.xml'
           # yamllint disable rule:line-length
-          goals: 'clean install deploy -DaltDeploymentRepository=thirdparty-snapshots::default::$NEXUSPROXY/content/repositories/thirdparty-snapshots'
+          goals: 'clean deploy -DaltDeploymentRepository=thirdparty-snapshots::default::$NEXUSPROXY/content/repositories/thirdparty-snapshots'
           # yamllint enable
           settings: '{mvn-settings}'
           settings-type: cfp
@@ -67,7 +67,7 @@
           maven-version: '{mvn33}'
           pom: 'org.eclipse.winery.model.tosca/pom.xml'
           # yamllint disable rule:line-length
-          goals: 'clean install deploy -DaltDeploymentRepository=thirdparty-snapshots::default::$NEXUSPROXY/content/repositories/thirdparty-snapshots'
+          goals: 'clean deploy -DaltDeploymentRepository=thirdparty-snapshots::default::$NEXUSPROXY/content/repositories/thirdparty-snapshots'
           # yamllint enable
           settings: '{mvn-settings}'
           settings-type: cfp
@@ -77,7 +77,7 @@
       - maven-target:
           maven-version: '{mvn33}'
           # yamllint disable rule:line-length
-          goals: 'clean install deploy -DaltDeploymentRepository=thirdparty-snapshots::default::$NEXUSPROXY/content/repositories/thirdparty-snapshots'
+          goals: 'clean deploy -DaltDeploymentRepository=thirdparty-snapshots::default::$NEXUSPROXY/content/repositories/thirdparty-snapshots'
           # yamllint enable
           settings: '{mvn-settings}'
           settings-type: cfp

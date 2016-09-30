@@ -24,6 +24,8 @@
           artifact-num-to-keep: '{build-artifact-num-to-keep}'
 
     parameters:
+      - maven-exec:
+          maven-version: '{mvn33}'
       - openo-infra-parameters:
           project: '{project}'
           branch: '{branch}'

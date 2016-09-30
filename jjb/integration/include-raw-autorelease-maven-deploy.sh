@@ -22,7 +22,7 @@ for m in `xmlstarlet sel -N x=http://maven.apache.org/POM/4.0.0 -t -m '//x:modul
                "stage/org/openo/$m" m2repo/org/openo/
 done)
 
-mvn -V -B org.sonatype.plugins:nexus-staging-maven-plugin:1.6.2:deploy-staged-repository \
+$MVN -V -B org.sonatype.plugins:nexus-staging-maven-plugin:1.6.2:deploy-staged-repository \
     -DrepositoryDirectory="`pwd`/m2repo" \
     -DnexusUrl=https://nexus.open-o.org/ \
     -DstagingProfileId="d8330dc636933" \

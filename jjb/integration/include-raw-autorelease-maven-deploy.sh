@@ -23,6 +23,15 @@ for m in `xmlstarlet sel -N x=http://maven.apache.org/POM/4.0.0 -t -m '//x:modul
                "stage/org/openo/$m" m2repo/org/openo/
 done)
 
+# Directed syncs for those that can't properly be built based on the module name
+# or don't have a common parent that can be detected from the pom module named
+for m in common-{services,tosca} sdno; do
+rsync -avz --exclude 'maven-metadata*' \
+           --exclude '_remote.repositories' \
+           --exclude 'resolver-status.properties' \
+           "stage/org/openo/$m" m2repo/org/openo/
+done
+
 $MVN -V -B org.sonatype.plugins:nexus-staging-maven-plugin:1.6.2:deploy-staged-repository \
     -DrepositoryDirectory="`pwd`/m2repo" \
     -DnexusUrl=https://nexus.open-o.org/ \

@@ -76,6 +76,10 @@
           jenkins-jobs test --recursive jjb/
       - ci-management-check-unicode
 
+    publishers:
+      - openo-infra-shiplogs:
+          maven-version: '{mvn33}'
+
 - job-template:
     name: 'ci-management-merge'
 
@@ -124,6 +128,10 @@
       - shell:
           !include-raw-escape: include-raw-jjb-update.sh
 
+    publishers:
+      - openo-infra-shiplogs:
+          maven-version: '{mvn33}'
+
 - job-template:
     name: 'ci-management-verify-packer-{platforms}-{templates}'
     project-type: freestyle
@@ -162,6 +170,10 @@
       - packer-validate:
           platform: '{platforms}'
           template: '{templates}'
+
+    publishers:
+      - openo-infra-shiplogs:
+          maven-version: '{mvn33}'
 
 - job-template:
     name: 'ci-management-merge-packer-{platforms}-{templates}'
@@ -204,3 +216,7 @@
       - packer-build:
           platform: '{platforms}'
           template: '{templates}'
+
+    publishers:
+      - openo-infra-shiplogs:
+          maven-version: '{mvn33}'

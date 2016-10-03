@@ -18,6 +18,7 @@ set -exu
 # Make sure pip itself us up-to-date.
 pip install --upgrade pip
 
+pip install --upgrade --no-binary pycparser pycparser
 pip install --upgrade docker-py importlib requests scapy netifaces netaddr ipaddr
 pip install --upgrade robotframework{,-{httplibrary,requests,sshlibrary,selenium2library}}
 

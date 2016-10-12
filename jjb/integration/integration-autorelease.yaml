@@ -5,7 +5,7 @@
       - 'integration-autorelease-daily'
 
     project: 'integration'
-    branch: 'master'
+    branch: 'sun'
     mvn-settings: 'autorelease-settings'
     build-node: 'centos7-basebuild-8c-8g'
 

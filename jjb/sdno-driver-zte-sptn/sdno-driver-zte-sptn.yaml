@@ -2,9 +2,13 @@
 - project:
     name: sdno-driver-zte-sptn
     jobs:
-      - '{project}-verify-java'
-      - '{project}-merge-java'
+      - '{project}-{stream}-verify-java'
+      - '{project}-{stream}-merge-java'
 
     project: 'sdno-driver-zte-sptn'
-    branch: 'master'
+    stream:
+      - 'master':
+          branch: 'master'
+      - 'sun':
+          branch: 'sun'
     mvn-settings: 'sdno-driver-zte-sptn-settings'

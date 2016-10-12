@@ -2,7 +2,11 @@
 - project:
     name: nfvo-python
     project: 'nfvo'
-    branch: 'master'
+    stream:
+      - 'master':
+          branch: 'master'
+      - 'sun':
+          branch: 'sun'
     mvn-settings: 'nfvo-settings'
     build-node: 'centos7-redis-2c-1g'
     subproject:
@@ -11,4 +15,4 @@
       - 'drivers-vnfm-svnfm-zte-vmanager':
           path: 'drivers/vnfm/svnfm/zte/vmanager'
     jobs:
-      - '{project}-{subproject}-verify-python':
+      - '{project}-{stream}-{subproject}-verify-python':

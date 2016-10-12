@@ -11,7 +11,7 @@
     #     path:      directory containing the project's tox.ini relative to
     #                the workspace. The default is the project root.
 
-    name: '{project}-{subproject}-verify-python'
+    name: '{project}-{stream}-{subproject}-verify-python'
     path: '$WORKSPACE'
 
     project-type: freestyle

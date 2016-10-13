@@ -45,6 +45,7 @@
             - 'origin/${branch}'
           skip-tag: true
           wipe-workspace: true
+          timeout: 20
 
 - scm:
     name: gerrit-trigger-scm
@@ -56,6 +57,7 @@
           branches:
             - 'origin/$GERRIT_BRANCH'
           skip-tag: true
+          timeout: 20
           choosing-strategy: '{choosing-strategy}'
 
 - scm:
@@ -68,6 +70,7 @@
           branches:
             - 'origin/$GERRIT_BRANCH'
           skip-tag: true
+          timeout: 20
           choosing-strategy: '{choosing-strategy}'
           basedir: '{basedir}'
 
@@ -81,6 +84,7 @@
           branches:
             - 'origin/{branch}'
           skip-tag: true
+          timeout: 20
           wipe-workspace: true
 
 # TRIGGERS

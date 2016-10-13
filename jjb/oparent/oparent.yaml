@@ -2,9 +2,13 @@
 - project:
     name: oparent
     jobs:
-      - '{project}-verify-java'
-      - '{project}-merge-java'
+      - '{project}-{stream}-verify-java'
+      - '{project}-{stream}-merge-java'
 
     project: 'oparent'
-    branch: 'master'
+    stream:
+      - 'master':
+          branch: "master"
+      - 'sun':
+          branch: 'sun'
     mvn-settings: 'oparent-settings'

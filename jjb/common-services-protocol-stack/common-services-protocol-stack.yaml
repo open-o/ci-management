@@ -2,9 +2,13 @@
 - project:
     name: common-services-protocol-stack
     jobs:
-      - '{project}-verify-java'
-      - '{project}-merge-java'
+      - '{project}-{stream}-verify-java'
+      - '{project}-{stream}-merge-java'
 
     project: 'common-services-protocol-stack'
-    branch: 'master'
+    stream:
+      - 'master':
+          branch: 'master'
+      - 'sun':
+          branch: 'sun'
     mvn-settings: 'common-services-protocol-stack-settings'

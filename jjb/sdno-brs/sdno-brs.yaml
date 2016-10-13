@@ -2,9 +2,13 @@
 - project:
     name: sdno-brs
     jobs:
-      - '{project}-verify-java'
-      - '{project}-merge-java'
+      - '{project}-{stream}-verify-java'
+      - '{project}-{stream}-merge-java'
 
     project: 'sdno-brs'
-    branch: 'master'
+    stream:
+      - 'master':
+          branch: 'master'
+      - 'sun':
+          branch: 'sun'
     mvn-settings: 'sdno-brs-settings'

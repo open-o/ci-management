@@ -2,7 +2,11 @@
 - project:
     name: common-services-common-utilities
     project: 'common-services-common-utilities'
-    branch: 'master'
+    stream:
+      - 'master':
+          branch: 'master'
+      - 'sun':
+          branch: 'sun'
     mvn-settings: 'common-services-common-utilities-settings'
     subproject:
       - 'common-util':
@@ -18,5 +22,5 @@
           pom: 'pom.xml'
           pattern: '*'
     jobs:
-      - '{project}-{subproject}-verify-java'
-      - '{project}-{subproject}-merge-java'
+      - '{project}-{stream}-{subproject}-verify-java'
+      - '{project}-{stream}-{subproject}-merge-java'

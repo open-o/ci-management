@@ -8,7 +8,7 @@
     # Required Variables:
     #     branch:    git branch (eg. stable/lithium or master)
 
-    name: '{project}-verify-java'
+    name: '{project}-{stream}-verify-java'
 
     project-type: freestyle
     concurrent: true
@@ -64,7 +64,7 @@
     #     pom:       name/location of the pom.xml file relative to the workspace
     #     pattern:   ant file-path pattern relative to the workspace used to trigger the job
 
-    name: '{project}-{subproject}-verify-java'
+    name: '{project}-{stream}-{subproject}-verify-java'
 
     project-type: freestyle
     concurrent: true
@@ -119,7 +119,7 @@
     #
     # Required Variables:
     #     branch:    git branch (eg. stable/lithium or master)
-    name: '{project}-merge-java'
+    name: '{project}-{stream}-merge-java'
 
     project-type: freestyle
     node: '{build-node}'
@@ -174,7 +174,7 @@
     #     pom:       name/location of the pom.xml file relative to the workspace
     #     pattern:   ant file-path pattern relative to the workspace used to trigger the job
 
-    name: '{project}-{subproject}-merge-java'
+    name: '{project}-{stream}-{subproject}-merge-java'
 
     project-type: freestyle
     node: '{build-node}'

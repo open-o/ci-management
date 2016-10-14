@@ -78,7 +78,7 @@
 
     publishers:
       - openo-infra-shiplogs:
-          maven-version: '{mvn33}'
+          maven-version: 'mvn33'
 
 - job-template:
     name: 'ci-management-merge'
@@ -132,7 +132,7 @@
 
     publishers:
       - openo-infra-shiplogs:
-          maven-version: '{mvn33}'
+          maven-version: 'mvn33'
 
 - job-template:
     name: 'ci-management-verify-packer-{platforms}-{templates}'
@@ -175,7 +175,7 @@
 
     publishers:
       - openo-infra-shiplogs:
-          maven-version: '{mvn33}'
+          maven-version: 'mvn33'
 
 - job-template:
     name: 'ci-management-merge-packer-{platforms}-{templates}'
@@ -221,4 +221,4 @@
 
     publishers:
       - openo-infra-shiplogs:
-          maven-version: '{mvn33}'
+          maven-version: 'mvn33'

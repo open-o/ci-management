@@ -25,7 +25,7 @@
 
     parameters:
       - maven-exec:
-          maven-version: '{mvn33}'
+          maven-version: 'mvn33'
       - openo-infra-parameters:
           project: '{project}'
           branch: '{branch}'
@@ -53,7 +53,7 @@
           settings-file: '{mvn-settings}'
       # force jenkins install of maven version before any shell scripts use it
       - maven-target:
-          maven-version: '{mvn33}'
+          maven-version: 'mvn33'
           goals: '--version'
           settings: '{mvn-settings}'
           settings-type: cfp
@@ -65,7 +65,7 @@
       - integration-autorelease-fix-relativepaths
       - integration-autorelease-set-version
       - maven-target:
-          maven-version: '{mvn33}'
+          maven-version: 'mvn33'
           pom: 'autorelease/build/pom.xml'
           goals: 'clean deploy -DaltDeploymentRepository=staging::default::file:hide/from/pom/files/stage'
           java-opts:

@@ -40,7 +40,8 @@
           build-timeout: '{build-timeout}'
 
     triggers:
-        - timed: '@daily'
+        # 2 PM UTC = 10 PM China = 7 AM Pacific
+        - timed: 'H 14 * * *'
         # allow manual triggering
         - gerrit-trigger-patch-submitted-pattern:
             name: '{project}'

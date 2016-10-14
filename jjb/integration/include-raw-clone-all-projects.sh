@@ -12,6 +12,6 @@ cd $BUILD_DIR
 while read p; do
     rm -rf $BUILD_DIR/$p
     #TODO: replace with https once repo is open to public
-    git clone ssh://openo-jobbuilder@gerrit.open-o.org:29418/$p
+    git clone -b $GERRIT_BRANCH ssh://openo-jobbuilder@gerrit.open-o.org:29418/$p
 done < $ROOT/all-projects.txt
 

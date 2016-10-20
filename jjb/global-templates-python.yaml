@@ -48,3 +48,7 @@
             pip freeze
             cd $WORKSPACE/{path}
             tox
+
+    publishers:
+      - openo-infra-shiplogs:
+          maven-version: 'mvn33'

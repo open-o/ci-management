@@ -78,3 +78,7 @@
       - shell:
           !include-raw-escape:
             - include-raw-autorelease-maven-deploy.sh
+
+    publishers:
+      - openo-infra-shiplogs:
+          maven-version: 'mvn33'

@@ -43,6 +43,10 @@
           properties-file: 'env.properties'
       - integration-run-test
 
+    publishers:
+      - openo-infra-shiplogs:
+          maven-version: 'mvn33'
+
 - job-template:
     name: '{project}-csit-{functionality}'
     disabled: false
@@ -85,3 +89,7 @@
       - inject:
           properties-file: 'env.properties'
       - integration-run-test
+
+    publishers:
+      - openo-infra-shiplogs:
+          maven-version: 'mvn33'

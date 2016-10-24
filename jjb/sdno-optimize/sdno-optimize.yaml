@@ -1,0 +1,16 @@
+---
+- project:
+    name: sdno-optimize
+    project: 'sdno-optimize'
+    stream:
+      - 'master':
+          branch: 'master'
+      - 'sun':
+          branch: 'sun'
+    mvn-settings: 'sdno-optimize-settings'
+    build-node: 'centos7-redis-2c-1g'
+    subproject:
+      - 'sdno-mpls-optimizer':
+          path: 'sdno-mpls-optimizer'
+    jobs:
+      - '{project}-{stream}-{subproject}-verify-python':

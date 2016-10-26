@@ -1,16 +1,17 @@
 ---
 - project:
-    name: sdno-monitoring
-    project: 'sdno-monitoring'
+    name: sdno-driver-ct-te-python
+    project: 'sdno-driver-ct-te'
     stream:
       - 'master':
           branch: 'master'
       - 'sun':
           branch: 'sun'
-    mvn-settings: 'sdno-monitoring-settings'
+    mvn-settings: 'sdno-driver-ct-te-settings'
     build-node: 'centos7-redis-2c-1g'
     subproject:
-      - 'sdno-link-monitor':
-          path: 'sdno-link-monitor'
+      - 'root':
+          path: '.'
+          pattern: '**'
     jobs:
       - '{project}-{stream}-{subproject}-verify-python':

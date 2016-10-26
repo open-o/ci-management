@@ -1,0 +1,14 @@
+---
+- project:
+    name: sdno-optimize-java
+    jobs:
+      - '{project}-{stream}-verify-java'
+      - '{project}-{stream}-merge-java'
+
+    project: 'sdno-optimize'
+    stream:
+      - 'master':
+          branch: 'master'
+      - 'sun':
+          branch: 'sun'
+    mvn-settings: 'sdno-optimize-settings'

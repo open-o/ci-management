@@ -1,6 +1,10 @@
 ---
 - project:
-    name: sdno-vsitemgr
+    name: sdno-vsitemgr-java
+    jobs:
+      - '{project}-{stream}-verify-java'
+      - '{project}-{stream}-merge-java'
+
     project: 'sdno-vsitemgr'
     stream:
       - 'master':
@@ -8,9 +12,3 @@
       - 'sun':
           branch: 'sun'
     mvn-settings: 'sdno-vsitemgr-settings'
-    build-node: 'centos7-redis-2c-1g'
-    subproject:
-      - 'root':
-          path: '.'
-    jobs:
-      - '{project}-{stream}-{subproject}-verify-python':

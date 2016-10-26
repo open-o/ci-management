@@ -12,7 +12,9 @@
     subproject:
       - 'lcm':
           path: 'lcm'
+          pattern: 'lcm/**'
       - 'drv-vnfm-zte':
           path: 'drivers/vnfm/svnfm/zte/vmanager'
+          pattern: 'drivers/vnfm/svnfm/zte/vmanager/**'
     jobs:
       - '{project}-{stream}-{subproject}-verify-python':

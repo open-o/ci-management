@@ -10,6 +10,7 @@
     # Optional Variables:
     #     path:      directory containing the project's tox.ini relative to
     #                the workspace. The default is the project root.
+    #     pattern:   ant file-path pattern relative to the workspace used to trigger the job
 
     name: '{project}-{stream}-{subproject}-verify-python'
     path: '$WORKSPACE'
@@ -37,7 +38,7 @@
       - gerrit-trigger-patch-submitted-pattern:
           name: '{project}'
           branch: '{branch}'
-          pattern: '{path}/**'
+          pattern: '{pattern}'
 
     builders:
         - shell: |

@@ -1,6 +1,10 @@
 ---
 - project:
-    name: sdno-driver-ct-te
+    name: sdno-driver-ct-te-java
+    jobs:
+      - '{project}-{stream}-verify-java'
+      - '{project}-{stream}-merge-java'
+
     project: 'sdno-driver-ct-te'
     stream:
       - 'master':
@@ -8,9 +12,3 @@
       - 'sun':
           branch: 'sun'
     mvn-settings: 'sdno-driver-ct-te-settings'
-    build-node: 'centos7-redis-2c-1g'
-    subproject:
-      - 'root':
-          path: '.'
-    jobs:
-      - '{project}-{stream}-{subproject}-verify-python':

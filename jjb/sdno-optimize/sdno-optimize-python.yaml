@@ -1,6 +1,6 @@
 ---
 - project:
-    name: sdno-optimize
+    name: sdno-optimize-python
     project: 'sdno-optimize'
     stream:
       - 'master':
@@ -12,5 +12,6 @@
     subproject:
       - 'sdno-mpls-optimizer':
           path: 'sdno-mpls-optimizer'
+          pattern: 'sdno-mpls-optimizer/**'
     jobs:
       - '{project}-{stream}-{subproject}-verify-python':

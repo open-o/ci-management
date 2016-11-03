@@ -41,7 +41,7 @@
 
     triggers:
         # 2 PM UTC = 10 PM China = 7 AM Pacific
-        - timed: 'H 14 * * *'
+        - timed: 'H 4,14 * * *'
         # allow manual triggering
         - gerrit-trigger-patch-submitted-pattern:
             name: '{project}'

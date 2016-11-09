@@ -2,15 +2,15 @@
 - project:
     name: integration-autorelease
     jobs:
-      - 'integration-autorelease-daily'
+      - 'integration-autorelease-{branch}-daily'
 
     project: 'integration'
-    branch: 'sun'
+    branch: 'master'
     mvn-settings: 'autorelease-settings'
     build-node: 'centos7-basebuild-8c-8g'
 
 - job-template:
-    name: 'integration-autorelease-daily'
+    name: 'integration-autorelease-{branch}-daily'
 
     project-type: freestyle
     concurrent: true
@@ -40,13 +40,8 @@
           build-timeout: '{build-timeout}'
 
     triggers:
-        # 4 AM UTC = noon China = 9 PM Pacific, 11 AM UTC = 7 PM China = 4 AM Pacific
-        - timed: 'H 4,11 * * *'
-        # allow manual triggering
-        - gerrit-trigger-patch-submitted-pattern:
-            name: '{project}'
-            branch: '{branch}'
-            pattern: 'autorelease/**'
+        # 11 AM UTC = 7 PM China = 4 AM Pacific
+        - timed: 'H 11 * * *'
 
     builders:
       - provide-maven-settings:

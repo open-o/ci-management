@@ -5,7 +5,7 @@
       - 'integration-verify-{project}-csit-{functionality}'
       - '{project}-csit-{functionality}':
           trigger_jobs:
-            - 'common-tosca-catalog-merge-java'
+            - 'common-tosca-catalog-master-merge-java'
 
     project: 'common-tosca-catalog'
     functionality:

@@ -5,7 +5,7 @@
       - 'integration-verify-{project}-csit-{functionality}'
       - '{project}-csit-{functionality}':
           trigger_jobs:
-            - 'common-services-microservice-bus-merge-java'
+            - 'common-services-microservice-bus-master-merge-java'
 
     project: 'common-services-microservice-bus'
     functionality:

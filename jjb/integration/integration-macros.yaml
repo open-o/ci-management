@@ -35,3 +35,13 @@
     name: integration-autorelease-set-version
     builders:
       - shell: "${WORKSPACE}/autorelease/scripts/set-version.sh"
+
+- publisher:
+    name: integration-robot
+    publishers:
+      - robot:
+          output-path: 'archives'
+          other-files: ''
+          unstable-threshold: '{unstable-if}'
+          pass-threshold: '{pass-if}'
+          only-critical: false

@@ -44,6 +44,9 @@
       - integration-run-test
 
     publishers:
+      - integration-robot:
+          unstable-if: 0.0
+          pass-if: 100.0
       - openo-infra-shiplogs:
           maven-version: 'mvn33'
 
@@ -91,5 +94,8 @@
       - integration-run-test
 
     publishers:
+      - integration-robot:
+          unstable-if: 0.0
+          pass-if: 100.0
       - openo-infra-shiplogs:
           maven-version: 'mvn33'

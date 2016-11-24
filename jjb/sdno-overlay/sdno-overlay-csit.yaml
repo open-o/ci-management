@@ -1,0 +1,16 @@
+---
+- project:
+    name: sdno-overlay-csit
+    jobs:
+      - 'integration-verify-{project}-csit-{functionality}'
+      - '{project}-csit-{functionality}':
+          trigger_jobs:
+            - 'sdno-overlay-master-merge-java'
+
+    project: 'sdno-overlay'
+    functionality:
+      - 'sanity-check'
+    pattern: '**'
+    robot-options: ''
+
+    branch: 'master'

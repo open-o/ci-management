@@ -10,6 +10,7 @@
     project: 'sdno-ipsec'
     functionality:
       - 'sanity-check'
+      - 'provision'
     pattern: '**'
     robot-options: ''
 

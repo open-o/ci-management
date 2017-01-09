@@ -10,6 +10,7 @@
     project: 'sdno-servicechain'
     functionality:
       - 'sanity-check'
+      - 'provision'
     pattern: '**'
     robot-options: ''
 

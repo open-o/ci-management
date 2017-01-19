@@ -12,6 +12,9 @@ rh_systems() {
     # Autorelease support packages
     yum install -y xmlstarlet
 
+    # Additional libraries for Python ncclient
+    yum install -y libxml2 libxslt libxslt-devel libffi libffi-devel
+
     # Packer builds happen from the centos flavor images
     PACKERDIR=$(mktemp -d)
     # disable double quote checking
@@ -35,10 +38,13 @@ rh_systems() {
 
 ubuntu_systems() {
     # Install python dependencies
-    apt install -y python-{dev,virtualenv,setuptools,pip}
+    apt-get install -y python-{dev,virtualenv,setuptools,pip}
 
     # Build dependencies for Python packages
-    apt install -y libssl-dev libmysqlclient-dev gcc
+    apt-get install -y libssl-dev libmysqlclient-dev gcc
+
+    # Additional libraries for Python ncclient
+    apt-get install -y wget unzip python-ncclient
 }
 
 all_systems() {

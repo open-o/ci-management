@@ -1,0 +1,12 @@
+---
+- project:
+    name: vnf-sdk-design-pkg
+    jobs:
+      - '{project}-{stream}-verify-java'
+      - '{project}-{stream}-merge-java'
+
+    project: 'vnf-sdk-design-pkg'
+    stream:
+      - 'master':
+          branch: 'master'
+    mvn-settings: 'vnf-sdk-design-pkg-settings'

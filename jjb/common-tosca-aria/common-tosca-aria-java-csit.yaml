@@ -1,0 +1,16 @@
+---
+- project:
+    name: common-tosca-aria-csit
+    jobs:
+      - 'integration-verify-{project}-csit-{functionality}'
+      - '{project}-csit-{functionality}':
+          trigger_jobs:
+            - 'common-tosca-aria-master-merge-java'
+
+    project: 'common-tosca-aria'
+    functionality:
+      - 'sanity-check'
+    pattern: '**'
+    robot-options: ''
+
+    branch: 'master'

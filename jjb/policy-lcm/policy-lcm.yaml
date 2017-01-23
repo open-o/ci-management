@@ -1,0 +1,12 @@
+---
+- project:
+    name: policy-lcm
+    jobs:
+      - '{project}-{stream}-verify-java'
+      - '{project}-{stream}-merge-java'
+
+    project: 'policy-lcm'
+    stream:
+      - 'master':
+          branch: 'master'
+    mvn-settings: 'policy-lcm-settings'

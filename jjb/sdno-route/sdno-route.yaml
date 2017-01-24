@@ -1,0 +1,12 @@
+---
+- project:
+    name: sdno-route
+    jobs:
+      - '{project}-{stream}-verify-java'
+      - '{project}-{stream}-merge-java'
+
+    project: 'sdno-route'
+    stream:
+      - 'master':
+          branch: 'master'
+    mvn-settings: 'sdno-route-settings'

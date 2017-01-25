@@ -1,0 +1,16 @@
+---
+- project:
+    name: vnf-sdk-marketplace-csit
+    jobs:
+      - 'integration-verify-{project}-csit-{functionality}'
+      - '{project}-csit-{functionality}':
+          trigger_jobs:
+            - 'vnf-sdk-marketplace-master-merge-java'
+
+    project: 'vnf-sdk-marketplace'
+    functionality:
+      - 'sanity-check'
+    pattern: '**'
+    robot-options: ''
+
+    branch: 'master'

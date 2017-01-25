@@ -1,0 +1,16 @@
+---
+- project:
+    name: vnf-sdk-function-test-csit
+    jobs:
+      - 'integration-verify-{project}-csit-{functionality}'
+      - '{project}-csit-{functionality}':
+          trigger_jobs:
+            - 'vnf-sdk-function-test-master-merge-java'
+
+    project: 'vnf-sdk-function-test'
+    functionality:
+      - 'sanity-check'
+    pattern: '**'
+    robot-options: ''
+
+    branch: 'master'

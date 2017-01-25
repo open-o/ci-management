@@ -1,0 +1,12 @@
+---
+- project:
+    name: sdnhub-driver-huawei-openstack
+    jobs:
+      - '{project}-{stream}-verify-java'
+      - '{project}-{stream}-merge-java'
+
+    project: 'sdnhub-driver-huawei-openstack'
+    stream:
+      - 'master':
+          branch: 'master'
+    mvn-settings: 'sdnhub-driver-huawei-openstack-settings'

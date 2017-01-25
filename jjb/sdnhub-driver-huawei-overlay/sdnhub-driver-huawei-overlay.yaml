@@ -1,0 +1,12 @@
+---
+- project:
+    name: sdnhub-driver-huawei-overlay
+    jobs:
+      - '{project}-{stream}-verify-java'
+      - '{project}-{stream}-merge-java'
+
+    project: 'sdnhub-driver-huawei-overlay'
+    stream:
+      - 'master':
+          branch: 'master'
+    mvn-settings: 'sdnhub-driver-huawei-overlay-settings'

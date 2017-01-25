@@ -1,0 +1,15 @@
+---
+- project:
+    name: sdnhub-driver-ct-te-python
+    project: 'sdnhub-driver-ct-te'
+    stream:
+      - 'master':
+          branch: 'master'
+    mvn-settings: 'sdnhub-driver-ct-te-settings'
+    build-node: 'centos7-redis-2c-1g'
+    subproject:
+      - 'root':
+          path: '.'
+          pattern: '**'
+    jobs:
+      - '{project}-{stream}-{subproject}-verify-python':

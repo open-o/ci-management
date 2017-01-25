@@ -1,0 +1,12 @@
+---
+- project:
+    name: sdnhub-driver-zte-sptn
+    jobs:
+      - '{project}-{stream}-verify-java'
+      - '{project}-{stream}-merge-java'
+
+    project: 'sdnhub-driver-zte-sptn'
+    stream:
+      - 'master':
+          branch: 'master'
+    mvn-settings: 'sdnhub-driver-zte-sptn-settings'

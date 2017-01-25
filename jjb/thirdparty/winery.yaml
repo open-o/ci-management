@@ -25,10 +25,10 @@
           # Use clone of https://github.com/eclipse/winery which has needed
           # patch applied (PR#20) to allow us to not have to have a build minion
           # with node, npm, and bower installed as the job will deal with it
-          url: 'https://github.com/tykeal/winery'
+          url: 'https://github.com/ZTE/winery'
           refspec: ''
           branches:
-            - 'origin/use_frontend_maven'
+            - 'master'
           skip-tag: true
           wipe-workspace: true
 

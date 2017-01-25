@@ -1,0 +1,12 @@
+---
+- project:
+    name: sdnhub-driver-huawei-servicechain
+    jobs:
+      - '{project}-{stream}-verify-java'
+      - '{project}-{stream}-merge-java'
+
+    project: 'sdnhub-driver-huawei-servicechain'
+    stream:
+      - 'master':
+          branch: 'master'
+    mvn-settings: 'sdnhub-driver-huawei-servicechain-settings'

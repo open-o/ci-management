@@ -1,0 +1,12 @@
+---
+- project:
+    name: client-gui
+    jobs:
+      - '{project}-{stream}-verify-java'
+      - '{project}-{stream}-merge-java'
+
+    project: 'client-gui'
+    stream:
+      - 'master':
+          branch: 'master'
+    mvn-settings: 'client-gui-settings'

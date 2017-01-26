@@ -63,7 +63,7 @@
       - maven-target:
           maven-version: 'mvn33'
           pom: 'autorelease/build/pom.xml'
-          goals: 'clean deploy -DaltDeploymentRepository=staging::default::file:hide/from/pom/files/stage'
+          goals: '-q clean deploy -DaltDeploymentRepository=staging::default::file:hide/from/pom/files/stage'
           java-opts:
             - '-Xmx1536m -XX:MaxPermSize=384m'
           settings: '{mvn-settings}'

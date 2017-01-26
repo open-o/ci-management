@@ -47,7 +47,7 @@
           settings-file: '{mvn-settings}'
       - maven-target:
           maven-version: 'mvn33'
-          goals: 'clean install'
+          goals: '-q clean install'
           settings: '{mvn-settings}'
           settings-type: cfp
           global-settings: 'global-settings'
@@ -109,7 +109,7 @@
       - maven-target:
           maven-version: 'mvn33'
           pom: '{pom}'
-          goals: 'clean install'
+          goals: '-q clean install'
           settings: '{mvn-settings}'
           settings-type: cfp
           global-settings: 'global-settings'
@@ -165,7 +165,7 @@
           settings-file: '{mvn-settings}'
       - maven-target:
           maven-version: 'mvn33'
-          goals: 'clean deploy sonar:sonar -Dsonar.host.url=https://sonar.open-o.org'
+          goals: '-q clean deploy sonar:sonar -Dsonar.host.url=https://sonar.open-o.org'
           settings: '{mvn-settings}'
           settings-type: cfp
           global-settings: 'global-settings'
@@ -226,7 +226,7 @@
       - maven-target:
           maven-version: 'mvn33'
           pom: '{pom}'
-          goals: 'clean deploy sonar:sonar -Dsonar.host.url=https://sonar.open-o.org'
+          goals: '-q clean deploy sonar:sonar -Dsonar.host.url=https://sonar.open-o.org'
           settings: '{mvn-settings}'
           settings-type: cfp
           global-settings: 'global-settings'

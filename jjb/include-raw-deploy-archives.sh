@@ -77,7 +77,6 @@ echo "build-url: ${{BUILD_URL}}" >> $ARCHIVES_DIR/_build-details.txt
 env > $ARCHIVES_DIR/_build-enviroment-variables.txt
 
 # capture system info
-touch $ARCHIVES_DIR/_sys-info.txt
 {{
     echo -e "uname -a:\n `uname -a` \n"
     echo -e "df -h:\n `df -h` \n"
@@ -85,12 +84,12 @@ touch $ARCHIVES_DIR/_sys-info.txt
     echo -e "nproc:\n `nproc` \n"
     echo -e "lscpu:\n `lscpu` \n"
     echo -e "ip addr:\n  `/sbin/ip addr` \n"
-}} 2>&1 | tee -a $ARCHIVES_DIR/_sys-info.txt
+}} 2>&1 > $ARCHIVES_DIR/_sys-info.txt
 
 # Magic string used to trim console logs at the appropriate level during wget
 echo "-----END_OF_BUILD-----"
-wget -O $ARCHIVES_DIR/console.log ${{BUILD_URL}}consoleText
-wget -O $ARCHIVES_DIR/console-timestamp.log ${{BUILD_URL}}/timestamps?time=HH:mm:ss\&appendLog
+wget -q -O $ARCHIVES_DIR/console.log ${{BUILD_URL}}consoleText
+wget -q -O $ARCHIVES_DIR/console-timestamp.log ${{BUILD_URL}}/timestamps?time=HH:mm:ss\&appendLog
 sed -i '/^-----END_OF_BUILD-----$/,$d' $ARCHIVES_DIR/console.log
 sed -i '/^.*-----END_OF_BUILD-----$/,$d' $ARCHIVES_DIR/console-timestamp.log
 

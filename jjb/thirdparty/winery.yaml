@@ -28,7 +28,7 @@
           url: 'https://github.com/ZTE/winery'
           refspec: ''
           branches:
-            - 'master'
+            - 'model_designer'
           skip-tag: true
           wipe-workspace: true
 

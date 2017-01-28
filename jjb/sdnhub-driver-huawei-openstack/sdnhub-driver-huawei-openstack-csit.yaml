@@ -1,0 +1,16 @@
+---
+- project:
+    name: sdnhub-driver-huawei-openstack-csit
+    jobs:
+      - 'integration-verify-{project}-csit-{functionality}'
+      - '{project}-csit-{functionality}':
+          trigger_jobs:
+            - 'sdnhub-driver-huawei-openstack-master-merge-java'
+
+    project: 'sdnhub-driver-huawei-openstack'
+    functionality:
+      - 'sanity-check'
+    pattern: '**'
+    robot-options: ''
+
+    branch: 'master'

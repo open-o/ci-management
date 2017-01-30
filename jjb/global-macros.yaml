@@ -389,7 +389,5 @@
       - ssh-agent-credentials:
           users:
             - 'openo-jenkins-ssh'
-      - jclouds:
-          single-use: True
       - openstack:
           single-use: True

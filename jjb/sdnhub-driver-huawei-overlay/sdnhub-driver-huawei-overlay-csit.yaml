@@ -1,0 +1,17 @@
+---
+- project:
+    name: sdnhub-driver-huawei-overlay-csit
+    jobs:
+      - 'integration-verify-{project}-csit-{functionality}'
+      - '{project}-csit-{functionality}':
+          trigger_jobs:
+            - 'sdnhub-driver-huawei-overlay-master-merge-java'
+
+    project: 'sdnhub-driver-huawei-overlay'
+    functionality:
+      - 'sanity-check'
+      - 'provision'
+    pattern: '**'
+    robot-options: ''
+
+    branch: 'master'

@@ -20,6 +20,15 @@ rsync -av \
     --exclude 'resolver-status.properties' \
     stage/org/openo/{client,common-services,common-tosca,gso,integration,nfvo,oparent,sdnhub,sdno,vnf-sdk} m2repo/org/openo/
 
+# Check for invalid SNAPSHOT artifacts
+INVALID_VERSIONS=`find m2repo/org/openo -name "*SNAPSHOT*"`
+if [ ! -z "$INVALID_VERSIONS" ]
+then
+    echo "Error: found invalid SNAPSHOT artifacts"
+    echo $INVALID_VERSIONS | tr ' ' '\n'
+    exit 1
+fi
+
 $MVN -q -V -B org.sonatype.plugins:nexus-staging-maven-plugin:1.6.2:deploy-staged-repository \
     -DrepositoryDirectory="`pwd`/m2repo" \
     -DnexusUrl=https://nexus.open-o.org/ \

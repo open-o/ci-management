@@ -6,6 +6,9 @@
       - 'test-sdno-testframework':
           pom: 'test/sdno-testframework/pom.xml'
           pattern: 'test/sdno-testframework/**'
+      - 'test-robottest':
+          pom: 'test/robottest/pom.xml'
+          pattern: 'test/robottest/**'
       - 'root':
           pom: 'pom.xml'
           pattern: '*'

@@ -9,9 +9,6 @@
       - 'test-robottest':
           pom: 'test/robottest/pom.xml'
           pattern: 'test/robottest/**'
-      - 'root':
-          pom: 'pom.xml'
-          pattern: '*'
 
     jobs:
       - '{project}-{stream}-{subproject}-verify-java':

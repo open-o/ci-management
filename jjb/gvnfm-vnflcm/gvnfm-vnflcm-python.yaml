@@ -1,0 +1,11 @@
+---
+- project:
+    name: gvnfm-vnflcm-python
+    project: 'gvnfm-vnflcm'
+    stream:
+      - 'master':
+          branch: 'master'
+    mvn-settings: 'gvnfm-vnflcm-settings'
+    build-node: 'centos7-redis-2c-1g'
+    jobs:
+      - '{project}-{stream}-verify-python':

@@ -65,10 +65,9 @@
     # Optional Variables:
     #     path:      directory containing the project's tox.ini relative to
     #                the workspace. The default is the project root.
-    #     pattern:   ant file-path pattern relative to the workspace used to trigger the job
 
     name: '{project}-{stream}-verify-python'
-    path: '$WORKSPACE'
+    path: '{root-path}'
 
     project-type: freestyle
     concurrent: true

@@ -2,6 +2,7 @@
 - project:
     name: gvnfm-vnflcm-python
     project: 'gvnfm-vnflcm'
+    root-path: 'lcm'
     stream:
       - 'master':
           branch: 'master'

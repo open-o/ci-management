@@ -1,0 +1,11 @@
+- project:
+    name: holmes-actions
+    jobs:
+      - '{project}-{stream}-verify-java'
+      - '{project}-{stream}-merge-java'
+
+    project: 'holmes-actions'
+    stream:
+      - 'master':
+          branch: 'master'
+    mvn-settings: 'holmes-actions-settings'

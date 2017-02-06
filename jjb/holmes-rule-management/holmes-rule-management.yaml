@@ -1,0 +1,11 @@
+- project:
+    name: holmes-rule-management
+    jobs:
+      - '{project}-{stream}-verify-java'
+      - '{project}-{stream}-merge-java'
+
+    project: 'holmes-rule-management'
+    stream:
+      - 'master':
+          branch: 'master'
+    mvn-settings: 'holmes-rule-management-settings'

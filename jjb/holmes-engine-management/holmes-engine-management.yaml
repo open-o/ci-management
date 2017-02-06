@@ -1,0 +1,11 @@
+- project:
+    name: holmes-engine-management
+    jobs:
+      - '{project}-{stream}-verify-java'
+      - '{project}-{stream}-merge-java'
+
+    project: 'holmes-engine-management'
+    stream:
+      - 'master':
+          branch: 'master'
+    mvn-settings: 'holmes-engine-management-settings'

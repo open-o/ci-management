@@ -1,0 +1,11 @@
+- project:
+    name: holmes-gui
+    jobs:
+      - '{project}-{stream}-verify-java'
+      - '{project}-{stream}-merge-java'
+
+    project: 'holmes-gui'
+    stream:
+      - 'master':
+          branch: 'master'
+    mvn-settings: 'holmes-gui-settings'

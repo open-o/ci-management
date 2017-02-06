@@ -1,0 +1,12 @@
+---
+- project:
+    name: modelling-specs
+    jobs:
+      - '{project}-{stream}-verify-java'
+      - '{project}-{stream}-merge-java'
+
+    project: 'modelling-specs'
+    stream:
+      - 'master':
+          branch: 'master'
+    mvn-settings: 'modelling-specs-settings'

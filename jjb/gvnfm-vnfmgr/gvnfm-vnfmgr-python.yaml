@@ -1,0 +1,15 @@
+---
+- project:
+    name: gvnfm-vnfmgr-python
+    project: 'gvnfm-vnfmgr'
+    stream:
+      - 'master':
+          branch: 'master'
+    mvn-settings: 'gvnfm-vnfmgr-settings'
+    build-node: 'centos7-redis-2c-1g'
+    subproject:
+      - 'mgr':
+          path: 'mgr'
+          pattern: 'mgr/**'
+    jobs:
+      - '{project}-{stream}-{subproject}-verify-python':

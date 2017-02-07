@@ -18,7 +18,7 @@ rsync -av \
     --exclude 'maven-metadata*' \
     --exclude '_remote.repositories' \
     --exclude 'resolver-status.properties' \
-    stage/org/openo/{client,common-services,common-tosca,gso,integration,nfvo,oparent,sdnhub,sdno,vnf-sdk} m2repo/org/openo/
+    stage/org/openo/{client,common-services,common-tosca,gso,gvnfm,holmes,integration,modelling,multivimdriver,nfvo,oparent,policy,sdnhub,sdno,vnf-sdk} m2repo/org/openo/
 
 # Check for invalid SNAPSHOT artifacts
 INVALID_VERSIONS=`find m2repo/org/openo -name "*SNAPSHOT*"`

@@ -2,11 +2,14 @@
 - project:
     name: gvnfm-vnflcm-python
     project: 'gvnfm-vnflcm'
-    root-path: 'lcm'
     stream:
       - 'master':
           branch: 'master'
     mvn-settings: 'gvnfm-vnflcm-settings'
     build-node: 'centos7-redis-2c-1g'
+    subproject:
+      - 'lcm':
+          path: 'lcm'
+          pattern: 'lcm/**'
     jobs:
-      - '{project}-{stream}-verify-python':
+      - '{project}-{stream}-{subproject}-verify-python':

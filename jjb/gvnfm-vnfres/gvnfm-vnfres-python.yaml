@@ -1,0 +1,15 @@
+---
+- project:
+    name: gvnfm-vnfres-python
+    project: 'gvnfm-vnfres'
+    stream:
+      - 'master':
+          branch: 'master'
+    mvn-settings: 'gvnfm-vnfres-settings'
+    build-node: 'centos7-redis-2c-1g'
+    subproject:
+      - 'res':
+          path: 'res'
+          pattern: 'res/**'
+    jobs:
+      - '{project}-{stream}-{subproject}-verify-python':

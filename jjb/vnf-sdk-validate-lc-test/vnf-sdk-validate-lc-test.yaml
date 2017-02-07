@@ -9,4 +9,4 @@
     stream:
       - 'master':
           branch: 'master'
-    mvn-settings: 'vnf-sdk-validate-lc-test'
+    mvn-settings: 'vnf-sdk-validate-lc-test-settings'

@@ -16,5 +16,8 @@
       - 'drv-vnfm-zte':
           path: 'drivers/vnfm/svnfm/zte/vmanager'
           pattern: 'drivers/vnfm/svnfm/zte/vmanager/**'
+      - 'drv-gvnfm':
+          path: 'drivers/vnfm/gvnfm/gvnfmadapter'
+          pattern: 'drivers/vnfm/gvnfm/gvnfmadapter/**'
     jobs:
       - '{project}-{stream}-{subproject}-verify-python':

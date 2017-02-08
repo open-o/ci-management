@@ -1,0 +1,15 @@
+---
+- project:
+    name: gvnfm-vnfres-java
+    project: 'gvnfm-vnfres'
+    stream:
+      - 'master':
+          branch: 'master'
+    mvn-settings: 'gvnfm-vnfres-settings'
+    subproject:
+      - 'res':
+          pom: 'res/pom.xml'
+          pattern: 'res/**'
+    jobs:
+      - '{project}-{stream}-{subproject}-verify-java':
+      - '{project}-{stream}-{subproject}-merge-java':

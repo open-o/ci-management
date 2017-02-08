@@ -1,0 +1,16 @@
+---
+- project:
+    name: sdnhub-driver-zte-sptn-csit
+    jobs:
+      - 'integration-verify-{project}-csit-{functionality}'
+      - '{project}-csit-{functionality}':
+          trigger_jobs:
+            - 'sdnhub-driver-zte-sptn-master-merge-java'
+
+    project: 'sdnhub-driver-zte-sptn'
+    functionality:
+      - 'sanity-check'
+    pattern: '**'
+    robot-options: ''
+
+    branch: 'master'

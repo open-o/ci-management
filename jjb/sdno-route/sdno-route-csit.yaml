@@ -10,7 +10,6 @@
     project: 'sdno-route'
     functionality:
       - 'sanity-check'
-    pattern: '**'
     robot-options: ''
 
     branch: 'master'

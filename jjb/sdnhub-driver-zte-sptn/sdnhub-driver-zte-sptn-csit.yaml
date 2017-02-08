@@ -10,7 +10,6 @@
     project: 'sdnhub-driver-zte-sptn'
     functionality:
       - 'sanity-check'
-    pattern: '**'
     robot-options: ''
 
     branch: 'master'

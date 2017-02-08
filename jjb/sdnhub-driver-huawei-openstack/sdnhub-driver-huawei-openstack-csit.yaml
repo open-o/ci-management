@@ -10,7 +10,6 @@
     project: 'sdnhub-driver-huawei-openstack'
     functionality:
       - 'sanity-check'
-    pattern: '**'
     robot-options: ''
 
     branch: 'master'

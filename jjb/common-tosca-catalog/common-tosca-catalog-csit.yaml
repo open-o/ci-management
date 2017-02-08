@@ -10,7 +10,6 @@
     project: 'common-tosca-catalog'
     functionality:
       - 'sanity-check'
-    pattern: '**'
     robot-options: ''
 
     branch: 'master'

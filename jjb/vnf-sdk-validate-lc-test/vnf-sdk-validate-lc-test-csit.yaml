@@ -10,7 +10,6 @@
     project: 'vnf-sdk-validate-lc-test'
     functionality:
       - 'sanity-check'
-    pattern: '**'
     robot-options: ''
 
     branch: 'master'

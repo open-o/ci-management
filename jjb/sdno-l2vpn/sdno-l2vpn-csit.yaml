@@ -10,7 +10,6 @@
     project: 'sdno-l2vpn'
     functionality:
       - 'sanity-check'
-    pattern: '**'
     robot-options: ''
 
     branch: 'master'

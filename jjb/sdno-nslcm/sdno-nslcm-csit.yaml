@@ -10,7 +10,6 @@
     project: 'sdno-nslcm'
     functionality:
       - 'sanity-check'
-    pattern: '**'
     robot-options: ''
 
     branch: 'master'

@@ -36,6 +36,9 @@
       - 'drivers-vnfm-svnfm-zte-vmanager':
           pom: 'drivers/vnfm/svnfm/zte/vmanager/pom.xml'
           pattern: 'drivers/vnfm/svnfm/zte/vmanager/**'
+      - 'drivers-vnfm-gvnfm-gvnfmadapter':
+          pom: 'drivers/vnfm/gvnfm/gvnfmadapter/pom.xml'
+          pattern: 'drivers/vnfm/gvnfm/gvnfmadapter/**'
       - 'lcm':
           pom: 'lcm/pom.xml'
           pattern: 'lcm/**'

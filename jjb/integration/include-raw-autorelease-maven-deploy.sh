@@ -29,7 +29,7 @@ then
     exit 1
 fi
 
-$MVN -q -V -B org.sonatype.plugins:nexus-staging-maven-plugin:1.6.2:deploy-staged-repository \
+$MVN -V -B org.sonatype.plugins:nexus-staging-maven-plugin:1.6.2:deploy-staged-repository \
     -DrepositoryDirectory="`pwd`/m2repo" \
     -DnexusUrl=https://nexus.open-o.org/ \
     -DstagingProfileId="d8330dc636933" \

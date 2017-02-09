@@ -1,0 +1,15 @@
+---
+- project:
+    name: gvnfm-vnflcm-java
+    project: 'gvnfm-vnflcm'
+    stream:
+      - 'master':
+          branch: 'master'
+    mvn-settings: 'gvnfm-vnflcm-settings'
+    subproject:
+      - 'lcm':
+          pom: 'lcm/pom.xml'
+          pattern: 'lcm/**'
+    jobs:
+      - '{project}-{stream}-{subproject}-verify-java':
+      - '{project}-{stream}-{subproject}-merge-java':

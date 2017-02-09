@@ -1,0 +1,16 @@
+---
+- project:
+    name: gso-csit
+    jobs:
+      - 'integration-verify-{project}-csit-{functionality}'
+      - '{project}-csit-{functionality}':
+          trigger_jobs:
+            - 'gso-master-merge-java'
+
+    project: 'gso'
+    functionality:
+      - 'sanity-check'
+    pattern: '**'
+    robot-options: ''
+
+    branch: 'master'

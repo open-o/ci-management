@@ -8,7 +8,7 @@
     project: 'oparent'
     stream:
       - 'master':
-          branch: "master"
+          branch: 'master'
       - 'sun':
           branch: 'sun'
     mvn-settings: 'oparent-settings'

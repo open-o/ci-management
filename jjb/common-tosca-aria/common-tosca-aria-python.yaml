@@ -1,17 +1,17 @@
 ---
 - project:
-    name: sdno-optimize-python
-    project: 'sdno-optimize'
+    name: common-tosca-aria-python
+    project: 'common-tosca-aria'
     stream:
       - 'master':
           branch: 'master'
       - 'sun':
           branch: 'sun'
-    mvn-settings: 'sdno-optimize-settings'
+    mvn-settings: 'common-tosca-aria-settings'
     build-node: 'centos7-redis-2c-1g'
     subproject:
-      - 'sdno-mpls-optimizer':
-          path: 'sdno-mpls-optimizer'
-          pattern: 'sdno-mpls-optimizer/**'
+      - 'root':
+          path: '.'
+          pattern: '**'
     jobs:
       - '{project}-{stream}-{subproject}-verify-python'

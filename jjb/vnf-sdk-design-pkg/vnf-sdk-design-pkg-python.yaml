@@ -1,15 +1,15 @@
 ---
 - project:
-    name: gvnfm-vnfres-python
-    project: 'gvnfm-vnfres'
+    name: vnf-sdk-design-pkg-python
+    project: 'vnf-sdk-design-pkg'
     stream:
       - 'master':
           branch: 'master'
-    mvn-settings: 'gvnfm-vnfres-settings'
+    mvn-settings: 'vnf-sdk-design-pkg-settings'
     build-node: 'centos7-redis-2c-1g'
     subproject:
-      - 'res':
-          path: 'res'
-          pattern: 'res/**'
+      - 'root':
+          path: '.'
+          pattern: '**'
     jobs:
       - '{project}-{stream}-{subproject}-verify-python'

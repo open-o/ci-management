@@ -1,6 +1,6 @@
 ---
 - project:
-    name: vnf-sdk-design-pkg
+    name: vnf-sdk-design-pkg-java
     jobs:
       - '{project}-{stream}-verify-java'
       - '{project}-{stream}-merge-java'

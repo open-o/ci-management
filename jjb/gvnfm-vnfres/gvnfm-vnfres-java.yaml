@@ -11,5 +11,5 @@
           pom: 'res/pom.xml'
           pattern: 'res/**'
     jobs:
-      - '{project}-{stream}-{subproject}-verify-java':
-      - '{project}-{stream}-{subproject}-merge-java':
+      - '{project}-{stream}-{subproject}-verify-java'
+      - '{project}-{stream}-{subproject}-merge-java'

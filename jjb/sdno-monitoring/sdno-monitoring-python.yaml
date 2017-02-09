@@ -14,4 +14,4 @@
           path: 'sdno-link-monitor'
           pattern: 'sdno-link-monitor/**'
     jobs:
-      - '{project}-{stream}-{subproject}-verify-python':
+      - '{project}-{stream}-{subproject}-verify-python'

@@ -9,21 +9,15 @@
           branch: 'sun'
     mvn-settings: 'nfvo-settings'
     subproject:
-      - 'monitor-umc':
-          pom: 'monitor/umc/pom.xml'
-          pattern: 'monitor/umc/**'
-      - 'monitor-dac':
-          pom: 'monitor/dac/pom.xml'
-          pattern: 'monitor/dac/**'
-      - 'resmanagement':
-          pom: 'resmanagement/pom.xml'
-          pattern: 'resmanagement/**'
       - 'drivers-sdnc-zte-sfc-driver':
           pom: 'drivers/sdnc/zte/sfc-driver/pom.xml'
           pattern: 'drivers/sdnc/zte/sfc-driver/**'
       - 'drivers-vim-vimadapter':
           pom: 'drivers/vim/vimadapter/pom.xml'
           pattern: 'drivers/vim/vimadapter/**'
+      - 'drivers-vnfm-gvnfm-gvnfmadapter':
+          pom: 'drivers/vnfm/gvnfm/gvnfmadapter/pom.xml'
+          pattern: 'drivers/vnfm/gvnfm/gvnfmadapter/**'
       - 'drivers-vnfm-gvnfm-juju-juju-vnfmadapter':
           pom: 'drivers/vnfm/gvnfm/juju/juju-vnfmadapter/pom.xml'
           pattern: 'drivers/vnfm/gvnfm/juju/juju-vnfmadapter/**'
@@ -36,15 +30,21 @@
       - 'drivers-vnfm-svnfm-zte-vmanager':
           pom: 'drivers/vnfm/svnfm/zte/vmanager/pom.xml'
           pattern: 'drivers/vnfm/svnfm/zte/vmanager/**'
-      - 'drivers-vnfm-gvnfm-gvnfmadapter':
-          pom: 'drivers/vnfm/gvnfm/gvnfmadapter/pom.xml'
-          pattern: 'drivers/vnfm/gvnfm/gvnfmadapter/**'
       - 'lcm':
           pom: 'lcm/pom.xml'
           pattern: 'lcm/**'
+      - 'monitor-dac':
+          pom: 'monitor/dac/pom.xml'
+          pattern: 'monitor/dac/**'
+      - 'monitor-umc':
+          pom: 'monitor/umc/pom.xml'
+          pattern: 'monitor/umc/**'
+      - 'resmanagement':
+          pom: 'resmanagement/pom.xml'
+          pattern: 'resmanagement/**'
       - 'root':
           pom: 'pom.xml'
           pattern: '*'
     jobs:
-      - '{project}-{stream}-{subproject}-verify-java':
-      - '{project}-{stream}-{subproject}-merge-java':
+      - '{project}-{stream}-{subproject}-verify-java'
+      - '{project}-{stream}-{subproject}-merge-java'

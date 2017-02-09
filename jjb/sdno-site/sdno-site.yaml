@@ -9,6 +9,4 @@
     stream:
       - 'master':
           branch: 'master'
-      - 'sun':
-          branch: 'sun'
     mvn-settings: 'sdno-site-settings'

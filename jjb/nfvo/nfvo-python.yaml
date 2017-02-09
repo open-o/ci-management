@@ -10,14 +10,14 @@
     mvn-settings: 'nfvo-settings'
     build-node: 'centos7-redis-2c-1g'
     subproject:
-      - 'lcm':
-          path: 'lcm'
-          pattern: 'lcm/**'
-      - 'drv-vnfm-zte':
-          path: 'drivers/vnfm/svnfm/zte/vmanager'
-          pattern: 'drivers/vnfm/svnfm/zte/vmanager/**'
       - 'drv-gvnfm':
           path: 'drivers/vnfm/gvnfm/gvnfmadapter'
           pattern: 'drivers/vnfm/gvnfm/gvnfmadapter/**'
+      - 'drv-vnfm-zte':
+          path: 'drivers/vnfm/svnfm/zte/vmanager'
+          pattern: 'drivers/vnfm/svnfm/zte/vmanager/**'
+      - 'lcm':
+          path: 'lcm'
+          pattern: 'lcm/**'
     jobs:
-      - '{project}-{stream}-{subproject}-verify-python':
+      - '{project}-{stream}-{subproject}-verify-python'

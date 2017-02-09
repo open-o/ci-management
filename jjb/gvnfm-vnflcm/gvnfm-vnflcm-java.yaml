@@ -11,5 +11,5 @@
           pom: 'lcm/pom.xml'
           pattern: 'lcm/**'
     jobs:
-      - '{project}-{stream}-{subproject}-verify-java':
-      - '{project}-{stream}-{subproject}-merge-java':
+      - '{project}-{stream}-{subproject}-verify-java'
+      - '{project}-{stream}-{subproject}-merge-java'

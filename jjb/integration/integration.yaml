@@ -1,0 +1,20 @@
+---
+- project:
+    name: integration
+    project: 'integration'
+    stream:
+      - 'master':
+          branch: 'master'
+      - 'sun':
+          branch: 'sun'
+    mvn-settings: 'integration-settings'
+    subproject:
+      - 'test-robottest':
+          pom: 'test/robottest/pom.xml'
+          pattern: 'test/robottest/**'
+      - 'test-sdno-testframework':
+          pom: 'test/sdno-testframework/pom.xml'
+          pattern: 'test/sdno-testframework/**'
+    jobs:
+      - '{project}-{stream}-{subproject}-verify-java'
+      - '{project}-{stream}-{subproject}-merge-java'

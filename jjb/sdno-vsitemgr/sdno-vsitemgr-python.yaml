@@ -14,4 +14,4 @@
           path: '.'
           pattern: '**'
     jobs:
-      - '{project}-{stream}-{subproject}-verify-python':
+      - '{project}-{stream}-{subproject}-verify-python'

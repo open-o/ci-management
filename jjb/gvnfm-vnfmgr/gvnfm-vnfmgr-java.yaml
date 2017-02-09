@@ -1,0 +1,15 @@
+---
+- project:
+    name: gvnfm-vnfmgr-java
+    project: 'gvnfm-vnfmgr'
+    stream:
+      - 'master':
+          branch: 'master'
+    mvn-settings: 'gvnfm-vnfmgr-settings'
+    subproject:
+      - 'mgr':
+          pom: 'mgr/pom.xml'
+          pattern: 'mgr/**'
+    jobs:
+      - '{project}-{stream}-{subproject}-verify-java':
+      - '{project}-{stream}-{subproject}-merge-java':

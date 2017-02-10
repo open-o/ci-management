@@ -56,6 +56,14 @@
       - shell:
           !include-raw-escape:
             - include-raw-build-docker.sh
+      - maven-target:
+          maven-version: 'mvn33'
+          pom: 'test/csit/docker/target/pom.xml'
+          goals: 'docker:push'
+          settings: '{mvn-settings}'
+          settings-type: cfp
+          global-settings: 'global-settings'
+          global-settings-type: cfp
 
     publishers:
       - openo-infra-shiplogs:

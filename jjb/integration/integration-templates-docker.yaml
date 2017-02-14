@@ -47,7 +47,7 @@
           global-settings-type: cfp
       - shell: |
           $WORKSPACE/test/csit/docker/scripts/gen-dockerfiles.sh {microservice}
-          docker build -t openoint/{microservice}:{version} openoint/{microservice}:latest $WORKSPACE/test/csit/docker/{microservice}/target
+          docker build -t openoint/{microservice}:{version} -t openoint/{microservice}:latest $WORKSPACE/test/csit/docker/{microservice}/target
 
     publishers:
       - openo-infra-shiplogs:
@@ -102,7 +102,7 @@
           global-settings-type: cfp
       - shell: |
           $WORKSPACE/test/csit/docker/scripts/gen-dockerfiles.sh {microservice}
-          docker build -t openoint/{microservice}:{version} openoint/{microservice}:latest $WORKSPACE/test/csit/docker/{microservice}/target
+          docker build -t openoint/{microservice}:{version} -t openoint/{microservice}:latest $WORKSPACE/test/csit/docker/{microservice}/target
 
       - maven-target:
           maven-version: 'mvn33'

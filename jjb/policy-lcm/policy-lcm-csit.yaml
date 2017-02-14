@@ -1,0 +1,15 @@
+---
+- project:
+    name: policy-lcm-csit
+    jobs:
+      - 'integration-verify-{project}-csit-{functionality}'
+      - '{project}-csit-{functionality}':
+          trigger_jobs:
+            - 'policy-lcm-master-merge-java'
+
+    project: 'policy-lcm'
+    functionality:
+      - 'sanity-check'
+    robot-options: ''
+
+    branch: 'master'

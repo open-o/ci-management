@@ -9,6 +9,9 @@
           branch: 'sun'
     mvn-settings: 'common-services-common-utilities-settings'
     subproject:
+      - 'baseservice-i18n':
+          pom: 'baseservice-i18n/pom.xml'
+          pattern: 'baseservice-i18n/**'
       - 'common-util':
           pom: 'common-util/pom.xml'
           pattern: 'common-util/**'

@@ -1,0 +1,15 @@
+---
+- project:
+    name: nfvo-java-csit
+    project: 'nfvo'
+    jobs:
+      - 'integration-verify-{project}-csit-{functionality}'
+      - '{project}-csit-{functionality}':
+          trigger_jobs:
+            - 'nfvo-master-resmanagement-verify-java'
+    functionality:
+      - 'sanity-check'
+    robot-options: ''
+    pattern: '**'
+
+    branch: 'master'

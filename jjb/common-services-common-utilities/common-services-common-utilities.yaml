@@ -15,6 +15,12 @@
       - 'common-util':
           pom: 'common-util/pom.xml'
           pattern: 'common-util/**'
+      - 'dropwizard-ioc-container':
+          pom: 'dropwizard-ioc-container/pom.xml'
+          pattern: 'dropwizard-ioc-container/**'
+      - 'logging-sdk':
+          pom: 'logging-sdk/pom.xml'
+          pattern: 'logging-sdk/**'
       - 'rest-client':
           pom: 'rest-client/pom.xml'
           pattern: 'rest-client/**'

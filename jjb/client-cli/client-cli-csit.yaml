@@ -1,0 +1,16 @@
+---
+- project:
+    name: client-cli-csit
+    jobs:
+      - 'integration-verify-{project}-csit-{functionality}'
+      - '{project}-csit-{functionality}':
+          trigger_jobs:
+            - 'client-cli-master-merge-java'
+
+    project: 'client-cli'
+    functionality:
+      - 'sanity-check'
+    pattern: '**'
+    robot-options: ''
+
+    branch: 'master'

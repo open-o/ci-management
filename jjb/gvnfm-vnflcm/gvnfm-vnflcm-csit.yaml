@@ -1,0 +1,15 @@
+---
+- project:
+    name: gvnfm-vnflcm-csit
+    jobs:
+      - 'integration-verify-{project}-csit-{functionality}'
+      - '{project}-csit-{functionality}':
+          trigger_jobs:
+            - 'gvnfm-vnflcm-merge-java'
+
+    project: 'gvnfm-vnflcm'
+    functionality:
+      - 'sanity-check'
+    robot-options: ''
+
+    branch: 'master'

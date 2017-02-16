@@ -1,0 +1,15 @@
+---
+- project:
+    name: policy-engine-csit
+    jobs:
+      - 'integration-verify-{project}-csit-{functionality}'
+      - '{project}-csit-{functionality}':
+          trigger_jobs:
+            - 'policy-engine-master-merge-java'
+
+    project: 'policy-engine'
+    functionality:
+      - 'sanity-check'
+    robot-options: ''
+
+    branch: 'master'

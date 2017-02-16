@@ -9,8 +9,6 @@
 
     project: 'common-services-auth'
     functionality:
-      - 'deploy'
-      - 'provision'
       - 'sanity-check'
     robot-options: ''
 

@@ -1,0 +1,15 @@
+---
+- project:
+    name: common-services-external-system-registration-csit
+    jobs:
+      - 'integration-verify-{project}-csit-{functionality}'
+      - '{project}-csit-{functionality}':
+          trigger_jobs:
+            - 'common-services-external-system-registration-master-merge-java'
+
+    project: 'common-services-external-system-registration'
+    functionality:
+      - 'sanity-check'
+    robot-options: ''
+
+    branch: 'master'

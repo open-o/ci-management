@@ -1,13 +1,13 @@
 ---
 - project:
-    name: sdno-vsitemgr-csit
+    name: sdno-driver-ct-te-csit
     jobs:
       - 'integration-verify-{project}-csit-{functionality}'
       - '{project}-csit-{functionality}':
           trigger_jobs:
-            - 'sdno-vsitemgr-master-root-verify-python'
+            - 'sdnhub-driver-ct-te-master-root-verify-python'
 
-    project: 'sdno-vsitemgr'
+    project: 'sdno-driver-ct-te'
     functionality:
       - 'sanity-check'
     robot-options: ''

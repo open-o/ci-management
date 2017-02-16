@@ -1,13 +1,13 @@
 ---
 - project:
-    name: sdno-vsitemgr-csit
+    name: sdno-monitoring
     jobs:
       - 'integration-verify-{project}-csit-{functionality}'
       - '{project}-csit-{functionality}':
           trigger_jobs:
-            - 'sdno-vsitemgr-master-root-verify-python'
+            - 'sdno-monitoring-master-sdno-link-monitor-verify-python'
 
-    project: 'sdno-vsitemgr'
+    project: 'sdno-monitoring'
     functionality:
       - 'sanity-check'
     robot-options: ''

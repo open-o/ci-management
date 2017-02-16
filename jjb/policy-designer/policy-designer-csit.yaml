@@ -1,0 +1,15 @@
+---
+- project:
+    name: policy-designer-csit
+    jobs:
+      - 'integration-verify-{project}-csit-{functionality}'
+      - '{project}-csit-{functionality}':
+          trigger_jobs:
+            - 'policy-designer-master-merge-java'
+
+    project: 'policy-designer'
+    functionality:
+      - 'sanity-check'
+    robot-options: ''
+
+    branch: 'master'

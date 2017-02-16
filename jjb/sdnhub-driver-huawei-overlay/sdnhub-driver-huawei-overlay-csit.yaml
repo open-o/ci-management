@@ -10,7 +10,6 @@
     project: 'sdnhub-driver-huawei-overlay'
     functionality:
       - 'sanity-check'
-      - 'provision'
     robot-options: ''
 
     branch: 'master'

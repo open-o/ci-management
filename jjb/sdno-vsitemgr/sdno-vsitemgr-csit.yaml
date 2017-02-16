@@ -1,15 +1,15 @@
 ---
 - project:
-    name: nfvo-java-csit
-    project: 'nfvo'
+    name: sdno-vsitemgr-csit
     jobs:
       - 'integration-verify-{project}-csit-{functionality}'
       - '{project}-csit-{functionality}':
           trigger_jobs:
-            - 'nfvo-master-resmanagement-verify-java'
+            - 'sdno-vsitemgr-master-merge-java'
+
+    project: 'sdno-vsitemgr'
     functionality:
       - 'sanity-check'
     robot-options: ''
-    pattern: '**'
 
     branch: 'master'

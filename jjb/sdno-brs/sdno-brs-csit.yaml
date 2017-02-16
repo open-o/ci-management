@@ -9,6 +9,7 @@
 
     project: 'sdno-brs'
     functionality:
+      - 'deploy'
       - 'sanity-check'
     robot-options: ''
 

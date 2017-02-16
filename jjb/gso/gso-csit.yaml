@@ -10,7 +10,6 @@
     project: 'gso'
     functionality:
       - 'sanity-check'
-    pattern: '**'
     robot-options: ''
 
     branch: 'master'

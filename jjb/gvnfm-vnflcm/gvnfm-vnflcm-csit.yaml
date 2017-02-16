@@ -5,7 +5,7 @@
       - 'integration-verify-{project}-csit-{functionality}'
       - '{project}-csit-{functionality}':
           trigger_jobs:
-            - 'gvnfm-vnflcm-merge-java'
+            - 'gvnfm-vnflcm-master-lcm-merge-java'
 
     project: 'gvnfm-vnflcm'
     functionality:

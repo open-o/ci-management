@@ -10,7 +10,6 @@
     project: 'client-cli'
     functionality:
       - 'sanity-check'
-    pattern: '**'
     robot-options: ''
 
     branch: 'master'

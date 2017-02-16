@@ -5,7 +5,7 @@
       - 'integration-verify-{project}-csit-{functionality}'
       - '{project}-csit-{functionality}':
           trigger_jobs:
-            - 'integration-master-root-merge-java'
+            - 'integration-master-test-robottest-merge-java'
             - 'integration-master-test-sdno-testframework-merge-java'
 
     project: 'integration'

@@ -9,8 +9,8 @@
 
     project: 'common-services-microservice-bus'
     functionality:
-      - 'sanity-check'
       - 'message-broker'
+      - 'sanity-check'
     robot-options: ''
 
     branch: 'master'

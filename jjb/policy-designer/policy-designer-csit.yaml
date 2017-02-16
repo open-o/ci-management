@@ -1,15 +1,14 @@
 ---
 - project:
-    name: sdno-vxlan-csit
+    name: policy-designer-csit
     jobs:
       - 'integration-verify-{project}-csit-{functionality}'
       - '{project}-csit-{functionality}':
           trigger_jobs:
-            - 'sdno-vxlan-master-merge-java'
+            - 'policy-designer-master-merge-java'
 
-    project: 'sdno-vxlan'
+    project: 'policy-designer'
     functionality:
-      - 'deploy'
       - 'sanity-check'
     robot-options: ''
 

@@ -1,15 +1,14 @@
 ---
 - project:
-    name: sdno-vxlan-csit
+    name: common-services-auth-csit
     jobs:
       - 'integration-verify-{project}-csit-{functionality}'
       - '{project}-csit-{functionality}':
           trigger_jobs:
-            - 'sdno-vxlan-master-merge-java'
+            - 'common-services-auth-master-merge-java'
 
-    project: 'sdno-vxlan'
+    project: 'common-services-auth'
     functionality:
-      - 'deploy'
       - 'sanity-check'
     robot-options: ''
 

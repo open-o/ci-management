@@ -9,6 +9,7 @@
 
     project: 'sdno-nslcm'
     functionality:
+      - 'deploy'
       - 'sanity-check'
     robot-options: ''
 

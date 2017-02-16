@@ -9,8 +9,9 @@
 
     project: 'sdno-ipsec'
     functionality:
-      - 'sanity-check'
+      - 'deploy'
       - 'provision'
+      - 'sanity-check'
     robot-options: ''
 
     branch: 'master'

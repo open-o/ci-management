@@ -1,15 +1,14 @@
 ---
 - project:
-    name: sdno-vxlan-csit
+    name: holmes-rule-management-csit
     jobs:
       - 'integration-verify-{project}-csit-{functionality}'
       - '{project}-csit-{functionality}':
           trigger_jobs:
-            - 'sdno-vxlan-master-merge-java'
+            - 'holmes-rule-management-master-merge-java'
 
-    project: 'sdno-vxlan'
+    project: 'holmes-rule-management'
     functionality:
-      - 'deploy'
       - 'sanity-check'
     robot-options: ''
 

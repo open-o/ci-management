@@ -1,13 +1,13 @@
 ---
 - project:
-    name: sdno-driver-ct-te-csit
+    name: sdnhub-driver-ct-te-csit
     jobs:
       - 'integration-verify-{project}-csit-{functionality}'
       - '{project}-csit-{functionality}':
           trigger_jobs:
             - 'sdnhub-driver-ct-te-master-root-verify-python'
 
-    project: 'sdno-driver-ct-te'
+    project: 'sdnhub-driver-ct-te'
     functionality:
       - 'sanity-check'
     robot-options: ''

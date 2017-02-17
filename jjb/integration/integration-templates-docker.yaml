@@ -87,6 +87,8 @@
           name: '{project}'
           branch: '{branch}'
           pattern: 'test/csit/docker/{microservice}/**'
+      - reverse:
+          jobs: '{obj:trigger_jobs}'
 
     builders:
       - provide-maven-settings:

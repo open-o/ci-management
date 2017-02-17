@@ -10,51 +10,161 @@
       - 'integration-{microservice}-verify-docker'
       - 'integration-{microservice}-merge-docker'
     microservice:
-      - 'common-services-auth'
-      - 'common-services-drivermanager'
-      - 'common-services-extsys'
-      - 'common-services-msb'
-      - 'common-services-protocolstack'
-      - 'common-services-wso2ext'
-      - 'common-tosca-aria'
-      - 'common-tosca-catalog'
-      - 'common-tosca-inventory'
-      - 'common-tosca-modeldesigner'
-      - 'gso-gui-portal'
-      - 'gso-service-gateway'
-      - 'gso-service-manager'
-      - 'gvnfm-vnflcm'
-      - 'gvnfm-vnfmgr'
-      - 'gvnfm-vnfres'
-      - 'nfvo-dac'
-      - 'nfvo-driver-sdnc-zte'
-      - 'nfvo-driver-vim'
-      - 'nfvo-driver-vnfm-huawei'
-      - 'nfvo-driver-vnfm-juju'
-      - 'nfvo-driver-vnfm-zte'
-      - 'nfvo-lcm'
-      - 'nfvo-resmanagement'
-      - 'nfvo-umc'
-      - 'sdnhub-driver-ct-te'
-      - 'sdnhub-driver-huawei-l3vpn'
-      - 'sdnhub-driver-huawei-openstack'
-      - 'sdnhub-driver-huawei-overlay'
-      - 'sdnhub-driver-huawei-servicechain'
-      - 'sdnhub-driver-zte-sptn'
-      - 'sdno-monitoring'
-      - 'sdno-optimize'
-      - 'sdno-service-brs'
-      - 'sdno-service-ipsec'
-      - 'sdno-service-l2vpn'
-      - 'sdno-service-l3vpn'
-      - 'sdno-service-lcm'
-      - 'sdno-service-mss'
-      - 'sdno-service-nslcm'
-      - 'sdno-service-overlayvpn'
-      - 'sdno-service-route'
-      - 'sdno-service-servicechain'
-      - 'sdno-service-site'
-      - 'sdno-service-vpc'
-      - 'sdno-service-vxlan'
-      - 'sdno-vsitemgr'
-      - 'vnfsdk-function-test'
+      - 'client-cli':
+          trigger_jobs:
+            - 'client-cli-master-merge-java'
+      - 'common-services-auth':
+          trigger_jobs:
+            - 'common-services-auth-master-merge-java'
+      - 'common-services-drivermanager':
+          trigger_jobs:
+            - 'common-services-driver-mgr-master-merge-java'
+      - 'common-services-extsys':
+          trigger_jobs:
+            - 'common-services-external-system-registration-master-merge-java'
+      - 'common-services-msb':
+          trigger_jobs:
+            - 'common-services-microservice-bus-master-merge-java'
+      - 'common-services-protocolstack':
+          trigger_jobs:
+            - 'common-services-protocol-stack-master-merge-java'
+      - 'common-services-wso2ext':
+          trigger_jobs:
+            - 'common-services-common-utilities-master-wso2bpel-ext-merge-java'
+      - 'common-tosca-aria':
+          trigger_jobs:
+            - 'common-tosca-aria-master-merge-java'
+      - 'common-tosca-catalog':
+          trigger_jobs:
+            - 'common-tosca-catalog-master-merge-java'
+      - 'common-tosca-inventory':
+          trigger_jobs:
+            - 'common-tosca-inventory-master-merge-java'
+      - 'common-tosca-modeldesigner':
+          trigger_jobs:
+            - 'common-tosca-model-designer-master-merge-java'
+      - 'gso-gui-portal':
+          trigger_jobs:
+      - 'gso-service-gateway':
+          trigger_jobs:
+            - 'gso-master-merge-java'
+      - 'gso-service-manager':
+          trigger_jobs:
+            - 'gso-master-merge-java'
+      - 'gvnfm-vnflcm':
+          trigger_jobs:
+            - 'gvnfm-vnflcm-master-lcm-merge-java'
+      - 'gvnfm-vnfmgr':
+          trigger_jobs:
+            - 'gvnfm-vnfmgr-master-mgr-merge-java'
+      - 'gvnfm-vnfres':
+          trigger_jobs:
+            - 'gvnfm-vnfres-master-res-merge-java'
+      - 'nfvo-dac':
+          trigger_jobs:
+            - 'nfvo-master-monitor-dac-merge-java'
+      - 'nfvo-driver-sdnc-zte':
+          trigger_jobs:
+            - 'nfvo-master-drivers-sdnc-zte-sfc-driver-merge-java'
+      - 'nfvo-driver-vim':
+          trigger_jobs:
+            - 'nfvo-master-drivers-vim-vimadapter-merge-java'
+      - 'nfvo-driver-vnfm-gvnfm':
+          trigger_jobs:
+            - 'nfvo-master-drivers-vnfm-gvnfm-gvnfmadapter-merge-java'
+      - 'nfvo-driver-vnfm-huawei':
+          trigger_jobs:
+            - 'nfvo-master-drivers-vnfm-svnfm-huawei-vnfmadapter-merge-java'
+      - 'nfvo-driver-vnfm-juju':
+          trigger_jobs:
+            - 'nfvo-master-drivers-vnfm-gvnfm-juju-juju-vnfmadapter-merge-java'
+      - 'nfvo-driver-vnfm-zte':
+          trigger_jobs:
+            - 'nfvo-master-drivers-vnfm-svnfm-zte-vmanager-merge-java'
+      - 'nfvo-lcm':
+          trigger_jobs:
+            - 'nfvo-master-lcm-merge-java'
+      - 'nfvo-resmanagement':
+          trigger_jobs:
+            - 'nfvo-master-resmanagement-merge-java'
+      - 'nfvo-umc':
+          trigger_jobs:
+            - 'nfvo-master-monitor-umc-merge-java'
+      - 'policy-designer':
+          trigger_jobs:
+            - 'policy-designer-master-merge-java'
+      - 'policy-engine':
+          trigger_jobs:
+            - 'policy-engine-master-merge-java'
+      - 'policy-lcm':
+          trigger_jobs:
+            - 'policy-lcm-master-merge-java'
+      - 'sdnhub-driver-ct-te':
+          trigger_jobs:
+            - 'sdnhub-driver-ct-te-master-merge-java'
+      - 'sdnhub-driver-huawei-l3vpn':
+          trigger_jobs:
+            - 'sdnhub-driver-huawei-l3vpn-master-merge-java'
+      - 'sdnhub-driver-huawei-openstack':
+          trigger_jobs:
+            - 'sdnhub-driver-huawei-openstack-master-merge-java'
+      - 'sdnhub-driver-huawei-overlay':
+          trigger_jobs:
+            - 'sdnhub-driver-huawei-overlay-master-merge-java'
+      - 'sdnhub-driver-huawei-servicechain':
+          trigger_jobs:
+            - 'sdnhub-driver-huawei-servicechain-master-merge-java'
+      - 'sdnhub-driver-zte-sptn':
+          trigger_jobs:
+            - 'sdnhub-driver-zte-sptn-master-merge-java'
+      - 'sdno-monitoring':
+          trigger_jobs:
+            - 'sdno-monitoring-master-merge-java'
+      - 'sdno-optimize':
+          trigger_jobs:
+            - 'sdno-optimize-master-merge-java'
+      - 'sdno-service-brs':
+          trigger_jobs:
+            - 'sdno-brs-master-merge-java'
+      - 'sdno-service-ipsec':
+          trigger_jobs:
+            - 'sdno-ipsec-master-merge-java'
+      - 'sdno-service-l2vpn':
+          trigger_jobs:
+            - 'sdno-l2vpn-master-merge-java'
+      - 'sdno-service-l3vpn':
+          trigger_jobs:
+            - 'sdno-l3vpn-master-merge-java'
+      - 'sdno-service-lcm':
+          trigger_jobs:
+            - 'sdno-lcm-master-merge-java'
+      - 'sdno-service-mss':
+          trigger_jobs:
+            - 'sdno-brs-master-merge-java'
+      - 'sdno-service-nslcm':
+          trigger_jobs:
+            - 'sdno-nslcm-master-merge-java'
+      - 'sdno-service-overlayvpn':
+          trigger_jobs:
+            - 'sdno-overlay-master-merge-java'
+      - 'sdno-service-route':
+          trigger_jobs:
+            - 'sdno-route-master-merge-java'
+      - 'sdno-service-servicechain':
+          trigger_jobs:
+            - 'sdno-servicechain-master-merge-java'
+      - 'sdno-service-site':
+          trigger_jobs:
+            - 'sdno-site-master-merge-java'
+      - 'sdno-service-vpc':
+          trigger_jobs:
+            - 'sdno-vpc-master-merge-java'
+      - 'sdno-service-vxlan':
+          trigger_jobs:
+            - 'sdno-vxlan-master-merge-java'
+      - 'sdno-vsitemgr':
+          trigger_jobs:
+            - 'sdno-vsitemgr-master-merge-java'
+      - 'vnfsdk-function-test':
+          trigger_jobs:
+            - 'vnf-sdk-function-test-master-merge-java'

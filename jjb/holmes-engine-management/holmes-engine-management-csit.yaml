@@ -3,10 +3,10 @@
     name: holmes-engine-management-csit
     jobs:
       - 'integration-verify-{project}-csit-{functionality}'
-      - '{project}-csit-{functionality}':
-          trigger_jobs:
+      - '{project}-csit-{functionality}'
     project: 'holmes-engine-management'
     functionality:
-      - 'sanity-check'
+      - 'sanity-check':
+          trigger_jobs:
     robot-options: ''
     branch: 'master'

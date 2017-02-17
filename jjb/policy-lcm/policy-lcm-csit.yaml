@@ -3,13 +3,12 @@
     name: policy-lcm-csit
     jobs:
       - 'integration-verify-{project}-csit-{functionality}'
-      - '{project}-csit-{functionality}':
-          trigger_jobs:
-            - 'policy-lcm-master-merge-java'
-
+      - '{project}-csit-{functionality}'
     project: 'policy-lcm'
     functionality:
-      - 'sanity-check'
+      - 'sanity-check':
+          trigger_jobs:
+            - 'integration-common-services-msb-merge-docker'
+            - 'integration-policy-lcm-merge-docker'
     robot-options: ''
-
     branch: 'master'

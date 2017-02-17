@@ -3,13 +3,14 @@
     name: sdno-l3vpn-csit
     jobs:
       - 'integration-verify-{project}-csit-{functionality}'
-      - '{project}-csit-{functionality}':
-          trigger_jobs:
-            - 'sdno-l3vpn-master-merge-java'
-
+      - '{project}-csit-{functionality}'
     project: 'sdno-l3vpn'
     functionality:
-      - 'sanity-check'
+      - 'sanity-check':
+          trigger_jobs:
+            - 'integration-common-services-msb-merge-docker'
+            - 'integration-sdno-service-brs-merge-docker'
+            - 'integration-sdno-service-l3vpn-merge-docker'
+            - 'integration-sdno-service-mss-merge-docker'
     robot-options: ''
-
     branch: 'master'

@@ -3,13 +3,12 @@
     name: policy-designer-csit
     jobs:
       - 'integration-verify-{project}-csit-{functionality}'
-      - '{project}-csit-{functionality}':
-          trigger_jobs:
-            - 'policy-designer-master-merge-java'
-
+      - '{project}-csit-{functionality}'
     project: 'policy-designer'
     functionality:
-      - 'sanity-check'
+      - 'sanity-check':
+          trigger_jobs:
+            - 'integration-common-services-msb-merge-docker'
+            - 'integration-policy-designer-merge-docker'
     robot-options: ''
-
     branch: 'master'

@@ -3,23 +3,18 @@
     name: nfvo-csit
     jobs:
       - 'integration-verify-{project}-csit-{functionality}'
-      - '{project}-csit-{functionality}':
-          trigger_jobs:
-            - 'nfvo-master-drivers-sdnc-zte-sfc-driver-merge-java'
-            - 'nfvo-master-drivers-vim-vimadapter-merge-java'
-            - 'nfvo-master-drivers-vnfm-gvnfm-gvnfmadapter-merge-java'
-            - 'nfvo-master-drivers-vnfm-gvnfm-juju-juju-vnfmadapter-merge-java'
-            - 'nfvo-master-drivers-vnfm-svnfm-etsi-ia-merge-java'
-            - 'nfvo-master-drivers-vnfm-svnfm-huawei-vnfmadapter-merge-java'
-            - 'nfvo-master-drivers-vnfm-svnfm-zte-vmanager-merge-java'
-            - 'nfvo-master-lcm-merge-java'
-            - 'nfvo-master-monitor-dac-merge-java'
-            - 'nfvo-master-monitor-umc-merge-java'
-            - 'nfvo-master-resmanagement-merge-java'
-
+      - '{project}-csit-{functionality}'
     project: 'nfvo'
     functionality:
-      - 'sanity-check'
+      - 'driver-vnfm-juju-sanity-check':
+          trigger_jobs:
+            - 'integration-common-services-msb-merge-docker'
+            - 'integration-nfvo-driver-vnfm-juju-merge-docker'
+      - 'sanity-check':
+          trigger_jobs:
+            - 'integration-common-services-msb-merge-docker'
+            - 'integration-nfvo-driver-vnfm-huawei-merge-docker'
+            - 'integration-nfvo-driver-vnfm-juju-merge-docker'
+            - 'integration-nfvo-resmanagement-merge-docker'
     robot-options: ''
-
     branch: 'master'

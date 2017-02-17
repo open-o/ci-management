@@ -3,14 +3,14 @@
     name: common-services-microservice-bus-csit
     jobs:
       - 'integration-verify-{project}-csit-{functionality}'
-      - '{project}-csit-{functionality}':
-          trigger_jobs:
-            - 'common-services-microservice-bus-master-merge-java'
-
+      - '{project}-csit-{functionality}'
     project: 'common-services-microservice-bus'
     functionality:
-      - 'message-broker'
-      - 'sanity-check'
+      - 'message-broker':
+          trigger_jobs:
+            - 'integration-common-services-msb-merge-docker'
+      - 'sanity-check':
+          trigger_jobs:
+            - 'integration-common-services-msb-merge-docker'
     robot-options: ''
-
     branch: 'master'

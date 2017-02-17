@@ -3,13 +3,12 @@
     name: common-tosca-aria-csit
     jobs:
       - 'integration-verify-{project}-csit-{functionality}'
-      - '{project}-csit-{functionality}':
-          trigger_jobs:
-            - 'common-tosca-aria-master-merge-java'
-
+      - '{project}-csit-{functionality}'
     project: 'common-tosca-aria'
     functionality:
-      - 'sanity-check'
+      - 'sanity-check':
+          trigger_jobs:
+            - 'integration-common-services-msb-merge-docker'
+            - 'integration-common-tosca-aria-merge-docker'
     robot-options: ''
-
     branch: 'master'

@@ -3,13 +3,12 @@
     name: gvnfm-vnflcm-csit
     jobs:
       - 'integration-verify-{project}-csit-{functionality}'
-      - '{project}-csit-{functionality}':
-          trigger_jobs:
-            - 'gvnfm-vnflcm-master-lcm-merge-java'
-
+      - '{project}-csit-{functionality}'
     project: 'gvnfm-vnflcm'
     functionality:
-      - 'sanity-check'
+      - 'sanity-check':
+          trigger_jobs:
+            - 'integration-common-services-msb-merge-docker'
+            - 'integration-gvnfm-vnflcm-merge-docker'
     robot-options: ''
-
     branch: 'master'

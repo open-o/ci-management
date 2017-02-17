@@ -3,13 +3,14 @@
     name: sdno-vxlan-csit
     jobs:
       - 'integration-verify-{project}-csit-{functionality}'
-      - '{project}-csit-{functionality}':
-          trigger_jobs:
-            - 'sdno-vxlan-master-merge-java'
-
+      - '{project}-csit-{functionality}'
     project: 'sdno-vxlan'
     functionality:
-      - 'sanity-check'
+      - 'sanity-check':
+          trigger_jobs:
+            - 'integration-common-services-msb-merge-docker'
+            - 'integration-sdno-service-brs-merge-docker'
+            - 'integration-sdno-service-mss-merge-docker'
+            - 'integration-sdno-service-vxlan-merge-docker'
     robot-options: ''
-
     branch: 'master'

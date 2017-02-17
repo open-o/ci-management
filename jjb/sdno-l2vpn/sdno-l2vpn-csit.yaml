@@ -9,7 +9,6 @@
 
     project: 'sdno-l2vpn'
     functionality:
-      - 'deploy'
       - 'sanity-check'
     robot-options: ''
 

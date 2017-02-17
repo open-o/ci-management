@@ -9,7 +9,6 @@
 
     project: 'sdno-overlay'
     functionality:
-      - 'deploy'
       - 'sanity-check'
     robot-options: ''
 

@@ -9,7 +9,6 @@
 
     project: 'sdno-l3vpn'
     functionality:
-      - 'deploy'
       - 'sanity-check'
     robot-options: ''
 

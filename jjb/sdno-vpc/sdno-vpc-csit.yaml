@@ -9,7 +9,6 @@
 
     project: 'sdno-vpc'
     functionality:
-      - 'deploy'
       - 'provision'
       - 'sanity-check'
     robot-options: ''

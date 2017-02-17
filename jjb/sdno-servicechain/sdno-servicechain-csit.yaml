@@ -9,7 +9,6 @@
 
     project: 'sdno-servicechain'
     functionality:
-      - 'deploy'
       - 'provision'
       - 'sanity-check'
     robot-options: ''

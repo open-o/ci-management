@@ -3,13 +3,12 @@
     name: common-services-auth-csit
     jobs:
       - 'integration-verify-{project}-csit-{functionality}'
-      - '{project}-csit-{functionality}':
-          trigger_jobs:
-            - 'common-services-auth-master-merge-java'
-
+      - '{project}-csit-{functionality}'
     project: 'common-services-auth'
     functionality:
-      - 'sanity-check'
+      - 'sanity-check':
+          trigger_jobs:
+            - 'integration-common-services-auth-merge-docker'
+            - 'integration-common-services-msb-merge-docker'
     robot-options: ''
-
     branch: 'master'

@@ -3,13 +3,13 @@
     name: vnf-sdk-marketplace-csit
     jobs:
       - 'integration-verify-{project}-csit-{functionality}'
-      - '{project}-csit-{functionality}':
-          trigger_jobs:
-            - 'vnf-sdk-marketplace-master-merge-java'
-
+      - '{project}-csit-{functionality}'
     project: 'vnf-sdk-marketplace'
     functionality:
-      - 'sanity-check'
+      - 'sanity-check':
+          trigger_jobs:
+            - 'integration-common-services-extsys-merge-docker'
+            - 'integration-common-services-msb-merge-docker'
+            - 'integration-vnfsdk-function-test-merge-docker'
     robot-options: ''
-
     branch: 'master'

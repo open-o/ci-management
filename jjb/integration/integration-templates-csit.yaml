@@ -75,14 +75,19 @@
           test-options: '{robot-options}'
 
     scm:
-      - git-branch-scm:
-          branch: '{branch}'
+      - gerrit-trigger-scm:
+          refspec: ''
+          choosing-strategy: 'default'
 
     wrappers:
       - openo-infra-wrappers:
           build-timeout: '{build-timeout}'
 
     triggers:
+      - gerrit-trigger-patch-merged-pattern:
+          name: '{project}'
+          branch: '{branch}'
+          pattern: 'test/csit/**/{project}/**'
       - timed: '@daily'
       - reverse:
           jobs: '{obj:trigger_jobs}'

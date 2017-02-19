@@ -3,13 +3,14 @@
     name: sdno-nslcm-csit
     jobs:
       - 'integration-verify-{project}-csit-{functionality}'
-      - '{project}-csit-{functionality}':
-          trigger_jobs:
-            - 'sdno-nslcm-master-merge-java'
-
+      - '{project}-csit-{functionality}'
     project: 'sdno-nslcm'
     functionality:
-      - 'sanity-check'
+      - 'sanity-check':
+          trigger_jobs:
+            - 'integration-common-services-msb-merge-docker'
+            - 'integration-sdno-service-brs-merge-docker'
+            - 'integration-sdno-service-mss-merge-docker'
+            - 'integration-sdno-service-nslcm-merge-docker'
     robot-options: ''
-
     branch: 'master'

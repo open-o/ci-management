@@ -3,13 +3,11 @@
     name: policy-engine-csit
     jobs:
       - 'integration-verify-{project}-csit-{functionality}'
-      - '{project}-csit-{functionality}':
-          trigger_jobs:
-            - 'policy-engine-master-merge-java'
-
+      - '{project}-csit-{functionality}'
     project: 'policy-engine'
     functionality:
-      - 'sanity-check'
+      - 'sanity-check':
+          trigger_jobs:
+            - 'integration-common-services-msb-merge-docker'
     robot-options: ''
-
     branch: 'master'

@@ -3,13 +3,12 @@
     name: client-cli-csit
     jobs:
       - 'integration-verify-{project}-csit-{functionality}'
-      - '{project}-csit-{functionality}':
-          trigger_jobs:
-            - 'client-cli-master-merge-java'
-
+      - '{project}-csit-{functionality}'
     project: 'client-cli'
     functionality:
-      - 'sanity-check'
+      - 'sanity-check':
+          trigger_jobs:
+            - 'integration-common-services-auth-merge-docker'
+            - 'integration-common-services-msb-merge-docker'
     robot-options: ''
-
     branch: 'master'

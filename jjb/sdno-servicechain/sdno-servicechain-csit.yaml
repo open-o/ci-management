@@ -3,14 +3,22 @@
     name: sdno-servicechain-csit
     jobs:
       - 'integration-verify-{project}-csit-{functionality}'
-      - '{project}-csit-{functionality}':
-          trigger_jobs:
-            - 'sdno-servicechain-master-merge-java'
-
+      - '{project}-csit-{functionality}'
     project: 'sdno-servicechain'
     functionality:
-      - 'provision'
-      - 'sanity-check'
+      - 'provision':
+          trigger_jobs:
+            - 'integration-common-services-drivermanager-merge-docker'
+            - 'integration-common-services-extsys-merge-docker'
+            - 'integration-common-services-msb-merge-docker'
+            - 'integration-sdno-service-brs-merge-docker'
+            - 'integration-sdno-service-mss-merge-docker'
+            - 'integration-sdno-service-servicechain-merge-docker'
+      - 'sanity-check':
+          trigger_jobs:
+            - 'integration-common-services-msb-merge-docker'
+            - 'integration-sdno-service-brs-merge-docker'
+            - 'integration-sdno-service-mss-merge-docker'
+            - 'integration-sdno-service-servicechain-merge-docker'
     robot-options: ''
-
     branch: 'master'

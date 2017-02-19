@@ -3,13 +3,14 @@
     name: gso-csit
     jobs:
       - 'integration-verify-{project}-csit-{functionality}'
-      - '{project}-csit-{functionality}':
-          trigger_jobs:
-            - 'gso-master-merge-java'
-
+      - '{project}-csit-{functionality}'
     project: 'gso'
     functionality:
-      - 'sanity-check'
+      - 'sanity-check':
+          trigger_jobs:
+            - 'integration-common-services-msb-merge-docker'
+            - 'integration-common-tosca-inventory-merge-docker'
+            - 'integration-gso-service-gateway-merge-docker'
+            - 'integration-gso-service-manager-merge-docker'
     robot-options: ''
-
     branch: 'master'

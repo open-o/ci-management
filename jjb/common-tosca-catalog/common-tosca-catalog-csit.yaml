@@ -3,13 +3,12 @@
     name: common-tosca-catalog-csit
     jobs:
       - 'integration-verify-{project}-csit-{functionality}'
-      - '{project}-csit-{functionality}':
-          trigger_jobs:
-            - 'common-tosca-catalog-master-merge-java'
-
+      - '{project}-csit-{functionality}'
     project: 'common-tosca-catalog'
     functionality:
-      - 'sanity-check'
+      - 'sanity-check':
+          trigger_jobs:
+            - 'integration-common-services-msb-merge-docker'
+            - 'integration-common-tosca-catalog-merge-docker'
     robot-options: ''
-
     branch: 'master'

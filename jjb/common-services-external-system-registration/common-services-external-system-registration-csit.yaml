@@ -3,13 +3,12 @@
     name: common-services-external-system-registration-csit
     jobs:
       - 'integration-verify-{project}-csit-{functionality}'
-      - '{project}-csit-{functionality}':
-          trigger_jobs:
-            - 'common-services-external-system-registration-master-merge-java'
-
+      - '{project}-csit-{functionality}'
     project: 'common-services-external-system-registration'
     functionality:
-      - 'sanity-check'
+      - 'sanity-check':
+          trigger_jobs:
+            - 'integration-common-services-extsys-merge-docker'
+            - 'integration-common-services-msb-merge-docker'
     robot-options: ''
-
     branch: 'master'

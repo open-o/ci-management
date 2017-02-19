@@ -3,13 +3,14 @@
     name: sdnhub-driver-huawei-overlay-csit
     jobs:
       - 'integration-verify-{project}-csit-{functionality}'
-      - '{project}-csit-{functionality}':
-          trigger_jobs:
-            - 'sdnhub-driver-huawei-overlay-master-merge-java'
-
+      - '{project}-csit-{functionality}'
     project: 'sdnhub-driver-huawei-overlay'
     functionality:
-      - 'sanity-check'
+      - 'sanity-check':
+          trigger_jobs:
+            - 'integration-common-services-drivermanager-merge-docker'
+            - 'integration-common-services-extsys-merge-docker'
+            - 'integration-common-services-msb-merge-docker'
+            - 'integration-sdnhub-driver-huawei-overlay-merge-docker'
     robot-options: ''
-
     branch: 'master'

@@ -3,13 +3,10 @@
     name: vnf-sdk-design-pkg-csit
     jobs:
       - 'integration-verify-{project}-csit-{functionality}'
-      - '{project}-csit-{functionality}':
-          trigger_jobs:
-            - 'vnf-sdk-design-pkg-master-merge-java'
-
+      - '{project}-csit-{functionality}'
     project: 'vnf-sdk-design-pkg'
     functionality:
-      - 'sanity-check'
+      - 'sanity-check':
+          trigger_jobs:
     robot-options: ''
-
     branch: 'master'

@@ -3,13 +3,11 @@
     name: vnf-sdk-function-test-csit
     jobs:
       - 'integration-verify-{project}-csit-{functionality}'
-      - '{project}-csit-{functionality}':
-          trigger_jobs:
-            - 'vnf-sdk-function-test-master-merge-java'
-
+      - '{project}-csit-{functionality}'
     project: 'vnf-sdk-function-test'
     functionality:
-      - 'sanity-check'
+      - 'sanity-check':
+          trigger_jobs:
+            - 'integration-common-services-msb-merge-docker'
     robot-options: ''
-
     branch: 'master'

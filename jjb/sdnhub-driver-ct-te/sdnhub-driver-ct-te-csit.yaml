@@ -8,6 +8,7 @@
     functionality:
       - 'sanity-check':
           trigger_jobs:
+            - 'sdnhub-driver-ct-te-master-root-verify-python'
             - 'integration-common-services-drivermanager-merge-docker'
             - 'integration-common-services-extsys-merge-docker'
             - 'integration-common-services-msb-merge-docker'

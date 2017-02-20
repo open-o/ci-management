@@ -8,6 +8,7 @@
     functionality:
       - 'sanity-check':
           trigger_jobs:
+            - 'sdno-optimize-master-sdno-mpls-optimizer-verify-python'
             - 'integration-common-services-msb-merge-docker'
             - 'integration-sdno-optimize-merge-docker'
     robot-options: ''

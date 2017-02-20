@@ -8,6 +8,7 @@
     functionality:
       - 'sanity-check':
           trigger_jobs:
+            - 'sdno-vsitemgr-master-root-verify-python'
             - 'integration-common-services-msb-merge-docker'
             - 'integration-sdno-vsitemgr-merge-docker'
     robot-options: ''

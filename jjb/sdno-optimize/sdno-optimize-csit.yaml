@@ -3,13 +3,12 @@
     name: sdno-optimizer-csit
     jobs:
       - 'integration-verify-{project}-csit-{functionality}'
-      - '{project}-csit-{functionality}':
-          trigger_jobs:
-            - 'sdno-optimize-master-sdno-mpls-optimizer-verify-python'
-
+      - '{project}-csit-{functionality}'
     project: 'sdno-optimizer'
     functionality:
-      - 'sanity-check'
+      - 'sanity-check':
+          trigger_jobs:
+            - 'integration-common-services-msb-merge-docker'
+            - 'integration-sdno-optimize-merge-docker'
     robot-options: ''
-
     branch: 'master'

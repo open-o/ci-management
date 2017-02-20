@@ -3,13 +3,12 @@
     name: sdno-monitoring
     jobs:
       - 'integration-verify-{project}-csit-{functionality}'
-      - '{project}-csit-{functionality}':
-          trigger_jobs:
-            - 'sdno-monitoring-master-sdno-link-monitor-verify-python'
-
+      - '{project}-csit-{functionality}'
     project: 'sdno-monitoring'
     functionality:
-      - 'sanity-check'
+      - 'sanity-check':
+          trigger_jobs:
+            - 'integration-common-services-msb-merge-docker'
+            - 'integration-sdno-monitoring-merge-docker'
     robot-options: ''
-
     branch: 'master'

@@ -1,0 +1,18 @@
+---
+- project:
+    name: multivimdriver-openstack-python
+    project: 'multivimdriver-openstack'
+    stream:
+      - 'master':
+          branch: 'master'
+    mvn-settings: 'multivimdriver-openstack-settings'
+    build-node: 'centos7-redis-2c-1g'
+    subproject:
+      - 'newton':
+          path: 'newton'
+          pattern: 'newton/**'
+      - 'kilo':
+          path: 'kilo'
+          pattern: 'kilo/**'
+    jobs:
+      - '{project}-{stream}-{subproject}-verify-python'

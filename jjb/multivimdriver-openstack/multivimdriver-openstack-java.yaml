@@ -1,0 +1,18 @@
+---
+- project:
+    name: multivimdriver-openstack-java
+    project: 'multivimdriver-openstack'
+    stream:
+      - 'master':
+          branch: 'master'
+    mvn-settings: 'multivimdriver-openstack-settings'
+    subproject:
+      - 'newton':
+          pom: 'newton/pom.xml'
+          pattern: 'newton/**'
+      - 'kilo':
+          pom: 'kilo/pom.xml'
+          pattern: 'kilo/**'
+    jobs:
+      - '{project}-{stream}-{subproject}-verify-java'
+      - '{project}-{stream}-{subproject}-merge-java'

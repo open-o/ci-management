@@ -1,0 +1,15 @@
+---
+- project:
+    name: multivimdriver-broker-java
+    project: 'multivimdriver-broker'
+    stream:
+      - 'master':
+          branch: 'master'
+    mvn-settings: 'multivimdriver-broker-settings'
+    subproject:
+      - 'multivimbroker':
+          pom: 'multivimbroker/pom.xml'
+          pattern: 'multivimbroker/**'
+    jobs:
+      - '{project}-{stream}-{subproject}-verify-java'
+      - '{project}-{stream}-{subproject}-merge-java'

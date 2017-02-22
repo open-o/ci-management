@@ -1,0 +1,15 @@
+---
+- project:
+    name: multivimdriver-broker-python
+    project: 'multivimdriver-broker'
+    stream:
+      - 'master':
+          branch: 'master'
+    mvn-settings: 'multivimdriver-broker-settings'
+    build-node: 'centos7-redis-2c-1g'
+    subproject:
+      - 'multivimbroker':
+          path: 'multivimbroker'
+          pattern: 'multivimbroker/**'
+    jobs:
+      - '{project}-{stream}-{subproject}-verify-python'

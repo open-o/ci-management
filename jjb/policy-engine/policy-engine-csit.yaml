@@ -9,5 +9,6 @@
       - 'sanity-check':
           trigger_jobs:
             - 'integration-common-services-msb-merge-docker'
+            - 'integration-policy-engine-merge-docker'
     robot-options: ''
     branch: 'master'

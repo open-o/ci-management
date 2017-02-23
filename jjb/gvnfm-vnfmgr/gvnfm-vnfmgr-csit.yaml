@@ -1,0 +1,14 @@
+---
+- project:
+    name: gvnfm-vnfmgr-csit
+    jobs:
+      - 'integration-verify-{project}-csit-{functionality}'
+      - '{project}-csit-{functionality}'
+    project: 'gvnfm-vnfmgr'
+    functionality:
+      - 'sanity-check':
+          trigger_jobs:
+            - 'integration-common-services-msb-merge-docker'
+            - 'integration-gvnfm-vnfmgr-merge-docker'
+    robot-options: ''
+    branch: 'master'

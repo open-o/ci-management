@@ -1,0 +1,15 @@
+---
+- project:
+    name: multivimdriver-vmware-vio-python
+    project: 'multivimdriver-vmware-vio'
+    stream:
+      - 'master':
+          branch: 'master'
+    mvn-settings: 'multivimdriver-vmware-vio-settings'
+    build-node: 'centos7-redis-2c-1g'
+    subproject:
+      - 'vio':
+          path: 'vio'
+          pattern: 'vio/**'
+    jobs:
+      - '{project}-{stream}-{subproject}-verify-python'

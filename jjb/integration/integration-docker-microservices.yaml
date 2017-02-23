@@ -60,6 +60,18 @@
       - 'gvnfm-vnfres':
           trigger_jobs:
             - 'gvnfm-vnfres-master-res-merge-java'
+      - 'multivim-broker':
+          trigger_jobs:
+            - 'multivimdriver-broker-master-multivimbroker-merge-java'
+      - 'multivim-driver-kilo':
+          trigger_jobs:
+            - 'multivimdriver-openstack-master-kilo-merge-java'
+      - 'multivim-driver-newton':
+          trigger_jobs:
+            - 'multivimdriver-openstack-master-newton-merge-java'
+      - 'multivim-driver-vio':
+          trigger_jobs:
+            - 'multivimdriver-vmware-vio-master-vio-merge-java'
       - 'nfvo-dac':
           trigger_jobs:
             - 'nfvo-master-monitor-dac-merge-java'

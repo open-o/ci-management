@@ -85,7 +85,7 @@
 
     triggers:
       - gerrit-trigger-patch-merged-pattern:
-          name: '{project}'
+          name: 'integration'
           branch: '{branch}'
           pattern: 'test/csit/**/{project}/**'
       - timed: '@daily'

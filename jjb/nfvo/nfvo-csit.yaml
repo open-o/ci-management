@@ -10,6 +10,14 @@
           trigger_jobs:
             - 'integration-common-services-msb-merge-docker'
             - 'integration-nfvo-driver-vnfm-juju-merge-docker'
+      - 'driver-vnfm-huawei-sanity-check':
+          trigger_jobs:
+            - 'integration-common-services-msb-merge-docker'
+            - 'integration-nfvo-driver-vnfm-huawei-merge-docker'
+      - 'resmanagement-sanity-check':
+          trigger_jobs:
+            - 'integration-common-services-msb-merge-docker'
+            - 'integration-nfvo-resmanagement-merge-docker'
       - 'sanity-check':
           trigger_jobs:
             - 'integration-common-services-msb-merge-docker'

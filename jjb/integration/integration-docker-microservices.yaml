@@ -60,6 +60,9 @@
       - 'gvnfm-vnfres':
           trigger_jobs:
             - 'gvnfm-vnfres-master-res-merge-java'
+      - 'holmes-engine-d-standalone':
+          trigger_jobs:
+            - 'holmes-engine-management-master-merge-java'
       - 'multivim-broker':
           trigger_jobs:
             - 'multivimdriver-broker-master-multivimbroker-merge-java'

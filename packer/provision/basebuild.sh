@@ -55,12 +55,22 @@ ubuntu_systems() {
     # Build dependencies for Python packages
     apt-get install -y libssl-dev libmysqlclient-dev gcc
 
-    # Additional libraries for Python ncclient
-    apt-get install -y wget unzip python-ncclient
 
     # Additional requirements for openresty
     apt-get install -y libreadline-dev libncurses5-dev libpcre3-dev \
         perl make build-essential curl
+
+    # Install packages that are version specific
+    FACTER_OSVER=$(/usr/bin/facter operatingsystemrelease)
+    case "$FACTER_OSVER" in
+        16.04)
+            # Additional libraries for Python ncclient
+            apt-get install -y python-ncclient
+        ;;
+        *)
+            echo "No custom packages for ${FACTER_OSVER}"
+        ;;
+    esac
 }
 
 all_systems() {

@@ -6,11 +6,12 @@
       - '{project}-csit-{functionality}'
     project: 'common-tosca-catalog'
     functionality:
-      - 'sanity-check':
+      - 'interface-check':
           trigger_jobs:
             - 'integration-common-services-msb-merge-docker'
+            - 'integration-common-tosca-aria-merge-docker'
             - 'integration-common-tosca-catalog-merge-docker'
-      - 'interface-check':
+      - 'sanity-check':
           trigger_jobs:
             - 'integration-common-services-msb-merge-docker'
             - 'integration-common-tosca-catalog-merge-docker'

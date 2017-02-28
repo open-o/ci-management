@@ -10,5 +10,9 @@
           trigger_jobs:
             - 'integration-common-services-msb-merge-docker'
             - 'integration-common-tosca-catalog-merge-docker'
+      - 'interface-check':
+          trigger_jobs:
+            - 'integration-common-services-msb-merge-docker'
+            - 'integration-common-tosca-catalog-merge-docker'
     robot-options: ''
     branch: 'master'

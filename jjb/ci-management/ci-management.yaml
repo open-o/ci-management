@@ -9,6 +9,8 @@
 
     project: 'ci-management'
     build-timeout: '60'
+    # we don't need anything larger for the jobs we perform
+    build-node: centos7-basebuild-2c-1g
 
     platforms:
       - centos

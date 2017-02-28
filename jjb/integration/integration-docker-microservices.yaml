@@ -63,6 +63,9 @@
       - 'holmes-engine-d-standalone':
           trigger_jobs:
             - 'holmes-engine-management-master-merge-java'
+      - 'holmes-rulemgt-standalone':
+          trigger_jobs:
+            - 'holmes-rule-management-master-merge-java'
       - 'multivim-broker':
           trigger_jobs:
             - 'multivimdriver-broker-master-multivimbroker-merge-java'

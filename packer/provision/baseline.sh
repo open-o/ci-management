@@ -116,6 +116,7 @@ Dpkg::Options {
 EOF
 
     echo "---> Updating operating system"
+    apt-get clean
     apt-get update
     apt-get upgrade
 

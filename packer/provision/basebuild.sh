@@ -46,6 +46,9 @@ rh_systems() {
 }
 
 ubuntu_systems() {
+    apt-get clean
+    apt-get update
+
     # Install python dependencies
     apt-get install -y python-{dev,virtualenv,setuptools,pip}
 

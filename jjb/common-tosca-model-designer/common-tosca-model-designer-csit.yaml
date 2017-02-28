@@ -3,13 +3,11 @@
     name: common-tosca-model-designer-csit
     jobs:
       - 'integration-verify-{project}-csit-{functionality}'
-      - '{project}-csit-{functionality}':
-          trigger_jobs:
-            - 'common-tosca-model-designer-master-merge-java'
-
+      - '{project}-csit-{functionality}'
     project: 'common-tosca-model-designer'
     functionality:
-      - 'sanity-check'
+      - 'sanity-check':
+          trigger_jobs:
+            - 'integration-common-services-msb-merge-docker'
     robot-options: ''
-
     branch: 'master'

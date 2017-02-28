@@ -9,5 +9,6 @@
       - 'sanity-check':
           trigger_jobs:
             - 'integration-common-services-msb-merge-docker'
+            - 'integration-vnfsdk-function-test-merge-docker'
     robot-options: ''
     branch: 'master'

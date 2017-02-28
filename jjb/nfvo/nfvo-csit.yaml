@@ -6,32 +6,35 @@
       - '{project}-csit-{functionality}'
     project: 'nfvo'
     functionality:
-      - 'driver-vnfm-juju-sanity-check':
-          trigger_jobs:
-            - 'integration-common-services-msb-merge-docker'
-            - 'integration-nfvo-driver-vnfm-juju-merge-docker'
-      - 'driver-vnfm-huawei-sanity-check':
-          trigger_jobs:
-            - 'integration-common-services-msb-merge-docker'
-            - 'integration-nfvo-driver-vnfm-huawei-merge-docker'
-      - 'resmanagement-sanity-check':
-          trigger_jobs:
-            - 'integration-common-services-msb-merge-docker'
-            - 'integration-nfvo-resmanagement-merge-docker'
-      - 'lcm-sanity-check':
-          trigger_jobs:
-            - 'integration-common-services-msb-merge-docker'
-            - 'integration-nfvo-lcm-merge-docker'
-      - 'driver-vnfm-zte-sanity-check':
-          trigger_jobs:
-            - 'integration-common-services-msb-merge-docker'
-            - 'integration-nfvo-driver-vnfm-zte-merge-docker'
       - 'driver-vnfm-gvnfm-sanity-check':
           trigger_jobs:
             - 'integration-common-services-msb-merge-docker'
             - 'integration-nfvo-driver-vnfm-gvnfm-merge-docker'
+      - 'driver-vnfm-huawei-sanity-check':
+          trigger_jobs:
+            - 'integration-common-services-msb-merge-docker'
+            - 'integration-nfvo-driver-vnfm-huawei-merge-docker'
+      - 'driver-vnfm-juju-sanity-check':
+          trigger_jobs:
+            - 'integration-common-services-msb-merge-docker'
+            - 'integration-nfvo-driver-vnfm-juju-merge-docker'
+      - 'driver-vnfm-zte-sanity-check':
+          trigger_jobs:
+            - 'integration-common-services-msb-merge-docker'
+            - 'integration-nfvo-driver-vnfm-zte-merge-docker'
+      - 'lcm-sanity-check':
+          trigger_jobs:
+            - 'integration-common-services-msb-merge-docker'
+            - 'integration-nfvo-lcm-merge-docker'
+      - 'resmanagement-sanity-check':
+          trigger_jobs:
+            - 'integration-common-services-msb-merge-docker'
+            - 'integration-nfvo-resmanagement-merge-docker'
       - 'sanity-check':
           trigger_jobs:
             - 'integration-common-services-msb-merge-docker'
+            - 'integration-nfvo-driver-vnfm-huawei-merge-docker'
+            - 'integration-nfvo-driver-vnfm-juju-merge-docker'
+            - 'integration-nfvo-resmanagement-merge-docker'
     robot-options: ''
     branch: 'master'

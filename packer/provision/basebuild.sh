@@ -2,7 +2,13 @@
 
 # vim: ts=4 sw=4 sts=4 et tw=72 :
 
+# force any errors to cause the script and job to end in failure
+set -xeu -o pipefail
+
 rh_systems() {
+    # Make sure the 'Development Tools' group is installed
+    yum install -y @development
+
     # Install python dependencies
     yum install -y python-{devel,virtualenv,setuptools,pip}
 
@@ -15,13 +21,16 @@ rh_systems() {
     # Additional libraries for Python ncclient
     yum install -y libxml2 libxslt libxslt-devel libffi libffi-devel
 
+    # Additional required libraries for openresty
+    yum install -y readline-devel pcre-devel curl
+
     # Packer builds happen from the centos flavor images
     PACKERDIR=$(mktemp -d)
     # disable double quote checking
     # shellcheck disable=SC2086
-    cd $PACKERDIR
-    wget https://releases.hashicorp.com/packer/0.10.1/packer_0.10.1_linux_amd64.zip
-    unzip packer_0.10.1_linux_amd64.zip -d /usr/local/bin/
+    cd $PACKERDIR || exit
+    wget https://releases.hashicorp.com/packer/0.12.2/packer_0.12.2_linux_amd64.zip
+    unzip packer_0.12.2_linux_amd64.zip -d /usr/local/bin/
     # rename packer to avoid conflicts with cracklib
     mv /usr/local/bin/packer /usr/local/bin/packer.io
 
@@ -45,6 +54,10 @@ ubuntu_systems() {
 
     # Additional libraries for Python ncclient
     apt-get install -y wget unzip python-ncclient
+
+    # Additional requirements for openresty
+    apt-get install -y libreadline-dev libncurses5-dev libpcre3-dev \
+        perl make build-essential curl
 }
 
 all_systems() {

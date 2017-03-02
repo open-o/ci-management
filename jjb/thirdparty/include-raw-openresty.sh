@@ -29,7 +29,7 @@ make install DESTDIR="${WORKSPACE}/install"
 
 cd "${WORKSPACE}/install"
 
-tar czf "${WORKSPACE}/${PACKAGE}" ./
+tar czf "${WORKSPACE}/${PACKAGE}" usr
 
 DISTRO=$(facter operatingsystem | tr '[:upper:]' '[:lower:]')
 OS_VERSION=$(facter operatingsystemrelease | tr '.' '_')
@@ -39,4 +39,4 @@ ${MVN} deploy:deploy-file -gs "${GLOBAL_SETTINGS_FILE}" -s "${SETTINGS_FILE}" \
     -Durl="${NEXUSPROXY}/content/repositories/thirdparty/" \
     -DgroupId="org.openresty.${DISTRO}.${OS_VERSION}" \
     -Dversion="${VERSION}" -DartifactId=openresty \
-    -Dtype=tar.gz
+    -Dpackaging=tar.gz

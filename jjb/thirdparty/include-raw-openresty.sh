@@ -32,7 +32,7 @@ cd "${WORKSPACE}/install"
 tar czf "${WORKSPACE}/${PACKAGE}" ./
 
 DISTRO=$(facter operatingsystem | tr '[:upper:]' '[:lower:]')
-OS_VERSION=$(facter operatingsystemrelease)
+OS_VERSION=$(facter operatingsystemrelease | tr '.' '_')
 
 ${MVN} deploy:deploy-file -gs "${GLOBAL_SETTINGS_FILE}" -s "${SETTINGS_FILE}" \
     -Dfile="${WORKSPACE}/${PACKAGE}" -DrepositoryId=thirdparty \

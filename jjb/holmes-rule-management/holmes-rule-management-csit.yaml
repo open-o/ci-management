@@ -8,5 +8,7 @@
     functionality:
       - 'sanity-check':
           trigger_jobs:
+            - 'integration-common-services-msb-merge-docker'
+            - 'integration-holmes-rulemgt-standalone-merge-docker'
     robot-options: ''
     branch: 'master'

@@ -30,11 +30,5 @@
           trigger_jobs:
             - 'integration-common-services-msb-merge-docker'
             - 'integration-nfvo-resmanagement-merge-docker'
-      - 'sanity-check':
-          trigger_jobs:
-            - 'integration-common-services-msb-merge-docker'
-            - 'integration-nfvo-driver-vnfm-huawei-merge-docker'
-            - 'integration-nfvo-driver-vnfm-juju-merge-docker'
-            - 'integration-nfvo-resmanagement-merge-docker'
     robot-options: ''
     branch: 'master'

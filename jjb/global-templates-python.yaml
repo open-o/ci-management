@@ -41,7 +41,7 @@
           pattern: '{pattern}'
 
     builders:
-        - shell: |
+      - shell: |
             virtualenv $WORKSPACE/venv-tox
             source $WORKSPACE/venv-tox/bin/activate
             pip install --upgrade pip

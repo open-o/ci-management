@@ -1,3 +1,4 @@
+---
 - parameter:
     name: integration-test-plan
     parameters:
@@ -19,7 +20,7 @@
     builders:
       - shell:
           !include-raw:
-            - include-raw-integration-install-robotframework.sh
+          - include-raw-integration-install-robotframework.sh
 
 - builder:
     name: integration-run-test

@@ -1,3 +1,4 @@
+---
 - job-template:
     name: 'integration-{microservice}-verify-docker'
 

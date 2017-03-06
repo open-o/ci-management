@@ -33,7 +33,7 @@
           build-timeout: '{build-timeout}'
 
     triggers:
-      - gerrit-trigger-nonvoting-patch-submitted-pattern:
+      - gerrit-trigger-patch-submitted-pattern:
           name: 'integration'
           branch: '{branch}'
           pattern: 'test/csit/**/{project}/**'

@@ -1,3 +1,4 @@
+---
 # Autorelease build jobs
 - project:
     name: integration-docker
@@ -40,8 +41,8 @@
           build-timeout: '{build-timeout}'
 
     triggers:
-        # 11 AM UTC = 7 PM China = 4 AM Pacific
-        - timed: 'H 11 * * *'
+      # 11 AM UTC = 7 PM China = 4 AM Pacific
+      - timed: 'H 11 * * *'
 
     builders:
       - provide-maven-settings:
@@ -57,7 +58,7 @@
           global-settings-type: cfp
       - shell:
           !include-raw-escape:
-            - include-raw-build-docker.sh
+          - include-raw-build-docker.sh
       - maven-target:
           maven-version: 'mvn33'
           pom: 'test/csit/docker/target/pom.xml'

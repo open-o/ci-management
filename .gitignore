@@ -16,3 +16,19 @@ target/
 # IntelliJ
 .idea/
 *.iml
+
+# Standard Eclipse Files
+.project
+.classpath
+.settings
+
+# Standard Ignored Files
+*.log
+logs
+ignore-*
+*.ignore
+*.tmp
+*~
+
+# Standard Sonar Files
+.sonar

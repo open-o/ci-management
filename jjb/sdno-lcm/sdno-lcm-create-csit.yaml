@@ -6,10 +6,11 @@
       - '{project}-csit-{functionality}'
     project: 'sdno-lcm'
     functionality:
-      - 'provision':
+      - 'creation':
           trigger_jobs:
             - 'integration-common-services-msb-merge-docker'
             - 'integration-sdno-service-lcm-merge-docker'
+            - 'integration-common-tosca-catalog-merge-docker'
     robot-options: ''
     branch: 'master'
     #TBA: Triggering jobs TOSCA catalog BRS and MSS.

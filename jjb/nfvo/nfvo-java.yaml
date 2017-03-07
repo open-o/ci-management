@@ -30,6 +30,9 @@
       - 'drivers-vnfm-svnfm-zte-vmanager':
           pom: 'drivers/vnfm/svnfm/zte/vmanager/pom.xml'
           pattern: 'drivers/vnfm/svnfm/zte/vmanager/**'
+      - 'drivers-ems-sems-boco-ems-driver':
+          pom: 'drivers/ems/sems/boco/ems-driver/pom.xml'
+          pattern: 'drivers/ems/sems/boco/ems-driver/**'
       - 'lcm':
           pom: 'lcm/pom.xml'
           pattern: 'lcm/**'

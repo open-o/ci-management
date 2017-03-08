@@ -13,6 +13,9 @@
       - 'client-cli':
           trigger_jobs:
             - 'client-cli-master-merge-java'
+      - 'client-gui':
+          trigger_jobs:
+            - 'client-gui-master-merge-java'
       - 'common-services-auth':
           trigger_jobs:
             - 'common-services-auth-master-merge-java'
@@ -43,8 +46,6 @@
       - 'common-tosca-modeldesigner':
           trigger_jobs:
             - 'common-tosca-model-designer-master-merge-java'
-      - 'gso-gui-portal':
-          trigger_jobs:
       - 'gso-service-gateway':
           trigger_jobs:
             - 'gso-master-merge-java'

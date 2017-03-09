@@ -4,7 +4,6 @@
 # force any errors to cause the script and job to end in failure
 set -xeu -o pipefail
 
-VERSION=3.2.6
 PACKAGE=redis-${VERSION}.tar.gz
 
 # Download Redis
@@ -18,7 +17,8 @@ make
 mkdir "${WORKSPACE}/install"
 make PREFIX="${WORKSPACE}/install" install
 cd "${WORKSPACE}/install"
-tar czf "${WORKSPACE}/${PACKAGE}" bin
+mv bin "redis-${VERSION}"
+tar czf "${WORKSPACE}/${PACKAGE}" "redis-${VERSION}"
 
 DISTRO=$(facter operatingsystem | tr '[:upper:]' '[:lower:]')
 case "${DISTRO}" in

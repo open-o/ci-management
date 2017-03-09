@@ -4,7 +4,6 @@
 # force any errors to cause the script and job to end in failure
 set -xeu -o pipefail
 
-# VERSION=1.11.2.2
 PACKAGE=openresty-${VERSION}.tar.gz
 
 # Download openresty
@@ -27,9 +26,11 @@ mkdir "${WORKSPACE}/install"
 
 make install DESTDIR="${WORKSPACE}/install"
 
-cd "${WORKSPACE}/install"
+cd "${WORKSPACE}/install/usr/local"
 
-tar czf "${WORKSPACE}/${PACKAGE}" usr
+mv openresty "openresty-${VERSION}"
+
+tar czf "${WORKSPACE}/${PACKAGE}" "openresty-${VERSION}"
 
 DISTRO=$(facter operatingsystem | tr '[:upper:]' '[:lower:]')
 case "${DISTRO}" in

@@ -10,5 +10,6 @@
           trigger_jobs:
             - 'integration-common-services-msb-merge-docker'
             - 'integration-holmes-rulemgt-standalone-merge-docker'
+            - 'integration-holmes-engine-d-standalone-merge-docker'
     robot-options: ''
     branch: 'master'

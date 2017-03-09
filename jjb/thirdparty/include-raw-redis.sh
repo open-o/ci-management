@@ -21,7 +21,14 @@ cd "${WORKSPACE}/install"
 tar czf "${WORKSPACE}/${PACKAGE}" bin
 
 DISTRO=$(facter operatingsystem | tr '[:upper:]' '[:lower:]')
-OS_VERSION=$(facter operatingsystemrelease | tr '.' '_')
+case "${DISTRO}" in
+    fedora|centos|redhat)
+        OS_VERSION=$(facter operatingsystemmajrelease)
+    ;;
+    *)
+        OS_VERSION=$(facter operatingsystemrelease | tr '.' '_')
+    ;;
+esac
 
 ${MVN} deploy:deploy-file -gs "${GLOBAL_SETTINGS_FILE}" -s "${SETTINGS_FILE}" \
     -Dfile="${WORKSPACE}/${PACKAGE}" -DrepositoryId=thirdparty \

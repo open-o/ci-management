@@ -2,15 +2,19 @@
 - project:
     name: openresty
     jobs:
-      - 'thirdparty-openresty'
+      - 'thirdparty-openresty-{os}'
 
     mvn-settings: 'thirdparty-settings'
 
+    os:
+      - ubuntu1404
+      - ubuntu1604
+
 - job-template:
-    name: thirdparty-openresty
+    name: 'thirdparty-openresty-{os}'
 
     project-type: freestyle
-    node: ubuntu1404-basebuild-4c-4g
+    node: '{os}-basebuild-4c-4g'
     concurrent: true
 
     properties:

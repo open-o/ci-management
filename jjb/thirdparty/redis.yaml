@@ -2,16 +2,20 @@
 - project:
     name: redis
     jobs:
-      - 'thirdparty-redis'
+      - 'thirdparty-redis-{os}'
 
     mvn-settings: 'thirdparty-settings'
 
+    os:
+      - centos7
+      - ubuntu1404
+      - ubuntu1604
 
 - job-template:
-    name: thirdparty-redis
+    name: 'thirdparty-redis-{os}'
 
     project-type: freestyle
-    node: ubuntu1404-basebuild-4c-4g
+    node: '{os}-basebuild-4c-4g'
     concurrent: true
 
     properties:

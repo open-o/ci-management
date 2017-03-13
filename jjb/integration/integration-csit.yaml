@@ -6,6 +6,12 @@
       - '{project}-csit-{functionality}'
     project: 'integration'
     functionality:
+      - 'ete1':
+          trigger_jobs:
+      - 'ete2':
+          trigger_jobs:
+      - 'ete3':
+          trigger_jobs:
       - 'functionality1':
           trigger_jobs:
     robot-options: ''

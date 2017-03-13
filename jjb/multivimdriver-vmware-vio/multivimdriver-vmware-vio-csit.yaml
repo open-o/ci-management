@@ -1,0 +1,13 @@
+---
+- project:
+    name: multivimdriver-vmware-vio-csit
+    jobs:
+      - 'integration-verify-{project}-csit-{functionality}'
+      - '{project}-csit-{functionality}'
+    project: 'multivimdriver-vmware-vio'
+    functionality:
+      - 'sanity-check':
+          trigger_jobs:
+            - 'integration-multivim-driver-vio-merge-docker'
+    robot-options: ''
+    branch: 'master'

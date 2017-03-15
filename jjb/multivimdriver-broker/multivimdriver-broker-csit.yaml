@@ -11,6 +11,10 @@
             - 'integration-multivim-broker-merge-docker'
             - 'integration-multivim-driver-newton-merge-docker'
             - 'integration-multivim-driver-kilo-merge-docker'
-            - 'integration-multivim-driver-vio-merge-docker'
+      - 'functionality10':
+          trigger_jobs:
+            - 'integration-multivim-broker-merge-docker'
+            - 'integration-multivim-driver-newton-merge-docker'
+            - 'integration-multivim-driver-kilo-merge-docker'
     robot-options: ''
     branch: 'master'

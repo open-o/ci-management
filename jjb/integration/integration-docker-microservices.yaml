@@ -187,3 +187,9 @@
       - 'vnfsdk-function-test':
           trigger_jobs:
             - 'vnf-sdk-function-test-master-merge-java'
+      - 'vnf-sdk-marketplace':
+          trigger_jobs:
+            - 'vnf-sdk-marketplace-master-merge-java'
+      - 'vnf-sdk-validate-lc-test':
+          trigger_jobs:
+            - 'vnf-sdk-validate-lc-test-master-merge-java'

@@ -11,6 +11,46 @@
             - 'integration-multivim-broker-merge-docker'
             - 'integration-multivim-driver-newton-merge-docker'
             - 'integration-multivim-driver-kilo-merge-docker'
+      - 'functionality2':
+          trigger_jobs:
+            - 'integration-multivim-broker-merge-docker'
+            - 'integration-multivim-driver-newton-merge-docker'
+            - 'integration-multivim-driver-kilo-merge-docker'
+      - 'functionality3':
+          trigger_jobs:
+            - 'integration-multivim-broker-merge-docker'
+            - 'integration-multivim-driver-newton-merge-docker'
+            - 'integration-multivim-driver-kilo-merge-docker'
+      - 'functionality4':
+          trigger_jobs:
+            - 'integration-multivim-broker-merge-docker'
+            - 'integration-multivim-driver-newton-merge-docker'
+            - 'integration-multivim-driver-kilo-merge-docker'
+      - 'functionality5':
+          trigger_jobs:
+            - 'integration-multivim-broker-merge-docker'
+            - 'integration-multivim-driver-newton-merge-docker'
+            - 'integration-multivim-driver-kilo-merge-docker'
+      - 'functionality6':
+          trigger_jobs:
+            - 'integration-multivim-broker-merge-docker'
+            - 'integration-multivim-driver-newton-merge-docker'
+            - 'integration-multivim-driver-kilo-merge-docker'
+      - 'functionality7':
+          trigger_jobs:
+            - 'integration-multivim-broker-merge-docker'
+            - 'integration-multivim-driver-newton-merge-docker'
+            - 'integration-multivim-driver-kilo-merge-docker'
+      - 'functionality8':
+          trigger_jobs:
+            - 'integration-multivim-broker-merge-docker'
+            - 'integration-multivim-driver-newton-merge-docker'
+            - 'integration-multivim-driver-kilo-merge-docker'
+      - 'functionality9':
+          trigger_jobs:
+            - 'integration-multivim-broker-merge-docker'
+            - 'integration-multivim-driver-newton-merge-docker'
+            - 'integration-multivim-driver-kilo-merge-docker'
       - 'functionality10':
           trigger_jobs:
             - 'integration-multivim-broker-merge-docker'

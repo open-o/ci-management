@@ -48,6 +48,9 @@
       - 'root':
           pom: 'pom.xml'
           pattern: '*'
+      - 'drivers-vnfm-svnfm-ericsson-vnfmdriver':
+          pom: 'drivers/vnfm/svnfm/ericsson/vnfmdriver/pom.xml'
+          pattern: 'drivers/vnfm/svnfm/ericsson/vnfmdriver/**'
     jobs:
       - '{project}-{stream}-{subproject}-verify-java'
       - '{project}-{stream}-{subproject}-merge-java'

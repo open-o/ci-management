@@ -176,6 +176,8 @@
           settings-type: cfp
           global-settings: 'global-settings'
           global-settings-type: cfp
+      - trigger-builds:
+          - project: "integration-autorelease-master-daily"
 
     publishers:
       - openo-infra-shiplogs:
@@ -239,6 +241,8 @@
           settings-type: cfp
           global-settings: 'global-settings'
           global-settings-type: cfp
+      - trigger-builds:
+          - project: "integration-autorelease-master-daily"
 
     publishers:
       - openo-infra-shiplogs:

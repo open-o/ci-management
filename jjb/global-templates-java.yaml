@@ -47,7 +47,7 @@
           settings-file: '{mvn-settings}'
       - maven-target:
           maven-version: 'mvn33'
-          goals: 'clean install'
+          goals: '-B clean install -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'
           java-opts:
             - '-Xmx2g'
           settings: '{mvn-settings}'
@@ -111,7 +111,7 @@
       - maven-target:
           maven-version: 'mvn33'
           pom: '{pom}'
-          goals: 'clean install'
+          goals: '-B clean install -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'
           java-opts:
             - '-Xmx2g'
           settings: '{mvn-settings}'
@@ -169,7 +169,7 @@
           settings-file: '{mvn-settings}'
       - maven-target:
           maven-version: 'mvn33'
-          goals: 'clean deploy sonar:sonar -Dsonar.host.url=https://sonar.open-o.org'
+          goals: '-B clean deploy sonar:sonar -Dsonar.host.url=https://sonar.open-o.org -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'
           java-opts:
             - '-Xmx2g'
           settings: '{mvn-settings}'
@@ -232,7 +232,7 @@
       - maven-target:
           maven-version: 'mvn33'
           pom: '{pom}'
-          goals: 'clean deploy sonar:sonar -Dsonar.host.url=https://sonar.open-o.org'
+          goals: '-B clean deploy sonar:sonar -Dsonar.host.url=https://sonar.open-o.org -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'
           java-opts:
             - '-Xmx2g'
           settings: '{mvn-settings}'

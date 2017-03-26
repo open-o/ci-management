@@ -62,7 +62,7 @@
       - maven-target:
           maven-version: 'mvn33'
           pom: 'test/csit/docker/target/pom.xml'
-          goals: 'docker:push'
+          goals: '-B docker:push -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'
           settings: '{mvn-settings}'
           settings-type: cfp
           global-settings: 'global-settings'
@@ -182,7 +182,7 @@
       - maven-target:
           maven-version: 'mvn33'
           pom: 'test/csit/docker-custom/target/pom.xml'
-          goals: 'docker:push'
+          goals: '-B docker:push  -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'
           settings: '{mvn-settings}'
           settings-type: cfp
           global-settings: 'global-settings'

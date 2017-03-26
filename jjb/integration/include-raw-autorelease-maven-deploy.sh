@@ -30,6 +30,7 @@ then
 fi
 
 $MVN -V -B org.sonatype.plugins:nexus-staging-maven-plugin:1.6.2:deploy-staged-repository \
+    -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn \
     -DrepositoryDirectory="`pwd`/m2repo" \
     -DnexusUrl=https://nexus.open-o.org/ \
     -DstagingProfileId="d8330dc636933" \

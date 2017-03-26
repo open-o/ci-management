@@ -65,7 +65,7 @@
       - maven-target:
           maven-version: 'mvn33'
           pom: 'autorelease/build/pom.xml'
-          goals: 'clean deploy -DdisableJavaSdkAutoGeneration -DaltDeploymentRepository=staging::default::file:hide/from/pom/files/stage'
+          goals: '-B clean deploy -DdisableJavaSdkAutoGeneration -DaltDeploymentRepository=staging::default::file:hide/from/pom/files/stage -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'
           java-opts:
             - '-Xmx4g -XX:MaxPermSize=1g'
           settings: '{mvn-settings}'

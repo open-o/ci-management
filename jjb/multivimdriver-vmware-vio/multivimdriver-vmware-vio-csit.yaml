@@ -12,5 +12,8 @@
       - 'sanity-image':
           trigger_jobs:
             - 'integration-multivim-driver-vio-merge-docker'
+      - 'sanity-network':
+          trigger_jobs:
+            - 'integration-multivim-driver-vio-merge-docker'
     robot-options: ''
     branch: 'master'

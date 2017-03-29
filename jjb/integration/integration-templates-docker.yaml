@@ -88,6 +88,7 @@
           name: '{project}'
           branch: '{branch}'
           pattern: 'test/csit/docker/{microservice}/**'
+      - timed: '@daily'
       - reverse:
           jobs: '{obj:trigger_jobs}'
 

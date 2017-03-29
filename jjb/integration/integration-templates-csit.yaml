@@ -4,7 +4,8 @@
     disabled: false
 
     project-type: freestyle
-    node: 'centos7-robot-8c-8g'
+    build-node: 'centos7-robot-8c-8g'
+    node: '{build-node}'
 
     properties:
       - build-discarder:
@@ -56,7 +57,8 @@
     disabled: false
 
     project-type: freestyle
-    node: 'centos7-robot-8c-8g'
+    build-node: 'centos7-robot-8c-8g'
+    node: '{build-node}'
 
     properties:
       - build-discarder:

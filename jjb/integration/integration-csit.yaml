@@ -12,8 +12,6 @@
           trigger_jobs:
       - 'ete3':
           trigger_jobs:
-      - 'functionality1':
-          trigger_jobs:
     robot-options: ''
     branch: 'master'
     build-node: 'centos7-robot-24c-64g'

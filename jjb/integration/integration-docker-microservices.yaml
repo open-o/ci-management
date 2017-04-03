@@ -88,6 +88,9 @@
       - 'nfvo-driver-vim':
           trigger_jobs:
             - 'nfvo-master-drivers-vim-vimadapter-merge-java'
+      - 'nfvo-driver-vnfm-ericsson':
+          trigger_jobs:
+            - 'nfvo-master-drivers-vnfm-svnfm-ericsson-vnfmdriver-merge-java'
       - 'nfvo-driver-vnfm-gvnfm':
           trigger_jobs:
             - 'nfvo-master-drivers-vnfm-gvnfm-gvnfmadapter-merge-java'

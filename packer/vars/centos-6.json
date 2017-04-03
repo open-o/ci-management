@@ -1,5 +1,5 @@
 {
-  "base_image": "CentOS 6.1702 (2017-03-03) - LF upload",
+  "base_image": "Centos 6.1702 (2017-03-03) - LF upload",
   "cloud_user": "centos",
 
   "distro": "CentOS 6",

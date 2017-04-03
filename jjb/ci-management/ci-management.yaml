@@ -13,7 +13,8 @@
     build-node: centos7-basebuild-2c-1g
 
     platforms:
-      - centos
+      - centos-6
+      - centos-7
       - ubuntu-14.04
       - ubuntu-16.04
 
@@ -21,6 +22,12 @@
       - basebuild
       - redis
       - robot
+
+    exclude:
+      - platforms: centos-6
+        templates: redis
+      - platforms: centos-6
+        templates: robot
 
 - job-template:
     name: ci-management-verify-jjb

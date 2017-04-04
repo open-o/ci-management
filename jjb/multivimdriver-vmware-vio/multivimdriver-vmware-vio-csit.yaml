@@ -21,5 +21,8 @@
       - 'sanity-volume':
           trigger_jobs:
             - 'integration-multivim-driver-vio-merge-docker'
+      - 'sanity-tenant':
+          trigger_jobs:
+            - 'integration-multivim-driver-vio-merge-docker'
     robot-options: ''
     branch: 'master'

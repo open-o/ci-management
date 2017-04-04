@@ -48,11 +48,23 @@ rh_systems() {
 
     # add in components we need or want on systems
     echo "---> Installing base packages"
-    yum install -y @base https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+
+    # This is ugly mostly because facter isn't installed yet and getting
+    # the sed foo working correctly has been failing
+    RELEASE=$(cat /etc/redhat-release | \
+      sed 's/^.* \(release .*\) .*/\1/' | awk '{print $2}' | cut -d'.' -f1)
+
+    yum install -y @base https://dl.fedoraproject.org/pub/epel/epel-release-latest-${RELEASE}.noarch.rpm
     # separate group installs from package installs since a non-existing
     # group with dnf based systems (F21+) will fail the install if such
     # a group does not exist
-    yum install -y unzip xz puppet git git-review perl-XML-XPath wget make
+    yum install -y unzip xz git git-review perl-XML-XPath wget make
+
+    yum install -y http://yum.puppetlabs.com/puppetlabs-release-pc1-el-${RELEASE}.noarch.rpm
+    yum install -y puppet-agent
+
+    # Make sure that facter is accessible on the old path
+    ln -s /opt/puppetlabs/bin/facter /usr/bin/facter
 
     # All of our systems require Java (because of Jenkins)
     # Install all versions of the OpenJDK devel but force 1.7.0 to be the

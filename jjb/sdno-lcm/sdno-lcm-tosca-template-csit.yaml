@@ -1,0 +1,13 @@
+---
+- project:
+    name: sdno-lcm-tosca-template-csit
+    jobs:
+      - 'integration-verify-{project}-csit-{functionality}'
+      - '{project}-csit-{functionality}'
+    project: 'sdno-lcm'
+    functionality:
+      - 'tosca-template':
+          trigger_jobs:
+            - 'integration-common-tosca-catalog-merge-docker'
+    robot-options: ''
+    branch: 'master'

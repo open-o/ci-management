@@ -27,7 +27,7 @@ rm "${ZLIB_PACKAGE}"
 
 # Download openssl
 OPENSSL_PACKAGE=openssl-${OPENSSL_VERSION}.tar.gz
-wget "https://www.openssl.org/source/${OPENSSL_VERSION}"
+wget "https://www.openssl.org/source/${OPENSSL_PACKAGE}"
 tar zxf "${OPENSSL_PACKAGE}"
 rm "${OPENSSL_PACKAGE}"
 

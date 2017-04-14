@@ -64,6 +64,13 @@ make install DESTDIR="${WORKSPACE}/install"
 
 cd "${WORKSPACE}/install/usr/local"
 
+#create some nginx cache dirs
+mkdir -p openresty/nginx/temp/client_body_temp
+mkdir -p openresty/nginx/temp/proxy_temp
+mkdir -p openresty/nginx/temp/fastcgi_temp
+mkdir -p openresty/nginx/temp/scgi_temp
+mkdir -p openresty/nginx/temp/uwsgi_temp
+
 mv openresty "openresty-${VERSION}"
 
 tar czf "${WORKSPACE}/${PACKAGE}" "openresty-${VERSION}"

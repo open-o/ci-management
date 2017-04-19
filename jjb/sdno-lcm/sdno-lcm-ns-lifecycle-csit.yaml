@@ -1,0 +1,15 @@
+---
+- project:
+    name: sdno-lcm-ns-lifecycle-csit
+    jobs:
+      - 'integration-verify-{project}-csit-{functionality}'
+      - '{project}-csit-{functionality}'
+    project: 'sdno-lcm'
+    functionality:
+      - 'ns-lifecycle':
+          trigger_jobs:
+            - 'integration-common-services-msb-merge-docker'
+            - 'integration-sdno-service-lcm-merge-docker'
+            - 'integration-common-tosca-catalog-merge-docker'
+    robot-options: ''
+    branch: 'master'

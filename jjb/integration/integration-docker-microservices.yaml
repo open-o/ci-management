@@ -187,6 +187,9 @@
       - 'sdno-vsitemgr':
           trigger_jobs:
             - 'sdno-vsitemgr-master-merge-java'
+      - 'vnf-sdk-function-test-task':
+          trigger_jobs:
+            - 'nfvo-master-vnf_functest-merge-java'
       - 'vnfsdk-function-test':
           trigger_jobs:
             - 'vnf-sdk-function-test-master-merge-java'
